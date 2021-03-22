@@ -19,11 +19,16 @@ ui <- fluidPage(
         mainPanel(
             
             # Output: Histogram ----
+            
             plotOutput(outputId = "distPlot"),
             plotOutput(outputId = "distPlotProdLoc"),
-            plotOutput(outputId = "Pie1"),
-            plotOutput(outputId = "Pie2"),
-            plotOutput(outputId = "Pie3"),
+            fluidRow(
+                splitLayout(style = "border: 1px solid silver:", cellWidths = c(300,300,300),
+                            plotOutput(outputId = "Pie1"),
+                            plotOutput(outputId = "Pie2"),
+                            plotOutput(outputId = "Pie3")
+                )
+            )
         )
     )
 )
@@ -54,16 +59,18 @@ server <- function(input, output) {
     })
     
     output$Pie1 <- renderPlot({
+        pie3D(x=dfnovege$freq,start=2, labels=dfnovege$category, col=myPalette, theta=3.14/2, main = "Menus non végétariens")
         
-        pie3D(x=dfnovege$freq, labels=dfnovege$category, col=myPalette, theta=3.14/2)
     })
     
     output$Pie2 <- renderPlot({
-        pie3D(x=dfvegehebdo$freq, labels=dfvegehebdo$category, col=myPalette, theta=3.14/2)
+        pie3D(x=dfvegehebdo$freq, start=sqrt(2),labels=dfvegehebdo$category, col=myPalette, theta=3.14/2, main = "Menus végétariens hebdomadaires")
+        
     })
     
     output$Pie3 <- renderPlot({
-        pie3D(x=dfvegequot$freq, labels=dfvegequot$category, col=myPalette, theta=3.14/2)
+        pie3D(x=dfvegequot$freq, start=sqrt(2),labels=dfvegequot$category, col=myPalette, theta=3.14/2, main = "Menus végétariens quotidiens")
+        
     })
 }
 
