@@ -14,3 +14,8 @@ Nous communiquons via un serveur discord, nous nous répartissons les tâches en
 et les comptes rendus sont disponibles sur ce lien google drive:
 
 https://drive.google.com/drive/folders/1PShdJMeQ_EUhR7OVe4taoAZkL8tEcHho
+
+Pour les M1 MIASHS, nos tâches s'articulerons autour de trois éléments principaux:
+ - Premièrement, l'affichage de statistiques descriptives générales sur les données de l'association avec des paramètres personnalisables pour répondre à trois questions principales 
+ - Deuxièmement, la réalisation du questionnaire demandé en se basant sur l'ancien questionnaire
+ - Troisièmement, la réalisation de la carte interactive permettant d'afficher à l'échelle départementale des statistiques générales en fonction de paramètres réglables
