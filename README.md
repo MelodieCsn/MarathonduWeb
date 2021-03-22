@@ -8,6 +8,8 @@ des graphiques concernant les statistiques d'autres collectivités, pour répond
 alimentation bio et locale. Enfin, les élus pourront accéder à une carte interactive qui leur permettra de se situer par rapport aux autres collectivités
 et comparer les résultats de leur démarche avec des collectivités leur ressemblant.
 
+Ce projet est un partenariat entre les M1 CNO et les M1 MIASHS, les premiers s'occupant de la partie communication autour du projet, 
+les seconds s'occupant de la création du site et de la visualisation des données.
 Nous communiquons via un serveur discord, nous nous répartissons les tâches en utilisant la partie projet de ce github,
 et les comptes rendus sont disponibles sur ce lien google drive:
 
