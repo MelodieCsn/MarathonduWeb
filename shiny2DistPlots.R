@@ -20,7 +20,10 @@ ui <- fluidPage(
             
             # Output: Histogram ----
             plotOutput(outputId = "distPlot"),
-            plotOutput(outputId = "distPlotProdLoc")
+            plotOutput(outputId = "distPlotProdLoc"),
+            plotOutput(outputId = "Pie1"),
+            plotOutput(outputId = "Pie2"),
+            plotOutput(outputId = "Pie3"),
         )
     )
 )
@@ -41,7 +44,6 @@ server <- function(input, output) {
     })
     
     
-    
     output$distPlotProdLoc <- renderPlot({
         ggplot(data=df_subset(), aes(x=bio_fact, y=loc)) + 
             geom_bar(stat = "summary",fill="#99e3ff")+
@@ -51,6 +53,18 @@ server <- function(input, output) {
             ylab("% de produits locaux")
     })
     
+    output$Pie1 <- renderPlot({
+        
+        pie3D(x=dfnovege$freq, labels=dfnovege$category, col=myPalette, theta=3.14/2)
+    })
+    
+    output$Pie2 <- renderPlot({
+        pie3D(x=dfvegehebdo$freq, labels=dfvegehebdo$category, col=myPalette, theta=3.14/2)
+    })
+    
+    output$Pie3 <- renderPlot({
+        pie3D(x=dfvegequot$freq, labels=dfvegequot$category, col=myPalette, theta=3.14/2)
+    })
 }
 
 # Create Shiny app ----

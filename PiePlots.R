@@ -6,6 +6,12 @@ library("ggplot2")
 library("tidyr")
 library("stats")
 library("plyr")
+library("plotrix")
+
+library(RColorBrewer)
+myPalette <- brewer.pal(2,"YIOrBr") 
+
+
 
 liste_participants <- read.xlsx("R_Data/LISTE PARTICIPANTS OBSERVATOIRE.xlsx", rowNames = TRUE)
 bdd_2020 <- read.xlsx("R_Data/bdd_observatoire_2020.xlsx")
@@ -27,8 +33,8 @@ novege = novege[novege$menuvege == 2,]
 
 # ajout de deux catégorie à l'intérieur des non végétariens, ceux qui mangent de la viande bio et ceus qui n'en mangent pas
 novege$category = NA
-novege$category[novege$via_bio == 1] <- "vbio"
-novege$category[novege$via_bio == 0] <- "vnobio"
+novege$category[novege$via_bio == 1] <- "viande bio"
+novege$category[novege$via_bio == 0] <- "viande non bio"
 
 # création du df pour le pie chart
 novege$category = as.factor(novege$category)
@@ -42,8 +48,8 @@ vegehebdo = vegehebdo[vegehebdo$freq_veg == 2,]
 
 # ajout de deux catégorie à l'intérieur des non végétariens, ceux qui mangent de la viande bio et ceux qui n'en mangent pas
 vegehebdo$category = NA
-vegehebdo$category[vegehebdo$via_bio == 1] <- "vbio"
-vegehebdo$category[vegehebdo$via_bio == 0] <- "vnobio"
+vegehebdo$category[vegehebdo$via_bio == 1] <- "viande bio"
+vegehebdo$category[vegehebdo$via_bio == 0] <- "viande non bio"
 
 # création du df pour le pie chart
 vegehebdo$category = as.factor(vegehebdo$category)
@@ -57,8 +63,8 @@ vegequot = vegequot[vegequot$freq_veg == 3,]
 
 # ajout de deux catégorie à l'intérieur des non végétariens, ceux qui mangent de la viande bio et ceux qui n'en mangent pas
 vegequot$category = NA
-vegequot$category[vegequot$via_bio == 1] <- "vbio"
-vegequot$category[vegequot$via_bio == 0] <- "vnobio"
+vegequot$category[vegequot$via_bio == 1] <- "Viande bio"
+vegequot$category[vegequot$via_bio == 0] <- "Viande non bio"
 
 # création du df pour le pie chart
 vegequot$category = as.factor(vegequot$category)
@@ -67,9 +73,10 @@ dfvegequot = count(vegequot, 'category')
 
 # les éléments qui sont viabo = oui et menuvege = non
 
-pie(x=dfnovege$freq, labels=dfnovege$category)
-pie(x=dfvegehebdo$freq, labels=dfvegehebdo$category)
-pie(x=dfvegequot$freq, labels=dfvegequot$category)
+pie3D(x=dfnovege$freq, labels=dfnovege$category, col=myPalette, theta=3.14/2)
+pie3D(x=dfvegehebdo$freq, labels=dfvegehebdo$category, col=myPalette, theta=3.14/2)
+pie3D(x=dfvegequot$freq, labels=dfvegequot$category, col=myPalette, theta=3.14/2)
+
 
 #Y-a-t-il une relation entre le pourcentage de produits bio et le % de produits locaux ? Si oui, quelle est-elle ?
 
