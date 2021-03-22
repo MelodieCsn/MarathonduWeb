@@ -9,12 +9,9 @@ ui <- fluidPage(
     # Sidebar panel for inputs ----
     sidebarPanel(
       
-      # Input: Slider for the number of bins ----
-      sliderInput(inputId = "bins",
-                  label = "Number of bins:",
-                  min = 1,
-                  max = 50,
-                  value = 30)
+      # Input: selectInput ----
+      selectInput("nbrepas", "Nombres de repas : ", 
+                  choices= c("- 500", "500-3000", "3000-10000", "+ 10000", "Total"))
       
     ),
     
@@ -30,11 +27,17 @@ ui <- fluidPage(
 
 # Define server logic required to draw a histogram ----
 server <- function(input, output) {
-  
-  
+  df_subset <- reactive({
+  a <- subset(bdd20_dedup, bdd20_dedup$tot_rep_fact == input$nbrepas)
+  return(a)
+  })
   output$distPlot <- renderPlot({
-    ggplot(data=bdd20_dedup, aes(x=bio_fact, y=cmp)) + 
-      geom_bar(stat = "summary",fill="#DC4405")
+    ggplot(data=df_subset(), aes(x=bio_fact, y=cmp)) + 
+      geom_bar(stat = "summary",fill="#DC4405")+
+      theme_classic(base_size = 20)+
+      geom_hline(yintercept = 3, linetype = "dashed")+
+      xlab("% de bio")+
+      ylab("Coûts denrées moyen par repas")
   })
   
 }
