@@ -1,7 +1,7 @@
 # MarathonduWeb
 Projet de création d'un site web orienté data visualisation en Rshiny
 
-ce projet consite à valoriser les progrès d'inclusion du bio et du local dans les collectivités territoriales dont l'association UnPlusBio 
+Ce projet consite à valoriser les progrès d'inclusion du bio et du local dans les collectivités territoriales dont l'association UnPlusBio 
 possède les données. 
 Les élus pourront, à l'issu de notre travail, remplir un questionnaire concernant leur collectivité, mais aussi visualiser 
 des graphiques concernant les statistiques d'autres collectivités, pour répondre à leurs questions potentielles sur la démarche d'inclusion d'une
