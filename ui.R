@@ -36,9 +36,15 @@ dashboardPage(
                 
               
               )
-            )
+            ),
   
-  
+      tabItem(tabName = "Carte interactive"
+        
+      ),
+      
+      tabItem(tabName = "Questionnaire"
+              
+      )
             )
       )
 )
