@@ -6,6 +6,55 @@ library(rlist)
 library(tidyr)
 library(naniar)
 
+#Préparations données structures
+# Chargement des données
+
+liste_participants <- read.xlsx("R_Data/LISTE PARTICIPANTS OBSERVATOIRE.xlsx", rowNames = TRUE)
+
+
+# Récupérer longitude et lattitude des communes
+
+get_commune_data <- function(row) {
+  results <- tryCatch({
+    ComByName(row$COMMUNE)
+  }, warning = function(w){
+    tryCatch({
+      ComByPostal(row$CODE.POSTAL)
+    }, warning = function(w){
+      ComByCode(row$CODE.POSTAL)
+    })
+  })
+  
+  return(results[1,])
+}
+
+for (i in seq_len(nrow(liste_participants))) {
+  liste_participants[i, "lat"] <- get_commune_data(liste_participants[i,])$lat
+  liste_participants[i, "long"] <- get_commune_data(liste_participants[i,])$long
+}
+
+liste_participants$lat <- as.numeric(liste_participants$lat)
+liste_participants$long <- as.numeric(liste_participants$long)
+
+
+getSize <- function(repas){
+  if(repas== "Moins de 500 repas/jour"){
+    return(2)
+  }
+  if(repas== "Entre 500 et 3000 repas/jour"){
+    return(4)
+  }
+  if(repas== "Entre 3000 et 10 000 repas/jour"){
+    return(6)
+  }
+  if(repas== "Plus de 10 000 repas/jour") {
+    return(8)
+  }
+  
+}
+
+liste_participants$taille_num <- lapply(liste_participants$`TAILLE.COLLECTIVITÉS.(en.nombre.de.repas/jour)`, getSize)
+# Préparation donées departements
 department <- readOGR(dsn="./Map",layer = "departements-20170102")
 
 bdd20_departement <- read.xlsx("R_Data/bdd_observatoire_2020_departements.xlsx")%>%
@@ -75,28 +124,12 @@ bdd20_summary <- bdd20_summary[order(match(bdd20_summary$code_insee, department$
 
 # Carte
 
-pal <- colorNumeric(
-  palette = "Blues",
-  domain = bdd20_summary$mean_bio)
+pal_gestion <- colorFactor(as.character(wes_palette("Darjeeling1")[c(1,2,3,4,5)]), 
+                           liste_participants$`MODE.GESTION.RESTAURATION.COLLECTIVE.(Gestion.directe,.concédée,.mixte.ou.les.deux)`)
 
 pal_ano <- colorNumeric(
   palette = "Greens",
   domain = bdd20_summary$mean_bio_anonyme)
-
-
-mm<- leaflet(data=department)%>%addTiles()%>%
-  addPolygons(fill = "green", label = ~nom)
-mm
-
-test <- leaflet()%>%
-  addProviderTiles(providers$Stamen.TonerLite)%>%
-  addPolygons(data = department,
-              weight = 1,
-              smoothFactor = 0.5,
-              color = "white",
-              fillOpacity = 0.8,
-              fillColor = pal(bdd20_summary$mean_bio))
-test  
 
 
 test_ano <- leaflet()%>%
@@ -108,6 +141,12 @@ test_ano <- leaflet()%>%
               color = "white",
               fillOpacity = 0.8,
               fillColor = pal_ano(bdd20_summary$mean_bio_anonyme),
-              label = bdd20_summary$N)
+              label = bdd20_summary$N)%>%
+  addCircleMarkers(data = liste_participants, lat = ~lat, lng = ~long, opacity = 0.7, radius = ~taille_num,
+                   color = ~pal_gestion(liste_participants$`MODE.GESTION.RESTAURATION.COLLECTIVE.(Gestion.directe,.concédée,.mixte.ou.les.deux)`)
+                   )%>%
+  addLegend("bottomright", pal = pal_gestion, values = liste_participants$`MODE.GESTION.RESTAURATION.COLLECTIVE.(Gestion.directe,.concédée,.mixte.ou.les.deux)`,
+            title = "Mode de Gestion",
+            opacity = 1)
 test_ano  
 
