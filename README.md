@@ -8,8 +8,7 @@ des graphiques concernant les statistiques d'autres collectivités, pour répond
 alimentation bio et locale. Enfin, les élus pourront accéder à une carte interactive qui leur permettra de se situer par rapport aux autres collectivités
 et comparer les résultats de leur démarche avec des collectivités leur ressemblant.
 
-**Données : **
-
+Données : 
 Nous avons accès aux données des questionnaires d'environ 200 questions chacuns remplis par les élus depuis 2017, soit entre 150 et 200 collectivités par année.
 Ces questionnaire comprennent notamment des informations comme la fréquence de service de repas végétariens, le pourcentage de produits bio et/ou locaux achetés, le prix du repas, le type de viande bio servie, etc.
 Ces données sont des fichiers xlxs de 100 Ko chacun. Nous avons également la liste des participants à ces questionnaires avec d'autres informations les concernant (adresse, type de collectivité, taille de collectivité, nombre de repas servis par jour, mode de production) avec pour seul lien entre
@@ -27,4 +26,5 @@ Pour les M1 MIASHS, nos tâches s'articulerons autour de trois éléments princi
  - Premièrement, l'affichage de statistiques descriptives générales sur les données de l'association avec des paramètres personnalisables pour répondre à trois questions principales 
  - Deuxièmement, la réalisation du questionnaire demandé en se basant sur l'ancien questionnaire
  - Troisièmement, la réalisation de la carte interactive permettant d'afficher à l'échelle départementale des statistiques générales en fonction de paramètres réglables
+
 Ces étapes ont été présentées à notre commanditaire et ont été validées par cette dernière. Nous la tenons également à jour de nos avancées et des possibles modifications que nous apportons au projet.
