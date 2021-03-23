@@ -1,4 +1,3 @@
-
 library("openxlsx")
 library("shiny")
 library("dplyr")
@@ -7,23 +6,22 @@ library("tidyr")
 library("stats")
 library("plyr")
 library("plotrix")
-library("patchwork") # To display 2 charts together
-library("hrbrthemes")
+library("shinydashboard")
+library("plotly")
+
 
 library(RColorBrewer)
 myPalette <- brewer.pal(2,"Dark2") 
 
-liste_participants <- read.xlsx("R_Data/LISTE PARTICIPANTS OBSERVATOIRE.xlsx", rowNames = TRUE)
-bdd_2020 <- read.xlsx("R_Data/bdd_observatoire_2020.xlsx")
-bdd_2019 <- read.xlsx("R_Data/bdd_observatoire_2019.xlsx")
-bdd_2018 <- read.xlsx("R_Data/bdd_observatoire_2018.xlsx")
+liste_participants <- read.xlsx("LISTE PARTICIPANTS OBSERVATOIRE.xlsx", rowNames = TRUE)
+bdd_2020 <- read.xlsx("bdd_observatoire_2020.xlsx")
+bdd_2019 <- read.xlsx("bdd_observatoire_2019.xlsx")
+bdd_2018 <- read.xlsx("bdd_observatoire_2018.xlsx")
 
-#str(bdd_2020$bio)
+
 bdd_2020$bio_fact = cut(bdd_2020$bio, breaks=c(0, 20, 40, 60, 80,Inf), labels = c("0-20","20-40","40-60","60-80","80+"))
 bdd_2020$tot_rep_fact = cut(bdd_2020$tot_rep, breaks = c(0,500,3000,10000,Inf), labels= c("- 500", "500-3000", "3000-10000", "+ 10000"))
-#str(bdd_2020$bio_fact)
-#bdd_2020$bio_fact
-#str(bdd_2020$cmp)
+
 
 bdd_2019$bio_fact = cut(bdd_2019$bio, breaks=c(0, 20, 40, 60, 80,Inf), labels = c("0-20","20-40","40-60","60-80","80+"))
 bdd_2019$tot_rep_fact = cut(bdd_2019$tot_rep, breaks = c(0,500,3000,10000,Inf), labels= c("- 500", "500-3000", "3000-10000", "+ 10000"))
@@ -64,21 +62,12 @@ dfbioannee = data.frame(annee,biorate,price)
 dfbioannee$category = as.factor(dfbioannee$annee)
 
 #Partie ou on garde que les participants fidèles depuis 2018
-annee <- c("2018", "2019", "2020")
-biorate <- c(mean(dfjoin$bio2018),mean(dfjoin$bio2019),mean(dfjoin$bio2020))
-price <- c(mean(dfjoin$cmp2018),mean(dfjoin$cmp2019),mean(dfjoin$cmp2020))
-locrate <- c(mean(dfjoin$loc2018),mean(dfjoin$loc2019),mean(dfjoin$loc2020))
-dfjoinannee = data.frame(annee,biorate,price)
-dfjoinannee$category = as.factor(dfjoinannee$annee)
-
-
-#annee <- c("2018", "2019", "2020")
-#biorate <- c(mean(df_join_subset2018$bio2018),mean(df_join_subset2019$bio2019),mean(df_join_subset2020$bio2020))
-#price <- c(mean(df_join_subset2018$cmp2018),mean(df_join_subset2019$cmp2019),mean(df_join_subset2020$cmp2020))
-#locrate <- c(mean(df_join_subset2018$loc2018),mean(df_join_subset2019$loc2019),mean(df_join_subset2020$loc2020))
-#dfjoinannee <- data.frame(annee,biorate,price)
-#dfjoinannee$category <- as.factor(dfjoinannee$annee)
-#print(dfjoinannee)
+# annee <- c("2018", "2019", "2020")
+# biorate <- c(mean(df_join_subset2018$bio2018),mean(df_join_subset2019$bio2019),mean(df_join_subset2020$bio2020))
+# price <- c(mean(df_join_subset2018$cmp2018),mean(df_join_subset2019$cmp2019),mean(df_join_subset2020$cmp2020))
+# locrate <- c(mean(df_join_subset2018$loc2018),mean(df_join_subset2019$loc2019),mean(df_join_subset2020$loc2020))
+# dfjoinannee <- data.frame(annee,biorate,price)
+# dfjoinannee$category <- as.factor(dfjoinannee$annee)
 
 
 # création du df des cantines non végétariennes
@@ -129,9 +118,9 @@ dfvegequot = count(vegequot, 'category')
 
 # les éléments qui sont viabo = oui et menuvege = non
 
-pie3D(x=dfnovege$freq,start=2*sqrt(2), labels=dfnovege$category, col=myPalette, theta=3.14/2, main = "Menus non végétariens")
-pie3D(x=dfvegehebdo$freq, start=sqrt(2),labels=dfvegehebdo$category, col=myPalette, theta=3.14/2, main = "Menus végétariens hebdomadaires")
-pie3D(x=dfvegequot$freq, start=sqrt(2),labels=dfvegequot$category, col=myPalette, theta=3.14/2, main = "Menus végétariens quotidiens")
+pie3D(x=dfnovege$freq, labels=dfnovege$category, col=myPalette, theta=3.14/2)
+pie3D(x=dfvegehebdo$freq, labels=dfvegehebdo$category, col=myPalette, theta=3.14/2)
+pie3D(x=dfvegequot$freq, labels=dfvegequot$category, col=myPalette, theta=3.14/2)
 
 
 #Y-a-t-il une relation entre le pourcentage de produits bio et le % de produits locaux ? Si oui, quelle est-elle ?
@@ -144,41 +133,10 @@ ggplot(data=bdd20_dedup, aes(x=bio_fact, y=loc)) +
   theme_classic(base_size = 20)+
   geom_hline(yintercept = 100, linetype = "dashed")+
   xlab("% de bio")+
-  ylab("% de produits locaux")+
-
-
-
+  ylab("% de produits locaux")
 
 temperatureColor <- "#69b3a2"
 priceColor <- rgb(0.2, 0.6, 0.9, 1)
-
-ggplot(dfbioannee, aes(x=annee)) +
-  
-  geom_line( aes(y=biorate,group=1), size=3, color=temperatureColor) + 
-  geom_line( aes(y=price*10 ,group=1), size=3, color=priceColor) +
-  geom_point(y=biorate, size=3)+
-  geom_point(y=price*10, size=3)+
-  geom_hline(yintercept = 33, linetype = "dashed")+
-  
-  scale_y_continuous(
-    
-    # Features of the first axis
-    name = "Pourcentage de bio",
-    
-    # Add a second axis and specify its features
-    sec.axis = sec_axis(~./10, name="Prix du repas")
-  ) + 
-  
-  theme_ipsum() +
-  
-  theme(
-    axis.title.y = element_text(color = temperatureColor, size=13),
-    axis.title.y.right = element_text(color = priceColor, size=13)
-  ) +
-  
-  ggtitle("Evolution du prix et de la proportion de bio entre 2018 et 2020 (pour toutes les collectivités)")
-
-#-------------------------------------------------------------------------------------------
 
 ggplot(dfjoinannee, aes(x=annee)) +
   
@@ -205,3 +163,4 @@ ggplot(dfjoinannee, aes(x=annee)) +
   ) +
   
   ggtitle("Evolution du prix et de la proportion de bio entre 2018 et 2020 (pour les collectivités présentes depuis 2018)")
+
