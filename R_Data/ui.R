@@ -27,21 +27,10 @@ dashboardPage(
                     ),
                     
                     fluidRow(
-                        column(12,align = "center",
-                               box(width = "100%",plotOutput(width = "50%", outputId = "linePriceBio"))
-                        )
-                    ),
-                    
-                    fluidRow(
-                        
-                        splitLayout(style = "border: 1px solid silver:", 
-                                    plotOutput(outputId = "Pie1"),
-                                    plotOutput(outputId = "Pie2"),
-                                    plotOutput(outputId = "Pie3")
-                        )
-                        
-                        
+                               box(plotlyOutput(outputId = "linePriceBio")),
+                               box(plotlyOutput(outputId = "Stacked"))
                     )
+                    
                     
             ),
             

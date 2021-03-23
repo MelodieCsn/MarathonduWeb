@@ -17,6 +17,10 @@ server <- function(input, output) {
         return(a)
     })
     
+    df_stack_subset <- reactive({
+        a <- subset(dfjoin, dfjoin$tot_rep_fact2020 == input$nbrepas)
+        return(a)
+    })
     
     output$distPlot <- renderPlotly({
         ggplotly(
@@ -43,42 +47,53 @@ server <- function(input, output) {
         
     })
     
-    output$Pie1 <- renderPlot({
-        ggplot(dfnovege, aes(y=points, x=team)) + 
-            geom_bar(position='stack', stat='identity')
+    output$Stacked <- renderPlotly({
         
-        pie3D(x=dfnovege$freq,start=2, labels=dfnovege$category, col=myPalette, theta=3.14/2, 
-              main = "Menus non végétariens",
-              radius = 0.8,
-              height = 0.025,
-              labelcex = 0.85)
+        vegehebdo = df_subset()[df_subset()$freq_veg == 2,]
+        vegehebdo$typeviande = NA
+        vegehebdo = vegehebdo[complete.cases(vegehebdo$freq_vege), ]
+        vegehebdo = vegehebdo[complete.cases(vegehebdo$via_bio), ]
+        vegehebdo$typeviande[vegehebdo$via_bio == 1] <- "viande bio"
+        vegehebdo$typeviande[vegehebdo$via_bio == 0] <- "viande non bio"
+        
+        vegehebdo$typeviande = as.factor(vegehebdo$typeviande)
+        dfvegehebdo = count(vegehebdo, 'typeviande')
+        dfvegehebdo$freqvege = "Hebdomadaire"
+        
+        vegequot = df_subset()[df_subset()$freq_veg == 3,]
+        vegequot = vegequot[complete.cases(vegequot$freq_vege), ]
+        vegequot = vegequot[complete.cases(vegequot$via_bio), ]
+        vegequot$typeviande = NA
+        vegequot$typeviande[vegequot$via_bio == 1] <- "viande bio"
+        vegequot$typeviande[vegequot$via_bio == 0] <- "viande non bio"
+        
+        vegequot$typeviande = as.factor(vegequot$typeviande)
+        dfvegequot = count(vegequot, 'typeviande')
+        dfvegequot$freqvege = "Quotidien"
+        
+        novege = df_subset()[df_subset()$menuvege == 2,]
+        novege = novege[complete.cases(novege$menuvege), ]
+        novege = novege[complete.cases(novege$via_bio), ]
+        novege$typeviande = NA
+        novege$typeviande[novege$via_bio == 1] <- "viande bio"
+        novege$typeviande[novege$via_bio == 0] <- "viande non bio"
+        
+        novege$typeviande = as.factor(novege$typeviande)
+        dfnovege = count(novege, 'typeviande')
+        dfnovege$freqvege = "Non végétarien"
+        
+        df = dplyr::bind_rows(dfnovege, dfvegehebdo)
+        dfstackedbar = dplyr::bind_rows(df, dfvegequot)
+        
+        ggplot(dfstackedbar, aes(fill = typeviande,y=freq, x=freqvege)) + 
+            geom_bar(position='stack', stat='identity')+
+            scale_fill_manual('Position', values=c('coral2', 'coral4'))
         
     })
     
-    output$Pie2 <- renderPlot({
-        pie3D(x=dfvegehebdo$freq, start=sqrt(2),labels=dfvegehebdo$category, col=myPalette, theta=3.14/2, 
-              main = "Menus végétariens hebdomadaires",
-              radius = 0.8,
-              height = 0.025,
-              labelcex = 0.85
-        )
-        
-    })
-    
-    output$Pie3 <- renderPlot({
-        pie3D(x=dfvegequot$freq, start=sqrt(2),labels=dfvegequot$category, col=myPalette, theta=3.14/2, 
-              main = "Menus végétariens quotidiens",
-              radius = 0.8,
-              height = 0.025,
-              labelcex = 0.85
-        )
-        
-        
-    })
     
     
-    
-    output$linePriceBio <- renderPlot({
+    output$linePriceBio <- renderPlotly({
         
         js2018 <- df_join_subset2018()
         js2019 <- df_join_subset2019()
