@@ -1,34 +1,42 @@
 ui <- fluidPage(
-    
-    # App title ----
-    titlePanel("Prix repas par % bio"),
-    
-    # Sidebar layout with input and output definitions ----
-    sidebarLayout(
-        
-        # Sidebar panel for inputs ----
-        sidebarPanel(
+    navbarPage(
+        "UnPlusBio",
+        tabPanel("Stats",
+        # App title ----
+            titlePanel("Prix repas par % bio"),
             
-            # Input: selectInput ----
-            selectInput("nbrepas", "Nombres de repas : ", 
-                        choices= c("- 500", "500-3000", "3000-10000", "+ 10000", "Total"))
-            
-        ),
-        
-        # Main panel for displaying outputs ----
-        mainPanel(
-            
-            # Output: Histogram ----
-            
-            plotOutput(outputId = "distPlot"),
-            plotOutput(outputId = "distPlotProdLoc"),
-            fluidRow(
-                splitLayout(style = "border: 1px solid silver:", cellWidths = c(300,300,300),
-                            plotOutput(outputId = "Pie1"),
-                            plotOutput(outputId = "Pie2"),
-                            plotOutput(outputId = "Pie3")
+            # Sidebar layout with input and output definitions ----
+            sidebarLayout(
+                
+                # Sidebar panel for inputs ----
+                sidebarPanel(
+                    
+                    # Input: selectInput ----
+                    selectInput("nbrepas", "Nombres de repas : ", 
+                                choices= c("- 500", "500-3000", "3000-10000", "+ 10000", "Total"))
+                    
+                ),
+                
+                # Main panel for displaying outputs ----
+                mainPanel(
+                    
+                    # Output: Histogram ----
+                    
+                    plotOutput(outputId = "distPlot"),
+                    plotOutput(outputId = "distPlotProdLoc"),
+                    fluidRow(
+                        splitLayout(style = "border: 1px solid silver:", cellWidths = c(300,300,300),
+                                    plotOutput(outputId = "Pie1"),
+                                    plotOutput(outputId = "Pie2"),
+                                    plotOutput(outputId = "Pie3")
+                        )
+                    )
                 )
             )
+        ),
+        tabPanel("Carte interractive", "Ceci est une carte interractive"
+        ),
+        tabPanel("Questionnaire", "Questionnaire à l'intention des élus"
         )
     )
 )
