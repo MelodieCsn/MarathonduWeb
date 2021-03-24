@@ -5,6 +5,8 @@ library(dplyr)
 library(rlist)
 library(tidyr)
 library(naniar)
+library(rgeoapi)
+library(wesanderson)
 
 #Préparations données structures
 # Chargement des données
@@ -54,15 +56,27 @@ getSize <- function(repas){
 }
 
 liste_participants$taille_num <- lapply(liste_participants$`TAILLE.COLLECTIVITÉS.(en.nombre.de.repas/jour)`, getSize)
+
+
 # Préparation donées departements
 department <- readOGR(dsn="./Map",layer = "departements-20170102")
 
 bdd20_departement <- read.xlsx("R_Data/bdd_observatoire_2020_departements.xlsx")%>%
-  select(c("id","freq_vege","menuvege","bio","loc","code.département")) %>%
+  select(c("id","freq_vege","menuvege","bio","loc","code.département","cmp")) %>%
   group_by(code.département)#%>% 
   #dplyr::summarise(N = n())
 
-bdd20_summary = bdd20_departement%>% dplyr::summarise(N = n(),mean_bio = mean(bio, na.rm = TRUE))
+for (i in seq_len(nrow(bdd20_departement))) {
+  bdd20_departement[i,"hedbo"] <- 0
+  
+  bdd20_departement$freq_vege[is.na(bdd20_departement$freq_vege)] <- 0
+  
+  if (bdd20_departement[i, "freq_vege"] == 1 || bdd20_departement[i, "freq_vege"] == 2) {
+    bdd20_departement[i,"hedbo"] <- 1
+  }
+}
+
+bdd20_summary = bdd20_departement%>% dplyr::summarise(N = n(),mean_bio = mean(bio, na.rm = TRUE), mean_local =mean(loc, na.rm = TRUE), mean_price = mean(cmp, na.rm= TRUE), mean_vege = mean(hedbo, na.rm = TRUE))
 
 # On verifie que tt les codes de bdd sont dans le Shapefile
 
@@ -118,6 +132,17 @@ bdd20_summary$MoreThanOne <- lapply(bdd20_summary$N, IsMoreThanOne)
 
 bdd20_summary$mean_bio_anonyme = bdd20_summary$mean_bio * as.numeric(bdd20_summary$MoreThanOne)
 bdd20_summary%>%replace_with_na(replace = list(mean_bio_anonyme=0))
+
+bdd20_summary$mean_local_anonyme = bdd20_summary$mean_local * as.numeric(bdd20_summary$MoreThanOne)
+bdd20_summary%>%replace_with_na(replace = list(mean_local_anonyme=0))
+
+bdd20_summary$mean_price_anonyme = bdd20_summary$mean_price * as.numeric(bdd20_summary$MoreThanOne)
+bdd20_summary%>%replace_with_na(replace = list(mean_price_anonyme=0))
+
+bdd20_summary$mean_vege_anonyme = bdd20_summary$mean_vege * as.numeric(bdd20_summary$MoreThanOne)
+bdd20_summary%>%replace_with_na(replace = list(mean_vege_anonyme=0))
+
+
 # On s assure que les departements soient dans le même ordre que le Shapefile
 bdd20_summary <- bdd20_summary[order(match(bdd20_summary$code_insee, department$code_insee)),]
 
