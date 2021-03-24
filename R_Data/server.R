@@ -23,7 +23,8 @@ server <- function(input, output) {
     })
     
     output$plotbioprix <- renderPlotly({
-        
+        fun_mean <- function(x){return(round(data.frame(y=mean(x),label=mean(x,na.rm=T))
+                                             ,digit=1))}
         p1 <- ggplotly(
                 ggplot(df_subset(), aes(x=bio_fact, y=cmp)) +
                 geom_segment( aes(x=bio_fact, xend=bio_fact, y=0, yend=cmp)) +
@@ -36,11 +37,15 @@ server <- function(input, output) {
         else if(input$loliouhisto== "histo") {
             ggplotly(
                 ggplot(data=df_subset(), aes(x=bio_fact, y=cmp)) + 
-                    geom_bar(stat = "summary",fill="#582c83")+
+                    geom_bar(stat = "summary",fill="#DC4405")+
                     theme_classic(base_size = 20)+
                     geom_hline(yintercept = 5, linetype = "dashed")+
-                    xlab("Pourcentage de bio")+
-                    ylab("Coût moyen par repas")
+                    xlab("% de bio")+
+                    ylab("Prix moyen d'un repas")+
+                    #geom_text(label =y,size = 3, position = position_stack(vjust = 0.5))+
+                    #stat_summary(aes(label=..y..), fun.data=fun_mean, geom="text",
+                                 #size=4,vjust = -10, color ="white")+
+                    stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.5)
             )
         }    
         else if(input$loliouhisto== "loli"){
@@ -51,7 +56,8 @@ server <- function(input, output) {
     })
     
     output$plotbioloc <- renderPlotly({
-        
+        fun_mean <- function(x){return(round(data.frame(y=mean(x),label=mean(x,na.rm=T))
+                                             ,digit=1))}
         p2 <- ggplotly(
             ggplot(df_subset(), aes(x=bio_fact, y=loc)) +
                 geom_segment( aes(x=bio_fact, xend=bio_fact, y=0, yend=loc)) +
@@ -64,11 +70,14 @@ server <- function(input, output) {
         else if(input$loliouhisto== "histo") {
             ggplotly(
                 ggplot(data=df_subset(), aes(x=bio_fact, y=loc)) + 
-                    geom_bar(stat = "summary",fill="#582c83")+
+                    geom_bar(stat = "summary",fill="#DC4405")+
                     theme_classic(base_size = 20)+
-                    geom_hline(yintercept = 70, linetype = "dashed")+
-                    xlab("Pourcentage de bio")+
-                    ylab("Pourcentage de local")
+                    geom_hline(yintercept = 100, linetype = "dashed")+
+                    xlab("% de bio")+
+                    ylab("% de produits locaux")+
+                    #stat_summary(aes(label=..y..), fun.data=fun_mean, geom="text",
+                                 #size=4,vjust = 5, color ="white")+
+                    stat_summary(fun.data = mean_se, geom = "errorbar", width = 0.5)
             )
         }    
         else if(input$loliouhisto== "loli"){
