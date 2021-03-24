@@ -19,16 +19,23 @@ dashboardPage(
                           choices= c("- 500", "500-3000", "3000-10000", "+ 10000", "Total")
               ),
               fluidRow( 
+                checkboxGroupInput("loliouhisto", "Type de graphe désiré ",c("Histogramme" = "histo","graphe lolipop" = "loli"), 
+                                   selected = c("graphe lolipop" = "loli")),
                 
                 box(
-                  plotlyOutput(outputId = "distPlot")),
+                  plotlyOutput(outputId = "plotbioprix")),
                 box(
-                  plotlyOutput(outputId = "distPlotProdLoc"))
+                  plotlyOutput(outputId = "plotbioloc"))
               ),
               
               fluidRow(
                 box(plotlyOutput(outputId = "linePriceBio")),
                 box(plotlyOutput(outputId = "Stacked"))
+              ),
+              
+              fluidRow(
+                box(plotOutput(outputId = "PrixRegAlim"),width = "30%"),
+                box(plotOutput(outputId = "PrixBioLoc"),width = "100%")
               )
               
               
