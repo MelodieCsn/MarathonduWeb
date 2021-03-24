@@ -18,18 +18,18 @@ bdd_2020 <- read.xlsx("R_Data/bdd_observatoire_2020.xlsx")
 bdd_2019 <- read.xlsx("R_Data/bdd_observatoire_2019.xlsx")
 bdd_2018 <- read.xlsx("R_Data/bdd_observatoire_2018.xlsx")
 
-#str(bdd_2020$bio)
-bdd_2020$bio_fact = cut(bdd_2020$bio, breaks=c(0, 20, 40, 60, 80,Inf), labels = c("0-20","20-40","40-60","60-80","80+"))
+bdd_2020$bio_fact = cut(bdd_2020$bio, breaks=c(0,10, 20,30, 40,50, 60,70, 80 ,90,Inf), labels = c("0-10","10-20","20-30","30-40","40-50","50-60","60-70","70-80","80-90","90-100"))
 bdd_2020$tot_rep_fact = cut(bdd_2020$tot_rep, breaks = c(0,500,3000,10000,Inf), labels= c("- 500", "500-3000", "3000-10000", "+ 10000"))
-#str(bdd_2020$bio_fact)
-#bdd_2020$bio_fact
-#str(bdd_2020$cmp)
 
-bdd_2019$bio_fact = cut(bdd_2019$bio, breaks=c(0, 20, 40, 60, 80,Inf), labels = c("0-20","20-40","40-60","60-80","80+"))
+
+bdd_2019$bio_fact = cut(bdd_2019$bio, breaks=c(0,10, 20,30, 40,50, 60,70, 80 ,90,Inf), labels = c("0-10","10-20","20-30","30-40","40-50","50-60","60-70","70-80","80-90","90-100"))
 bdd_2019$tot_rep_fact = cut(bdd_2019$tot_rep, breaks = c(0,500,3000,10000,Inf), labels= c("- 500", "500-3000", "3000-10000", "+ 10000"))
 
-bdd_2018$bio_fact = cut(bdd_2018$bio, breaks=c(0, 20, 40, 60, 80,Inf), labels = c("0-20","20-40","40-60","60-80","80+"))
+bdd_2018$bio_fact = cut(bdd_2018$bio, breaks=c(0,10, 20,30, 40,50, 60,70, 80 ,90,Inf), labels = c("0-10","10-20","20-30","30-40","40-50","50-60","60-70","70-80","80-90","90-100"))
 bdd_2018$tot_rep_fact = cut(bdd_2018$tot_rep, breaks = c(0,500,3000,10000,Inf), labels= c("- 500", "500-3000", "3000-10000", "+ 10000"))
+
+bdd20_dedup =bdd_2020[, !duplicated(colnames(bdd_2020))]
+bdd20_dedup = bdd20_dedup[complete.cases(bdd20_dedup$bio_fact), ]
 
 
 
@@ -72,15 +72,6 @@ dfjoinannee = data.frame(annee,biorate,price)
 dfjoinannee$category = as.factor(dfjoinannee$annee)
 
 
-#annee <- c("2018", "2019", "2020")
-#biorate <- c(mean(df_join_subset2018$bio2018),mean(df_join_subset2019$bio2019),mean(df_join_subset2020$bio2020))
-#price <- c(mean(df_join_subset2018$cmp2018),mean(df_join_subset2019$cmp2019),mean(df_join_subset2020$cmp2020))
-#locrate <- c(mean(df_join_subset2018$loc2018),mean(df_join_subset2019$loc2019),mean(df_join_subset2020$loc2020))
-#dfjoinannee <- data.frame(annee,biorate,price)
-#dfjoinannee$category <- as.factor(dfjoinannee$annee)
-#print(dfjoinannee)
-
-
 # création du df des cantines non végétariennes
 novege =bdd_2020[, !duplicated(colnames(bdd_2020))]
 novege = novege[complete.cases(novege$menuvege), ]
@@ -88,13 +79,15 @@ novege = novege[complete.cases(novege$via_bio), ]
 novege = novege[novege$menuvege == 2,]
 
 # ajout de deux catégorie à l'intérieur des non végétariens, ceux qui mangent de la viande bio et ceus qui n'en mangent pas
-novege$category = NA
-novege$category[novege$via_bio == 1] <- "viande bio"
-novege$category[novege$via_bio == 0] <- "viande non bio"
+novege$typeviande = NA
+novege$typeviande[novege$via_bio == 1] <- "viande bio"
+novege$typeviande[novege$via_bio == 0] <- "viande non bio"
 
 # création du df pour le pie chart
-novege$category = as.factor(novege$category)
-dfnovege = count(novege, 'category')
+novege$typeviande = as.factor(novege$typeviande)
+dfnovege = count(novege, 'typeviande')
+dfnovege$freqvege = "Non végétarien"
+
 
 # Création du df des cantines végé hébdomadaires
 vegehebdo = bdd_2020[, !duplicated(colnames(bdd_2020))]
@@ -103,13 +96,15 @@ vegehebdo = vegehebdo[complete.cases(vegehebdo$via_bio), ]
 vegehebdo = vegehebdo[vegehebdo$freq_veg == 2,]
 
 # ajout de deux catégorie à l'intérieur des non végétariens, ceux qui mangent de la viande bio et ceux qui n'en mangent pas
-vegehebdo$category = NA
-vegehebdo$category[vegehebdo$via_bio == 1] <- "viande bio"
-vegehebdo$category[vegehebdo$via_bio == 0] <- "viande non bio"
+vegehebdo$typeviande = NA
+vegehebdo$typeviande[vegehebdo$via_bio == 1] <- "viande bio"
+vegehebdo$typeviande[vegehebdo$via_bio == 0] <- "viande non bio"
 
 # création du df pour le pie chart
-vegehebdo$category = as.factor(vegehebdo$category)
-dfvegehebdo = count(vegehebdo, 'category')
+vegehebdo$typeviande = as.factor(vegehebdo$typeviande)
+dfvegehebdo = count(vegehebdo, 'typeviande')
+dfvegehebdo$freqvege = "Hebdomadaire"
+
 
 # Création du df des cantines végé hébdomadaires
 vegequot = bdd_2020[, !duplicated(colnames(bdd_2020))]
@@ -118,14 +113,17 @@ vegequot = vegequot[complete.cases(vegequot$via_bio), ]
 vegequot = vegequot[vegequot$freq_veg == 3,]
 
 # ajout de deux catégorie à l'intérieur des non végétariens, ceux qui mangent de la viande bio et ceux qui n'en mangent pas
-vegequot$category = NA
-vegequot$category[vegequot$via_bio == 1] <- "Viande bio"
-vegequot$category[vegequot$via_bio == 0] <- "Viande non bio"
+vegequot$typeviande = NA
+vegequot$typeviande[vegequot$via_bio == 1] <- "viande bio"
+vegequot$typeviande[vegequot$via_bio == 0] <- "viande non bio"
 
 # création du df pour le pie chart
-vegequot$category = as.factor(vegequot$category)
-dfvegequot = count(vegequot, 'category')
+vegequot$typeviande = as.factor(vegequot$typeviande)
+dfvegequot = count(vegequot, 'typeviande')
+dfvegequot$freqvege = "Quotidien"
 
+df = dplyr::bind_rows(dfnovege, dfvegehebdo)
+dfstackedbar = dplyr::bind_rows(df, dfvegequot)
 
 # les éléments qui sont viabo = oui et menuvege = non
 
@@ -144,9 +142,22 @@ ggplot(data=bdd20_dedup, aes(x=bio_fact, y=loc)) +
   theme_classic(base_size = 20)+
   geom_hline(yintercept = 100, linetype = "dashed")+
   xlab("% de bio")+
-  ylab("% de produits locaux")+
+  ylab("% de produits locaux")
 
 
+
+ggplot(data=bdd20_dedup, aes(x=bio_fact, y=cmp)) + 
+  geom_bar(stat = "summary",fill="#582c83")+
+  theme_classic(base_size = 20)+
+  geom_hline(yintercept = 3, linetype = "dashed")+
+  xlab("% de bio")+
+  ylab("Coûts denrées moyen par repas")
+
+ymax = max(bdd20_dedup$cmp)
+ggplot(bdd20_dedup, aes(x=bio_fact, y=cmp)) +
+  geom_segment( aes(x=bio_fact, xend=bio_fact, y=0, yend = cmp)) +
+  geom_point( size=6, color="red", fill=alpha("red", 0.5), alpha=0.7, shape=21, stroke=1) +
+  theme_bw()
 
 
 temperatureColor <- "#69b3a2"
@@ -205,3 +216,12 @@ ggplot(dfjoinannee, aes(x=annee)) +
   ) +
   
   ggtitle("Evolution du prix et de la proportion de bio entre 2018 et 2020 (pour les collectivités présentes depuis 2018)")
+
+
+ggplot(dfstackedbar, aes(fill = typeviande,y=freq, x=freqvege)) + 
+  geom_bar(position='stack', stat='identity')+
+  scale_fill_manual('Position', values=c('coral2', 'coral4'))
+  
+
+
+

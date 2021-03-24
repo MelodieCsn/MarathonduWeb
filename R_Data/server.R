@@ -22,30 +22,62 @@ server <- function(input, output) {
         return(a)
     })
     
-    output$distPlot <- renderPlotly({
-        ggplotly(
-            ggplot(data=df_subset(), aes(x=bio_fact, y=cmp)) + 
-                geom_bar(stat = "summary",fill="#582c83")+
-                theme_classic(base_size = 20)+
-                geom_hline(yintercept = 3, linetype = "dashed")+
-                xlab("% de bio")+
-                ylab("Coûts denrées moyen par repas")
+    output$plotbioprix <- renderPlotly({
+        
+        p1 <- ggplotly(
+                ggplot(df_subset(), aes(x=bio_fact, y=cmp)) +
+                geom_segment( aes(x=bio_fact, xend=bio_fact, y=0, yend=cmp)) +
+                geom_point( size=5, color="red", fill=alpha("red", 0.5), alpha=0.7, shape=21, stroke=1) +
+                theme_bw()
         )
+        if(is.null(input$loliouhisto)){ 
+            p1 
+        }
+        else if(input$loliouhisto== "histo") {
+            ggplotly(
+                ggplot(data=df_subset(), aes(x=bio_fact, y=cmp)) + 
+                    geom_bar(stat = "summary",fill="#582c83")+
+                    theme_classic(base_size = 20)+
+                    geom_hline(yintercept = 5, linetype = "dashed")+
+                    xlab("Pourcentage de bio")+
+                    ylab("Coût moyen par repas")
+            )
+        }    
+        else if(input$loliouhisto== "loli"){
+        
+            p1
+        }
         
     })
     
-    
-    output$distPlotProdLoc <- renderPlotly({
-        ggplotly(
-            ggplot(data=df_subset(), aes(x=bio_fact, y=loc)) + 
-                geom_bar(stat = "summary",fill="#99e3ff")+
-                theme_classic(base_size = 20)+
-                geom_hline(yintercept = 100, linetype = "dashed")+
-                xlab("% de bio")+
-                ylab("% de produits locaux")
+    output$plotbioloc <- renderPlotly({
+        
+        p2 <- ggplotly(
+            ggplot(df_subset(), aes(x=bio_fact, y=loc)) +
+                geom_segment( aes(x=bio_fact, xend=bio_fact, y=0, yend=loc)) +
+                geom_point( size=5, color="red", fill=alpha("red", 0.5), alpha=0.7, shape=21, stroke=1) +
+                theme_bw()
         )
+        if(is.null(input$loliouhisto)){ 
+            p2 
+        }
+        else if(input$loliouhisto== "histo") {
+            ggplotly(
+                ggplot(data=df_subset(), aes(x=bio_fact, y=loc)) + 
+                    geom_bar(stat = "summary",fill="#582c83")+
+                    theme_classic(base_size = 20)+
+                    geom_hline(yintercept = 70, linetype = "dashed")+
+                    xlab("Pourcentage de bio")+
+                    ylab("Pourcentage de local")
+            )
+        }    
+        else if(input$loliouhisto== "loli"){
+            
+            p2
+        }
         
     })
+    
     
     output$Stacked <- renderPlotly({
         
@@ -122,8 +154,6 @@ server <- function(input, output) {
                 # Add a second axis and specify its features
                 sec.axis = sec_axis(~./10, name="Prix du repas")
             ) + 
-            
-            theme_ipsum() +
             
             theme(
                 axis.title.y = element_text(color = temperatureColor, size=13),
