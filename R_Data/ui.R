@@ -6,8 +6,8 @@ dashboardPage(
     dashboardSidebar(
         sidebarMenu(
             menuItem("Stat", tabName = "Stat"),
-            menuItem("Carte interactive", tabName = "Carte interactive"),
-            menuItem("Questionnaire", tabName = "Questionnaire")
+            menuItem("Carte", tabName = "Carte"),
+            menuItem("test", tabName = "test")
         )
     ),
     dashboardBody(
@@ -29,22 +29,43 @@ dashboardPage(
                     ),
                     
                     fluidRow(
-                               box(plotlyOutput(outputId = "linePriceBio")),
+                        box(plotOutput(outputId = "PrixRegAlim"), width = "70%"),
+                        box(plotOutput(outputId = "PrixBioLoc"), width = "30%")
+                        ),
+                        
+                    
+                    fluidRow(
+                               box(plotOutput(outputId = "linePriceBio")),
                                box(plotlyOutput(outputId = "Stacked"))
+                    ),
+                    fluidRow(
+                        
+                        column(4,plotOutput(outputId = "venn"))
                     )
                     
                     
-            ),
-            
-            tabItem(tabName = "Carte interactive"
                     
             ),
             
-            tabItem(tabName = "Questionnaire"
-                    
+            tabItem(tabName = "Carte",
+                    #titlePanel("Répartition géographique"),
+                        # Sidebar panel for inputs ----
+                    radioButtons("projection", "Affichage : ",
+                                choices= c("Part du bio (en %)" = "bio" ,
+                                            "Part de produits Locaux (en%)" = "loc",
+                                            "Prix moyen par repas" = "prix" ,
+                                            "% Au moins un menu végétarien hebdomadaire" = "vege")),
+                            
+                    leafletOutput(outputId = "mymap")
+            ),
+            tabItem(tabName="test",
+                    p("COUCOU")
             )
+                        
         )
+            
     )
 )
+
 
 

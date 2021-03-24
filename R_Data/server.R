@@ -1,24 +1,29 @@
 # Define server logic required to draw a histogram ----
 server <- function(input, output) {
     df_subset <- reactive({
-        a <- subset(bdd20_dedup, bdd20_dedup$tot_rep_fact == input$nbrepas)
+        if(input$nbrepas=="Total"){a <- bdd20_dedup}
+        else{a <- subset(bdd20_dedup, bdd20_dedup$tot_rep_fact == input$nbrepas)}
         return(a)
     })
     df_join_subset2020 <- reactive({
-        a <- subset(dfjoin, dfjoin$tot_rep_fact2020 == input$nbrepas)
+        if(input$nbrepas=="Total"){a <- dfjoin}
+        else{a <- subset(dfjoin, dfjoin$tot_rep_fact2020 == input$nbrepas)}
         return(a)
     })
     df_join_subset2019 <- reactive({
-        a <- subset(dfjoin, dfjoin$tot_rep_fact2019 == input$nbrepas)
+        if(input$nbrepas=="Total"){a <- dfjoin}
+        else{a <- subset(dfjoin, dfjoin$tot_rep_fact2019 == input$nbrepas)}
         return(a)
     })
     df_join_subset2018 <- reactive({
-        a <- subset(dfjoin, dfjoin$tot_rep_fact2018 == input$nbrepas)
+        if(input$nbrepas=="Total"){a <- dfjoin}
+        else{a <- subset(dfjoin, dfjoin$tot_rep_fact2018 == input$nbrepas)}
         return(a)
     })
     
     df_stack_subset <- reactive({
-        a <- subset(dfjoin, dfjoin$tot_rep_fact2020 == input$nbrepas)
+        if(input$nbrepas=="Total"){a <- dfjoin}
+        else{a <- subset(dfjoin, dfjoin$tot_rep_fact2020 == input$nbrepas)}
         return(a)
     })
     
@@ -28,7 +33,7 @@ server <- function(input, output) {
         p1 <- ggplotly(
                 ggplot(df_subset(), aes(x=bio_fact, y=cmp)) +
                 geom_segment( aes(x=bio_fact, xend=bio_fact, y=0, yend=cmp)) +
-                geom_point( size=5, color="red", fill=alpha("red", 0.5), alpha=0.7, shape=21, stroke=1) +
+                geom_point( size=5, color="#DC4405", fill=alpha("orange", 0.5), alpha=0.8, shape=21, stroke=1) +
                 theme_bw()
         )
         if(is.null(input$loliouhisto)){ 
@@ -61,7 +66,7 @@ server <- function(input, output) {
         p2 <- ggplotly(
             ggplot(df_subset(), aes(x=bio_fact, y=loc)) +
                 geom_segment( aes(x=bio_fact, xend=bio_fact, y=0, yend=loc)) +
-                geom_point( size=5, color="red", fill=alpha("red", 0.5), alpha=0.7, shape=21, stroke=1) +
+                geom_point( size=5, color="#582c83", fill=alpha("purple", 0.5), alpha=0.7, shape=21, stroke=1) +
                 theme_bw()
         )
         if(is.null(input$loliouhisto)){ 
@@ -70,7 +75,7 @@ server <- function(input, output) {
         else if(input$loliouhisto== "histo") {
             ggplotly(
                 ggplot(data=df_subset(), aes(x=bio_fact, y=loc)) + 
-                    geom_bar(stat = "summary",fill="#DC4405")+
+                    geom_bar(stat = "summary",fill="#582c83")+
                     theme_classic(base_size = 20)+
                     geom_hline(yintercept = 100, linetype = "dashed")+
                     xlab("% de bio")+
@@ -125,16 +130,17 @@ server <- function(input, output) {
         
         df = dplyr::bind_rows(dfnovege, dfvegehebdo)
         dfstackedbar = dplyr::bind_rows(df, dfvegequot)
-        
-        ggplot(dfstackedbar, aes(fill = typeviande,y=freq, x=freqvege)) + 
-            geom_bar(position='stack', stat='identity')+
-            scale_fill_manual('Position', values=c('coral2', 'coral4'))
+        ggplotly(
+            ggplot(dfstackedbar, aes(fill = typeviande,y=freq, x=freqvege)) + 
+                geom_bar(position='stack', stat='identity')+
+                scale_fill_manual('Position', values=c('coral2', 'coral4'))
+        )
+       
         
     })
     
     
-    
-    output$linePriceBio <- renderPlotly({
+    output$linePriceBio <- renderPlot({
         
         js2018 <- df_join_subset2018()
         js2019 <- df_join_subset2019()
@@ -142,35 +148,160 @@ server <- function(input, output) {
         annee <- c("2018", "2019", "2020")
         biorate <- c(mean(js2018$bio2018),mean(js2019$bio2019),mean(js2020$bio2020))
         price <- c(mean(js2018$cmp2018),mean(js2019$cmp2019),mean(js2020$cmp2020))
-        locrate <- c(mean(js2018$loc2018),mean(js2019$loc2019),mean(js2020$loc2020))
         dfjoinannee <- data.frame(annee,biorate,price)
         dfjoinannee$category <- as.factor(dfjoinannee$annee)
-        #print(dfjoinannee)
-        
-        ggplot(dfjoinannee, aes(x=annee)) +
-            
-            geom_line( aes(y=biorate,group=1), size=3, color=temperatureColor) + 
-            geom_line( aes(y=price*10 ,group=1), size=3, color=priceColor) +
-            geom_point(y=biorate, size=3)+
-            geom_point(y=price*10, size=3)+
-            geom_hline(yintercept = 40, linetype = "dashed")+
-            
-            scale_y_continuous(
+        print(dfjoinannee)
+
+            ggplot(dfjoinannee, aes(x=annee)) +
                 
-                # Features of the first axis
-                name = "Pourcentage de bio",
+                geom_line( aes(y=biorate,group=1), size=2, color=temperatureColor) + 
+                geom_line( aes(y=price*30 ,group=1), size=2, color=priceColor) +
+                geom_point(y=biorate, size=3)+
+                geom_point(y=price*30, size=3)+
+                #geom_hline(yintercept = 33, linetype = "dashed")+
                 
-                # Add a second axis and specify its features
-                sec.axis = sec_axis(~./10, name="Prix du repas")
-            ) + 
-            
-            theme(
-                axis.title.y = element_text(color = temperatureColor, size=13),
-                axis.title.y.right = element_text(color = priceColor, size=13)
-            ) +
-            
-            ggtitle("Evolution du prix et de la proportion de bio entre 2018 et 2020")
+                scale_y_continuous(
+                    # Features of the first axis
+                    name = "Pourcentage de bio",
+                    # Add a second axis and specify its features
+                    sec.axis = sec_axis(~./30, name="Prix du repas")) + 
+                theme_ipsum() +
+                theme(
+                    axis.title.y = element_text(color = temperatureColor, size=13),
+                    axis.title.y.right = element_text(color = priceColor, size=13)) +
+                ggtitle("Evolution du prix et de la proportion de bio entre 2018 et 2020 (pour toutes les collectivités)")
         
     })
+    
+    # PARTIE MOULIKA --------------------------------------------------------------------------------------------------------------------------
+    
+    #prix régime alimentaire
+    output$PrixRegAlim <- renderPlot({
+        bdd_2020_menu <- read.xlsx("bdd_observatoire_2020.xlsx")%>%
+            select(c("freq_vege","cmp"))
+        
+        bdd_2020_menu$freq_vege[is.na(bdd_2020_menu$freq_vege)] <- 0
+        
+        # on eneleve les NA de la colonne cmp
+        bdd_2020_menu = bdd_2020_menu[complete.cases(bdd_2020_menu$cmp), ]
+        trash <- with(bdd_2020_menu, which(freq_vege==3, arr.ind=TRUE))
+        bdd_2020_menu<- bdd_2020_menu[-trash, ]
+        
+        
+        # string format
+        bdd_2020_menu = bdd_2020_menu %>% 
+            mutate(freq_vege= replace(freq_vege, freq_vege == 2, "Végétarien hébdomadaire"))
+        
+        bdd_2020_menu = bdd_2020_menu %>% 
+            mutate(freq_vege= replace(freq_vege, freq_vege == 1, "Végétarien Quotidiens"))
+        
+        bdd_2020_menu = bdd_2020_menu %>% 
+            mutate(freq_vege= replace(freq_vege, freq_vege == 0, "Non Végétarien"))
+        
+        
+        
+        #plot
+        ggplot(bdd_2020_menu , aes(x = cmp, y = freq_vege, fill = freq_vege)) +
+            geom_density_ridges() +
+            labs(title = 'Prix des repas en fonction du régime alimentaire')+
+                
+            theme_ridges() + 
+            theme(legend.position = "bottom")+
+            xlab("Prix") +
+            ylab("Régime alimentaire")
+        
+        
+        
+    })
+    
+    output$PrixBioLoc <- renderPlot({
+        
+        bdd_2020_loc<- read.xlsx("bdd_observatoire_2020.xlsx")%>%
+            select(c("loc","cmp","bio"))
+        
+        # on eneleve les NA de la colonne cmp
+        bdd_2020_loc = bdd_2020_loc[complete.cases(bdd_2020_loc$cmp), ]
+        bdd_2020_loc = bdd_2020_loc[complete.cases(bdd_2020_loc$loc), ]
+        bdd_2020_loc = bdd_2020_loc[complete.cases(bdd_2020_loc$bio), ]
+        
+        #plot
+            ggplot( bdd_2020_loc, aes(x = loc  ,y=bio, size=cmp, fill=bio)) +
+                geom_point(alpha=0.5, shape=21, color="black") +
+                ggtitle("Proportion de repas bio en fonction de la proportion de produits locaux et du coût d'un repas") +
+                scale_size(range = c(.1, 7), name="Coût d'un repas") +
+                scale_fill_viridis(discrete=FALSE, guide=FALSE, option="A") +
+                theme(plot.title = element_text(hjust = 0.7, size = 8))+
+                theme_ipsum()+
+                theme(legend.position="bottom") +
+                xlab("Proportion de poduits locaux (en %)") +
+                ylab("Proportion de repas bio (en %)")
+        
+    })
+    
+    output$venn <- renderPlot({
+        grid.newpage()
+        draw.triple.venn(area1 = venn_cmp,
+                         area2 = venn_vege_hebdo,
+                         area3 = venn_bio,
+                         n12 = venn_vege_cmp,
+                         n23 = venn_vege_bio,
+                         n13 = venn_bio_cmp,
+                         n123 = les_trois,
+                         fill = c("yellow", "blue", "red"),
+                         category = c("Prix < 2.5€", "Au moins 1 repas végé hebdo", "bio +20%"))
+        
+    })
+    
+    # CARTE MANUE ----------------------------------------------------------------------------------------------------------------------------
+    selectedData <- reactive({
+        if(input$projection=="bio") return(bdd20_bio)
+        if(input$projection=="loc") return(bdd20_loc)
+        if(input$projection=="prix")return(bdd20_price)
+        if(input$projection=="vege") return(bdd20_vege)
+        
+    })
+    
+    # Definition legende
+    legende <- c("Déléguée", "Directe", "Les deux", "Mixte", "NC")
+    
+    # Definition palette
+    pal_gestion <- colorFactor(as.character(wes_palette("Darjeeling1")[c(1,2,3,4,5)]),
+                               participants_map$`MODE.GESTION.RESTAURATION.COLLECTIVE.(Gestion.directe,.concédée,.mixte.ou.les.deux)`)
+    
+    pal <- reactive({
+        if(input$projection=="bio") return (colorNumeric(palette = brewer.pal(n = 9, "Greens")[2:9],domain = bdd20_bio$mean))
+        if(input$projection=="loc") return (colorNumeric(palette = brewer.pal(n = 9, "Blues")[2:9],domain = bdd20_loc$mean))
+        if(input$projection=="prix") return (colorNumeric(palette = brewer.pal(n = 9, "Reds")[2:9],domain = bdd20_price$mean))
+        if(input$projection=="vege") return (colorNumeric(palette = brewer.pal(n = 9, "Purples")[2:9],domain = bdd20_vege$mean))
+    })
+    
+    # Definition de la carte
+    output$mymap <- renderLeaflet({
+        pal <- pal()
+        leaflet()%>%
+            setView(lng = 3.1074, lat = 45.7825, zoom = 5)%>%
+            addProviderTiles(providers$Stamen.TonerLite)%>%
+            addPolygons(data = department,
+                        weight = 1,
+                        smoothFactor = 0.5,
+                        color = "white",
+                        fillOpacity = 0.8,
+                        fillColor = pal(selectedData()$mean),
+                        highlight = highlightOptions(weight = 5, color = "black"),
+                        popup = bdd20_summary$label)%>%
+            addCircleMarkers(data = participants_map, lat = ~lat, lng = ~long, opacity = 0.7, radius = ~taille_num,
+                             color = ~pal_gestion(participants_map$`MODE.GESTION.RESTAURATION.COLLECTIVE.(Gestion.directe,.concédée,.mixte.ou.les.deux)`),
+                             label = participants_map$`TYPE.ETABLISSEMENT.(Cuisine.centrale.d'une.collectivité,.écoles,.collèges,.lycées,.Ehpad,.etc.)`
+            )%>%
+            addLegend("bottomright", pal = pal_gestion, values = participants_map$`MODE.GESTION.RESTAURATION.COLLECTIVE.(Gestion.directe,.concédée,.mixte.ou.les.deux)`,
+                      title = "Mode de Gestion",
+                      opacity = 1,
+                      labFormat = function(type, cuts, p) {paste0(legende)
+                      })%>%
+            addLegend("topright", pal = pal, values = selectedData()$mean,
+                      title = "Projection départements")
+    })
+    
 }
+
 

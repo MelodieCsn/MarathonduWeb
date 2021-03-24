@@ -18,14 +18,14 @@ bdd_2020 <- read.xlsx("R_Data/bdd_observatoire_2020.xlsx")
 bdd_2019 <- read.xlsx("R_Data/bdd_observatoire_2019.xlsx")
 bdd_2018 <- read.xlsx("R_Data/bdd_observatoire_2018.xlsx")
 
-bdd_2020$bio_fact = cut(bdd_2020$bio, breaks=c(0,10, 20,30, 40,50, 60,70, 80 ,90,Inf), labels = c("0-10","10-20","20-30","30-40","40-50","50-60","60-70","70-80","80-90","90-100"))
+bdd_2020$bio_fact = cut(bdd_2020$bio, breaks=c(0, 20,40, 60, 80,Inf), labels = c("0-20","20-40","40-60","60-80","80+"))
 bdd_2020$tot_rep_fact = cut(bdd_2020$tot_rep, breaks = c(0,500,3000,10000,Inf), labels= c("- 500", "500-3000", "3000-10000", "+ 10000"))
 
 
-bdd_2019$bio_fact = cut(bdd_2019$bio, breaks=c(0,10, 20,30, 40,50, 60,70, 80 ,90,Inf), labels = c("0-10","10-20","20-30","30-40","40-50","50-60","60-70","70-80","80-90","90-100"))
+bdd_2019$bio_fact = cut(bdd_2019$bio, breaks=c(0, 20,40, 60, 80,Inf), labels = c("0-20","20-40","40-60","60-80","80+"))
 bdd_2019$tot_rep_fact = cut(bdd_2019$tot_rep, breaks = c(0,500,3000,10000,Inf), labels= c("- 500", "500-3000", "3000-10000", "+ 10000"))
 
-bdd_2018$bio_fact = cut(bdd_2018$bio, breaks=c(0,10, 20,30, 40,50, 60,70, 80 ,90,Inf), labels = c("0-10","10-20","20-30","30-40","40-50","50-60","60-70","70-80","80-90","90-100"))
+bdd_2018$bio_fact = cut(bdd_2018$bio, breaks=c(0, 20,40, 60, 80,Inf), labels = c("0-20","20-40","40-60","60-80","80+"))
 bdd_2018$tot_rep_fact = cut(bdd_2018$tot_rep, breaks = c(0,500,3000,10000,Inf), labels= c("- 500", "500-3000", "3000-10000", "+ 10000"))
 
 bdd20_dedup =bdd_2020[, !duplicated(colnames(bdd_2020))]
@@ -86,6 +86,9 @@ novege$typeviande[novege$via_bio == 0] <- "viande non bio"
 # création du df pour le pie chart
 novege$typeviande = as.factor(novege$typeviande)
 dfnovege = count(novege, 'typeviande')
+dfnovege$proportion = NA
+dfnovege$proportion[1] = 100*(dfnovege$freq[1]/(dfnovege$freq[1]+dfnovege$freq[2]))
+dfnovege$proportion[2] = 100*(dfnovege$freq[2]/(dfnovege$freq[1]+dfnovege$freq[2]))
 dfnovege$freqvege = "Non végétarien"
 
 
@@ -103,8 +106,10 @@ vegehebdo$typeviande[vegehebdo$via_bio == 0] <- "viande non bio"
 # création du df pour le pie chart
 vegehebdo$typeviande = as.factor(vegehebdo$typeviande)
 dfvegehebdo = count(vegehebdo, 'typeviande')
+dfvegehebdo$proportion = NA
+dfvegehebdo$proportion[1] = 100*(dfvegehebdo$freq[1]/dfvegehebdo$freq[1]+dfvegehebdo$freq[2])
+dfvegehebdo$proportion[2] = 100*(dfvegehebdo$freq[2]/dfvegehebdo$freq[1]+dfvegehebdo$freq[2])
 dfvegehebdo$freqvege = "Hebdomadaire"
-
 
 # Création du df des cantines végé hébdomadaires
 vegequot = bdd_2020[, !duplicated(colnames(bdd_2020))]
@@ -117,13 +122,26 @@ vegequot$typeviande = NA
 vegequot$typeviande[vegequot$via_bio == 1] <- "viande bio"
 vegequot$typeviande[vegequot$via_bio == 0] <- "viande non bio"
 
+
+
 # création du df pour le pie chart
 vegequot$typeviande = as.factor(vegequot$typeviande)
 dfvegequot = count(vegequot, 'typeviande')
+dfvegequot$proportion = NA
+dfvegequot$proportion[1] = 100*(dfvegequot$freq[1]/dfvegequot$freq[1]+dfvegequot$freq[2])
+dfvegequot$proportion[2] = 100*(dfvegequot$freq[2]/dfvegequot$freq[1]+dfvegequot$freq[2])
 dfvegequot$freqvege = "Quotidien"
 
 df = dplyr::bind_rows(dfnovege, dfvegehebdo)
 dfstackedbar = dplyr::bind_rows(df, dfvegequot)
+
+
+
+
+ggplot(dfstackedbar, aes(fill = typeviande,y=freq, x=freqvege)) + 
+  geom_bar(position='stack', stat='identity')+
+  scale_fill_manual('Position', values=c('coral2', 'coral4')) +
+  geom_text(label =dfstackedbar$proportion )
 
 # les éléments qui sont viabo = oui et menuvege = non
 
@@ -136,7 +154,7 @@ pie3D(x=dfvegequot$freq, start=sqrt(2),labels=dfvegequot$category, col=myPalette
 
 bdd20_dedup =bdd_2020[, !duplicated(colnames(bdd_2020))]
 bdd20_dedup = bdd20_dedup[complete.cases(bdd20_dedup$bio_fact), ]
-
+# POUR LES CNO
 ggplot(data=bdd20_dedup, aes(x=bio_fact, y=loc)) + 
   geom_bar(stat = "summary", fill="#DC4405") +
   theme_classic(base_size = 20)+
@@ -145,15 +163,41 @@ ggplot(data=bdd20_dedup, aes(x=bio_fact, y=loc)) +
   ylab("% de produits locaux")
 
 
+bdd20_vegeprix <- read.xlsx("R_Data/bdd_observatoire_2020.xlsx")%>%
+  select(c("id","freq_vege","menuvege","cmp"))
+
+bdd20_vegeprix$freq_vege[is.na(bdd20_vegeprix$freq_vege)] <- 0
+
+bdd20_vegeprix = filter(bdd20_vegeprix, freq_vege != 3)
+bdd20_vegeprix[bdd20_vegeprix$freq_vege == 0 , ]$freq_vege <- "Non végétarien"
+bdd20_vegeprix[bdd20_vegeprix$freq_vege == 1 ,]$freq_vege <- "Végétarien hebdomadaire"
+bdd20_vegeprix[bdd20_vegeprix$freq_vege == 2 ,]$freq_vege <- "Végétarien quotidien"
+
+
+
+ggplot(data=bdd20_vegeprix, aes(x=freq_vege, y=cmp)) + 
+  geom_bar(stat = "summary",fill="#DC4405")+
+  theme_classic(base_size = 20)+
+  geom_hline(yintercept = 2.7, linetype = "dashed")+
+  xlab("Type de repas servi")+
+  ylab("Prix moyen d'un repas (euros)")+
+  stat_summary(aes(label=..y..), fun.data=fun_mean, geom="text",
+               size=5,vjust = 2, color ="white")
+
+fun_mean <- function(x){return(round(data.frame(y=mean(x),label=mean(x,na.rm=T))
+                                     ,digit=1))}
 
 ggplot(data=bdd20_dedup, aes(x=bio_fact, y=cmp)) + 
   geom_bar(stat = "summary",fill="#582c83")+
   theme_classic(base_size = 20)+
   geom_hline(yintercept = 3, linetype = "dashed")+
-  xlab("% de bio")+
-  ylab("Coûts denrées moyen par repas")
+  xlab("Part de bio dans les repas (%)")+
+  ylab("Prix moyen d'un repas")+
+  stat_summary(aes(label=..y..), fun.data=fun_mean, geom="text",
+             size=5,vjust = 2, color ="white")
 
 ymax = max(bdd20_dedup$cmp)
+
 ggplot(bdd20_dedup, aes(x=bio_fact, y=cmp)) +
   geom_segment( aes(x=bio_fact, xend=bio_fact, y=0, yend = cmp)) +
   geom_point( size=6, color="red", fill=alpha("red", 0.5), alpha=0.7, shape=21, stroke=1) +
@@ -165,10 +209,10 @@ priceColor <- rgb(0.2, 0.6, 0.9, 1)
 
 ggplot(dfbioannee, aes(x=annee)) +
   
-  geom_line( aes(y=biorate,group=1), size=3, color=temperatureColor) + 
-  geom_line( aes(y=price*10 ,group=1), size=3, color=priceColor) +
+  geom_line( aes(y=biorate,group=1), size=2, color=temperatureColor) + 
+  geom_line( aes(y=price*15 ,group=1), size=2, color=priceColor) +
   geom_point(y=biorate, size=3)+
-  geom_point(y=price*10, size=3)+
+  geom_point(y=price*15, size=3)+
   geom_hline(yintercept = 33, linetype = "dashed")+
   
   scale_y_continuous(
@@ -177,7 +221,8 @@ ggplot(dfbioannee, aes(x=annee)) +
     name = "Pourcentage de bio",
     
     # Add a second axis and specify its features
-    sec.axis = sec_axis(~./10, name="Prix du repas")
+    sec.axis = sec_axis(~./15, name="Prix du repas")
+    
   ) + 
   
   theme_ipsum() +

@@ -8,9 +8,83 @@ library("plyr")
 library("plotrix")
 library("shinydashboard")
 library("plotly")
+library("hrbrthemes")
+library("viridis")
+library("RColorBrewer")
+library("ggridges")
+library("VennDiagram")
+library("shiny")
+library("dplyr")
+library("leaflet")
+library("rgdal")
+library("RColorBrewer")
+library("wesanderson")
+library("tidyr")
+library("rlist")
+library("openxlsx")
+
+# Chargement des données
 
 
-library(RColorBrewer)
+department <- readOGR(dsn="./Map",layer = "departements-20170102")
+
+participants_map <- read.xlsx("./Out/liste_participants_coordinates.xlsx")
+bdd20_summary <- read.xlsx("./Out/bdd20_summary.xlsx")
+
+getSize <- function(repas){
+  a=0
+  if(repas== "Moins de 500 repas/jour"){
+    a = 2
+  }
+  if(repas== "Entre 500 et 3000 repas/jour"){
+    a= 4
+  }
+  if(repas== "Entre 3000 et 10 000 repas/jour"){
+    a= 6
+  }
+  if(repas== "Plus de 10 000 repas/jour") {
+    a= 8
+  }
+  return(a)
+  
+}
+
+
+participants_map$taille_num <- lapply(participants_map$`TAILLE.COLLECTIVITÉS.(en.nombre.de.repas/jour)`, getSize)
+
+getInsee <- function(elt){
+  if(nchar(elt) == 1){
+    return(paste0("0",elt))
+  }
+  if(elt == "69"){
+    return("69M")
+  }
+  else{
+    return(elt)
+  }
+}
+
+bdd20_summary$code_insee <- lapply(bdd20_summary$code.département, getInsee)
+
+bdd20_summary <- bdd20_summary[order(match(bdd20_summary$code_insee, department$code_insee)),]
+
+bdd20_bio <- bdd20_summary%>%
+  select(c("code.département","mean_bio_anonyme"))
+bdd20_bio$mean = bdd20_bio$mean_bio_anonyme
+
+bdd20_loc <- bdd20_summary%>%
+  select(c("code.département","mean_local_anonyme"))
+bdd20_loc$mean = bdd20_loc$mean_local_anonyme
+
+bdd20_price <- bdd20_summary%>%
+  select(c("code.département","mean_price_anonyme"))
+bdd20_price$mean = bdd20_price$mean_price_anonyme
+
+bdd20_vege <- bdd20_summary%>%
+  select(c("code.département","mean_vege_anonyme"))
+bdd20_vege$mean = bdd20_vege$mean_vege_anonyme
+
+
 myPalette <- brewer.pal(2,"Dark2") 
 
 liste_participants <- read.xlsx("LISTE PARTICIPANTS OBSERVATOIRE.xlsx", rowNames = TRUE)
@@ -62,34 +136,59 @@ locrate <- c(mean(bdd_2018_bioclean$loc),mean(bdd_2019_bioclean$loc),mean(bdd_20
 dfbioannee = data.frame(annee,biorate,price)
 dfbioannee$category = as.factor(dfbioannee$annee)
 
-#Partie ou on garde que les participants fidèles depuis 2018
-# annee <- c("2018", "2019", "2020")
-# biorate <- c(mean(df_join_subset2018$bio2018),mean(df_join_subset2019$bio2019),mean(df_join_subset2020$bio2020))
-# price <- c(mean(df_join_subset2018$cmp2018),mean(df_join_subset2019$cmp2019),mean(df_join_subset2020$cmp2020))
-# locrate <- c(mean(df_join_subset2018$loc2018),mean(df_join_subset2019$loc2019),mean(df_join_subset2020$loc2020))
-# dfjoinannee <- data.frame(annee,biorate,price)
-# dfjoinannee$category <- as.factor(dfjoinannee$annee)
-
-
 
 #pie3D(x=dfnovege$freq, labels=dfnovege$category, col=myPalette, theta=3.14/2)
 #pie3D(x=dfvegehebdo$freq, labels=dfvegehebdo$category, col=myPalette, theta=3.14/2)
 #pie3D(x=dfvegequot$freq, labels=dfvegequot$category, col=myPalette, theta=3.14/2)
 
 
-#Y-a-t-il une relation entre le pourcentage de produits bio et le % de produits locaux ? Si oui, quelle est-elle ?
+bdd_vendiagram <- bdd_2020%>%
+  select(c("id","freq_vege","menuvege","gasp_auc","cmp","bio"))
+
+for (i in seq_len(nrow(bdd_vendiagram))) {
+  bdd_vendiagram[i,"bool_vege_hebdo"] <- 0
+  
+  bdd_vendiagram$freq_vege[is.na(bdd_vendiagram$freq_vege)] <- 0
+  
+  if (bdd_vendiagram[i, "freq_vege"] == 1 || bdd_vendiagram[i, "freq_vege"] == 2) {
+    bdd_vendiagram[i,"bool_vege_hebdo"] <- 1
+  }
+}
+
+venn_cmp <- length(bdd_vendiagram[bdd_vendiagram$cmp<2.5 ,1])
+venn_vege_hebdo <- length(bdd_vendiagram[bdd_vendiagram$bool_vege_hebdo==1 ,1])
+venn_bio <- length(bdd_vendiagram[bdd_vendiagram$bio>20 ,1])
 
 
+bdd_vendiagram$cmp[is.na(bdd_vendiagram$cmp)] <- 5
+bdd_vendiagram$bool_vege_hebdo[is.na(bdd_vendiagram$bool_vege_hebdo)] <- 0
+bdd_vendiagram$bio[is.na(bdd_vendiagram$bio)] <- 0
 
-ggplot(data=bdd20_dedup, aes(x=bio_fact, y=loc)) + 
-  geom_bar(stat = "summary", fill="#DC4405") +
-  theme_classic(base_size = 20)+
-  geom_hline(yintercept = 100, linetype = "dashed")+
-  xlab("% de bio")+
-  ylab("% de produits locaux")
+venn_vege_cmp <- 0
+for (i in seq_len(nrow(bdd_vendiagram))) {
+  if (bdd_vendiagram[i,"cmp"]<2. && bdd_vendiagram[i,"bool_vege_hebdo"] == 1) {
+    venn_vege_cmp <- venn_vege_cmp + 1
+  }
+}
 
-temperatureColor <- "#69b3a2"
-priceColor <- rgb(0.2, 0.6, 0.9, 1)
+venn_bio_cmp <- 0
+for (i in seq_len(nrow(bdd_vendiagram))) {
+  if (bdd_vendiagram[i,"bio"]>20 && bdd_vendiagram[i,"cmp"]<2.5) {
+    venn_bio_cmp <- venn_bio_cmp + 1
+  }
+}
+
+venn_vege_bio <- 0
+for (i in seq_len(nrow(bdd_vendiagram))) {
+  if (bdd_vendiagram[i,"bio"]>20 && bdd_vendiagram[i,"bool_vege_hebdo"] == 1) {
+    venn_vege_bio <- venn_vege_bio + 1
+  }
+}
 
 
-#library(tidyverse)
+les_trois <- 0
+for (i in seq_len(nrow(bdd_vendiagram))) {
+  if (bdd_vendiagram[i,"bio"]>20 && bdd_vendiagram[i,"bool_vege_hebdo"] == 1 && bdd_vendiagram[i,"cmp"]<2.5) {
+    les_trois <- les_trois + 1
+  }
+}
