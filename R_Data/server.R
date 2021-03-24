@@ -154,8 +154,8 @@ server <- function(input, output) {
 
             ggplot(dfjoinannee, aes(x=annee)) +
                 
-                geom_line( aes(y=biorate,group=1), size=2, color=temperatureColor) + 
-                geom_line( aes(y=price*30 ,group=1), size=2, color=priceColor) +
+                geom_line( aes(y=biorate,group=1), size=2, color="#582c83") + 
+                geom_line( aes(y=price*30 ,group=1), size=2, color="#DC4405") +
                 geom_point(y=biorate, size=3)+
                 geom_point(y=price*30, size=3)+
                 #geom_hline(yintercept = 33, linetype = "dashed")+
@@ -167,8 +167,8 @@ server <- function(input, output) {
                     sec.axis = sec_axis(~./30, name="Prix du repas")) + 
                 theme_ipsum() +
                 theme(
-                    axis.title.y = element_text(color = temperatureColor, size=13),
-                    axis.title.y.right = element_text(color = priceColor, size=13)) +
+                    axis.title.y = element_text(color = "#582c83", size=13),
+                    axis.title.y.right = element_text(color = "#DC4405", size=13)) +
                 ggtitle("Evolution du prix et de la proportion de bio entre 2018 et 2020 (pour toutes les collectivités)")
         
     })

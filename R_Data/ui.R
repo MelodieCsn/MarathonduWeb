@@ -18,10 +18,9 @@ dashboardPage(
                     selectInput("nbrepas", "Nombres de repas : ", 
                                 choices= c("- 500", "500-3000", "3000-10000", "+ 10000", "Total")
                     ),
+                    radioButtons("loliouhisto", "Type de graphe désiré ",c("Histogramme" = "histo","graphe lolipop" = "loli"), 
+                                 selected = c("graphe lolipop" = "loli")),
                     fluidRow( 
-                        checkboxGroupInput("loliouhisto", "Type de graphe désiré ",c("Histogramme" = "histo","graphe lolipop" = "loli"), 
-                                           selected = c("graphe lolipop" = "loli")),
-                        
                         box(
                             plotlyOutput(outputId = "plotbioprix")),
                         box(
@@ -42,7 +41,6 @@ dashboardPage(
                         
                         column(4,plotOutput(outputId = "venn"))
                     )
-                    
                     
                     
             ),
