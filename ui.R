@@ -1,15 +1,15 @@
 dashboardPage(
   
-    #Header
-    dashboardHeader(title = "Un plus Bio"),
-    #Sidebar
-    dashboardSidebar(
-      sidebarMenu(
-        menuItem("Stat", tabName = "Stat"),
-        menuItem("Carte interactive", tabName = "Carte interactive"),
-        menuItem("Questionnaire", tabName = "Questionnaire")
-      )
-    ),
+  #Header
+  dashboardHeader(title = "Un plus Bio"),
+  #Sidebar
+  dashboardSidebar(
+    sidebarMenu(
+      menuItem("Stat", tabName = "Stat"),
+      menuItem("Carte interactive", tabName = "Carte interactive"),
+      menuItem("Questionnaire", tabName = "Questionnaire")
+    )
+  ),
   dashboardBody(
     tabItems(
       tabItem(tabName = "Stat",
@@ -21,33 +21,26 @@ dashboardPage(
               fluidRow( 
                 
                 box(
-                  plotOutput(outputId = "distPlot")),
+                  plotlyOutput(outputId = "distPlot")),
                 box(
-                  plotOutput(outputId = "distPlotProdLoc"))
+                  plotlyOutput(outputId = "distPlotProdLoc"))
               ),
               
               fluidRow(
-                
-                    splitLayout(style = "border: 1px solid silver:", 
-                                plotOutput(outputId = "Pie1"),
-                                plotOutput(outputId = "Pie2"),
-                                plotOutput(outputId = "Pie3")
-                    )
-                
-              
+                box(plotlyOutput(outputId = "linePriceBio")),
+                box(plotlyOutput(outputId = "Stacked"))
               )
-            ),
-  
+              
+              
+      ),
+      
       tabItem(tabName = "Carte interactive"
-        
+              
       ),
       
       tabItem(tabName = "Questionnaire"
               
       )
-            )
-      )
+    )
+  )
 )
-  
- 
-  
