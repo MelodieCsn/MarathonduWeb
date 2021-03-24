@@ -34,7 +34,9 @@ server <- function(input, output) {
                 ggplot(df_subset(), aes(x=bio_fact, y=cmp)) +
                 geom_segment( aes(x=bio_fact, xend=bio_fact, y=0, yend=cmp)) +
                 geom_point( size=5, color="#DC4405", fill=alpha("orange", 0.5), alpha=0.8, shape=21, stroke=1) +
-                theme_bw()
+                theme_bw()+
+                xlab("Pourcentage de produits bio")+
+                ylab("Prix moyen d'un repas")
         )
         if(is.null(input$loliouhisto)){ 
             p1 
@@ -67,7 +69,9 @@ server <- function(input, output) {
             ggplot(df_subset(), aes(x=bio_fact, y=loc)) +
                 geom_segment( aes(x=bio_fact, xend=bio_fact, y=0, yend=loc)) +
                 geom_point( size=5, color="#582c83", fill=alpha("purple", 0.5), alpha=0.7, shape=21, stroke=1) +
-                theme_bw()
+                theme_bw()+
+                xlab("Pourcentage de produits bio")+
+                ylab("Pourcentage de produits locaux")
         )
         if(is.null(input$loliouhisto)){ 
             p2 
@@ -133,7 +137,9 @@ server <- function(input, output) {
         ggplotly(
             ggplot(dfstackedbar, aes(fill = typeviande,y=freq, x=freqvege)) + 
                 geom_bar(position='stack', stat='identity')+
-                scale_fill_manual('Position', values=c('coral2', 'coral4'))
+                scale_fill_manual('Position', values=c('coral2', 'coral4'))+
+                xlab("Type de menu")+
+                ylab("Effectif")
         )
        
         
@@ -159,7 +165,7 @@ server <- function(input, output) {
                 geom_point(y=biorate, size=3)+
                 geom_point(y=price*30, size=3)+
                 #geom_hline(yintercept = 33, linetype = "dashed")+
-                
+                xlab("Année") +
                 scale_y_continuous(
                     # Features of the first axis
                     name = "Pourcentage de bio",
@@ -167,10 +173,14 @@ server <- function(input, output) {
                     sec.axis = sec_axis(~./30, name="Prix du repas")) + 
                 theme_ipsum() +
                 theme(
-                    axis.title.y = element_text(color = "#582c83", size=13),
-                    axis.title.y.right = element_text(color = "#DC4405", size=13)) +
-                ggtitle("Evolution du prix et de la proportion de bio entre 2018 et 2020 (pour toutes les collectivités)")
-        
+                    axis.title.y = element_text(angle = 0, color = "#582c83", size=20),
+                    axis.title.y.right = element_text(angle = 0,color = "#DC4405", size=20),
+                    axis.text.x = element_text(size=18,color="black"),
+                    axis.title.x = element_text(size=18,color="black"))
+                
+                # angle possible
+                
+
     })
     
     # PARTIE MOULIKA --------------------------------------------------------------------------------------------------------------------------
