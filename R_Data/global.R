@@ -22,7 +22,6 @@ library("wesanderson")
 library("tidyr")
 library("rlist")
 library("openxlsx")
-
 # Chargement des données
 
 
