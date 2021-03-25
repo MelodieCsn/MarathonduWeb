@@ -14,12 +14,21 @@ dashboardPage(
         tabItems(
             tabItem(tabName = "Stat",
                     # Input: selectInput ----
+                    column(3),
+                    column(6, 
+                           box(status = "info", width = "30%",
+                               selectInput("nbrepas", "Nombres de repas : ", 
+                                           choices= c("- 500", "500-3000", "3000-10000", "+ 10000", "Total")
+                              ),
+                               
+                               radioButtons("loliouhisto", "Type de graphe désiré ",c("Histogramme" = "histo","graphe lolipop" = "loli"), 
+                                            selected = c("graphe lolipop" = "loli"))
+                           )
+                           ),
                     
-                    selectInput("nbrepas", "Nombres de repas : ", 
-                                choices= c("- 500", "500-3000", "3000-10000", "+ 10000", "Total")
-                    ),
-                    radioButtons("loliouhisto", "Type de graphe désiré ",c("Histogramme" = "histo","graphe lolipop" = "loli"), 
-                                 selected = c("graphe lolipop" = "loli")),
+                    column(3),
+                    
+                    
                     fluidRow( 
                         box(title = "Pourcentage de produit bio
                             en fonction du prix moyen d'un repas ", 
