@@ -1,6 +1,6 @@
 # MarathonduWeb GROUPE 7
 
-Attention : Pensez à dezip le dossier Map !!!!!!!!!!!!!!!
+Attention : Penser à dezip le dossier Map !!!!!!!!!!!!!!!
 
 
 Projet de création d'un site web orienté data visualisation en Rshiny
