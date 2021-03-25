@@ -22,10 +22,13 @@ library("wesanderson")
 library("tidyr")
 library("rlist")
 library("openxlsx")
+library("shinycssloaders")
+
+
+# Options du loader
+options(spinner.color="#0257D8", spinner.color.background="#FFFFF7", spinner.size=2)
 
 # Chargement des données
-
-
 department <- readOGR(dsn="./Map",layer = "departements-20170102")
 
 participants_map <- read.xlsx("./Out/liste_participants_coordinates.xlsx")

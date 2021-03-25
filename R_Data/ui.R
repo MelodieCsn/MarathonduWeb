@@ -53,8 +53,7 @@ dashboardPage(
                                             "Part de produits Locaux (en%)" = "loc",
                                             "Prix moyen par repas" = "prix" ,
                                             "% Au moins un menu végétarien hebdomadaire" = "vege")),
-                            
-                    leafletOutput(outputId = "mymap")
+                    leafletOutput(outputId = "mymap"), withSpinner(tableOutput('mymap'), type=4)
             ),
             tabItem(tabName="test",
                     p("COUCOU")
