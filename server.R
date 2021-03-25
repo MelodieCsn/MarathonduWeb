@@ -138,8 +138,8 @@ server <- function(input, output) {
         ggplotly(
             ggplot(dfstackedbar, aes(fill = typeviande,y=freq, x=freqvege)) + 
                 geom_bar(position='stack', stat='identity')+
-                scale_fill_manual('Position', values=c("#DC4405",'#582c83'))+
-                xlab("Type de menu")+
+                scale_fill_manual('Qualité de la Viande', values=c("#DC4405",'#582c83'))+
+                xlab("Régime alimentaire")+
                 ylab("Effectif")
         )
         
