@@ -5,9 +5,9 @@ dashboardPage(
     #Sidebar
     dashboardSidebar(
         sidebarMenu(
-            menuItem("Stat", tabName = "Stat"),
-            menuItem("Carte", tabName = "Carte"),
-            menuItem("test", tabName = "test")
+            menuItem("Statistiques", tabName = "Stat", icon = icon("chart-bar")),
+            menuItem("Carte interactive", tabName = "Carte", icon = icon("map-marked-alt"))
+            
         )
     ),
     dashboardBody(
