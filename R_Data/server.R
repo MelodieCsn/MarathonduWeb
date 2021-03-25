@@ -137,7 +137,7 @@ server <- function(input, output) {
         ggplotly(
             ggplot(dfstackedbar, aes(fill = typeviande,y=freq, x=freqvege)) + 
                 geom_bar(position='stack', stat='identity')+
-                scale_fill_manual('Position', values=c('coral2', 'coral4'))+
+                scale_fill_manual('Position', values=c("#DC4405",'#582c83'))+
                 xlab("Type de menu")+
                 ylab("Effectif")
         )
@@ -218,7 +218,9 @@ server <- function(input, output) {
             theme_ridges() + 
             theme(legend.position = "bottom")+
             xlab("Prix") +
-            ylab("Régime alimentaire")
+            ylab("Régime alimentaire")+
+            scale_fill_cyclical(name = "Fill colors",
+                values = c("#582c83", "#007644", "#DC4405"))
         
         
         
