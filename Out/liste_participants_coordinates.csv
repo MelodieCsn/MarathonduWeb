@@ -1,0 +1,275 @@
+"";"ENQUÊTE.2017";"ENQUÊTE.2018";"ENQUÊTE.2019";"ENQUÊTE.2020";"LABELLISÉS.ECOCERT.EN.CUISINE";"ADRESSE";"CODE.POSTAL";"COMMUNE";"REGION";"TYPE.ETABLISSEMENT.(Cuisine.centrale.d'une.collectivité,.écoles,.collèges,.lycées,.Ehpad,.etc.)";"COLLECTIVITÉ.TERRITORIALE.(Oui/Non)";"TAILLE.COLLECTIVITÉS.(en.nombre.de.repas/jour)";"MODE.GESTION.RESTAURATION.COLLECTIVE.(Gestion.directe,.concédée,.mixte.ou.les.deux)";"MODE.PRODUCTION.RESTAURATION.COLLECTIVE.(Cuisine.centrale,.sur.place.ou.les.deux)";"NBR.ÉTABLISSEMENTS";"NBR.REPAS/JOUR";"lat";"long"
+"BEGLES";1;1;1;1;"Non";"77 RUE CALIXTE CAMELLE";"33130";"BEGLES";"NOUVELLE AQUITAINE";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"CENTRALE";"17";"2310";44,7974;-0,5519
+"BRIANCON";1;1;1;1;"Oui";"Affaires Scolaires - 9 avenue René Froger";"5100";"BRIANCON";"PROVENCE-ALPES-COTE-D'AZUR";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"CENTRALE";"13";"560";44,8976;6,6421
+"CD DROME";1;1;1;1;"Oui";"26 AVENUE DU PRESIDENT HERRIOT";"26026";"VALENCE";"AUVERGNE-RHONE-ALPES";"Collèges";"Oui";"Plus de 10 000 repas/jour";"DIR";"SUR PLACE";"30";"13700";45,8852;0,3178
+"CD ISERE";1;1;1;0;"Oui";"NC";"38000";NA;"NC";"Collèges";"Oui";"Plus de 10 000 repas/jour";"DIR";"LES DEUX";"NC";"NC";45,1825;5,7301
+"CD PYRENEES ATLANTIQUES";1;1;1;1;"Oui";"Hotel du Département";"64058";"PAU";"NOUVELLE AQUITAINE";"Collèges";"Oui";"Plus de 10 000 repas/jour";"DIR";"SUR PLACE";"75";"14901";43,3197;-0,3462
+"CHATEAUNEUF DE GRASSE";1;1;1;1;"Non";"4 place G. Clémenceau";"6740";"Châteauneuf";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Entre 500 et 3000 repas/jour";"DEL";"SUR PLACE";"4";"500";43,6676;6,9799
+"Collège du Bas Chablais";1;1;1;0;"Non";"NC";"NC";"NC";"NC";"Collèges";"Non";"NC";"NC";"NC";"NC";"NC";NA;NA
+"COLLIAS";1;1;1;0;"Non";"52 route d'Uzès";"30210";"Collias";"OCCITANIE";"Cuisine centrale";"Oui";"NC";"DEL";"CENTRALE";"NC";"NC";43,9585;4,4728
+"CUSSAC FORT MEDOC";1;1;1;1;"Oui";"34 avenue du Haut Médoc";"33460";"CUSSAC FORT MEDOC";"NOUVELLE AQUITAINE";"Ecoles";"Oui";"NC";"DEL";"SUR PLACE";"2";"210";45,0756;-0,709
+"DIJON";1;1;1;1;"Non";"CS 73310";"21033";"DIJON";"BOURGOGNE-FRANCHE-COMTE";"Cuisine centrale";"Oui";"Entre 3000 et 10 000 repas/jour";"DIR";"CENTRALE";"87";"9575";47,3238;5,0377
+"DOLUS D'OLERON";1;1;1;0;"Oui";"Rue des Ecoles";"17550";"DOLUS d'OLERON";"NOUVELLE AQUITAINE";"Ecoles";"Oui";"NC";"DIR";"LES DEUX";"NC";"NC";45,9183;-1,2568
+"Ehpad de Mens et Cors";1;1;1;1;"Oui";"rue des aires";"38710";"Mens";"AUVERGNE-RHONE-ALPES";"Ehpad";"Non";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"290";44,8067;5,7391
+"EPINAY";1;1;1;1;"Non";"11 rue Jean Baptiste CLEMENT";"93800";"Epinay-sur-seine";"ILE DE FRANCE";"Cuisine centrale";"Oui";"Entre 3000 et 10 000 repas/jour";"DIR";"CENTRALE";"35";"3620";48,9538;2,3194
+"GRANDE SYNTHE";1;0;0;1;"Non";"NC";"NC";"NC";"NC";"Ecoles";"Oui";"Entre 500 et 3000 repas/jour";"NC";"NC";"NC";"NC";NA;NA
+"GRENOBLE";1;1;1;1;"Non";"57 Rue Général Mangin";"38100";"Grenoble";"AUVERGNE-RHONE-ALPES";"Cuisine centrale";"Oui";"Plus de 10 000 repas/jour";"DIR";"CENTRALE";"95";"12000";45,1825;5,7301
+"LA COURONNE";1;1;1;1;"Non";"3 bis allée des sports";"16400";"La Couronne";"NOUVELLE AQUITAINE";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"CENTRALE";"6";"620";45,6123;0,1109
+"LE HAILLAN";1;1;1;0;"Non";"ALLEE DES MUSARDISES";"33185";"LE HAILLAN";"NOUVELLE AQUITAINE";"Cuisine centrale";"Oui";"NC";"DEL";"CENTRALE";"NC";"NC";44,8792;-0,6807
+"LES LILAS ";1;1;1;0;"Oui";"NC";"NC";"NC";"NC";"Ecoles";"Oui";"NC";"DEL";"NC";"NC";"NC";NA;NA
+"LOOS EN GOHELLE";1;1;1;1;"Non";"29 place de la république";"62750";"loos en gohelle";"HAUTS-DE-FRANCE";"Cuisine centrale";"Oui";"Moins de 500 repas/jour";"DEL";"CENTRALE";"3";"170";50,4525;2,7816
+"MANDUEL";1;1;1;1;"Oui";"place de la mairie";"30129";"MANDUEL";"OCCITANIE";"Cuisine centrale";"Oui";"NC";"DIR";"CENTRALE";"5";"460";43,8109;4,4879
+"MARTIGUES";1;1;1;1;"Non";"Avenue Louis sammut";"13500";"MARTIGUES";"PROVENCE-ALPES-COTE-D'AZUR";"Cuisine centrale";"Oui";"Entre 3000 et 10 000 repas/jour";"DIR";"LES DEUX";"47";"5150";43,367;5,0365
+"MILLAU";1;1;1;1;"Oui";"Avenue de la République";"12104";"Millau";"OCCITANIE";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"CENTRALE";"24";"1060";44,1121;3,1072
+"MOUSSY LE NEUF";1;1;1;1;"Non";"Place Charles de Gaulle";"77230";"Moussy-le-Neuf";"ILE DE FRANCE";"Ecoles";"Oui";"Moins de 500 repas/jour";"MIX";"SUR PLACE";"3";"330";49,0723;2,6081
+"NANTES";1;1;1;1;"Non";"Impasse du petit Chatelier";"44300";"NANTES";"PAYS-DE-LOIRE";"Cuisine centrale";"Oui";"Plus de 10 000 repas/jour";"DIR";"CENTRALE";"131";"13864";47,2397;-1,5492
+"NARBONNE";1;1;1;1;"Non";"Place de l'Hotel de Ville";"11100";"Narbonne";"OCCITANIE";"Cuisine centrale";"Oui";"Moins de 500 repas/jour";"DIR";"CENTRALE";"7";"300";43,1647;3,0419
+"NIMES";1;1;1;1;"Non";"Place de l'Hotel de Ville";"30000";"NIMES";"OCCITANIE";"Cuisine centrale";"Oui";"Entre 3000 et 10 000 repas/jour";"DEL";"CENTRALE";"88";"8782";43,8425;4,346
+"PELISSANE";1;0;0;0;"Non";"NC";"NC";"NC";"NC";"Ecoles";"Oui";"NC";"NC";"NC";"NC";"NC";NA;NA
+"SAINT REMY DE PROVENCE";1;1;1;1;"Oui";"Place Jules Pellissier";"13210";"Saint-Rémy de Provence";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"SUR PLACE";"5";"600";43,7785;4,8533
+"SALON DE PROVENCE";1;1;1;1;"Oui";"Mairie de Salon de Provence, place de l'hôtel de Ville";"13300";"SALON-DE-PROVENCE";"PROVENCE-ALPES-COTE-D'AZUR";"Cuisine centrale";"Oui";"Entre 3000 et 10 000 repas/jour";"DIR";"CENTRALE";"42";"3540";43,6423;5,1075
+"TOULOUSE";1;1;1;1;"Non";"1 rue Paulin Talabot";"31100";"TOULOUSE";"OCCITANIE";"Cuisine centrale";"Oui";"Plus de 10 000 repas/jour";"DIR";"CENTRALE";"218";"33450";43,6089;1,4368
+"VALBONNE";1;1;1;0;"Non";"1 Place de l'Hotel de Ville";"6560";"VALBONNE";"PROVENCE-ALPES-COTE-D'AZUR";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"DEL";"CENTRALE";"8";"1600";43,6295;7,0346
+"Association et écogite Le Loubatas ";0;1;0;0;"Non";"17 chemin neuf";"13860";"Peyrolles en provence";"PROVENCE-ALPES-COTE-D'AZUR";"Centre de vacances";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";43,6222;5,5853
+"Centre de loisirs éducatifs Les Cro Mignons";0;1;0;0;"Non";"Ecole H.Fabres, route de Lagnes";"84800";"Saumane";"PROVENCE-ALPES-COTE-D'AZUR";"Centre de loisirs";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";44,0824;5,6827
+"Centre de rééducation La Hève ";0;1;0;0;"Non";"Rue Stendhal";"76620";"Le Havre";"NORMANDIE";"Hopital";"Non";"NC";"DEL";"SUR PLACE";"NC";"NC";49,5069;0,1284
+"Centre de vacances 1000 et une vacances";0;1;0;0;"Non";"980 route de Taninges";"74300";"CHATILLON SUR CLUSES";"AUVERGNE-RHONE-ALPES";"Centre de vacances";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";46,0348;6,6579
+"Centre de vacances du Domaine de Frechet ";0;1;0;0;"Non";"278 chemin de frechet";"74950";"LE REPOSOIR";"AUVERGNE-RHONE-ALPES";"Centre de vacances";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";45,9941;6,5125
+"Centre de vacances Fondation Kruger ";0;1;1;0;"Non";"LD La Coume, Carretera del Coll de Jau";"66500";"Mosset";"OCCITANIE";"Centre de vacances";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";42,6645;2,3035
+"Centre de vacances Les Florimontains";0;1;0;0;"Non";"44-120, Chemin de Martignon";"73200";"PLANCHERINE";"AUVERGNE-RHONE-ALPES";"Centre de vacances";"Non";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"1";"100";45,6746;6,2989
+"Centre de vacances POLE Montagne";0;1;0;0;"Non";"175 rue de la Forge";"74260";"Les GETS";"AUVERGNE-RHONE-ALPES";"Centre de vacances";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";46,155;6,6535
+"Citée scolaire Chantaco Ramiro Arrué ";0;1;0;0;"Non";"4 rue Rodolphe Caillaux";"64500";"St Jean de Luz";"NOUVELLE AQUITAINE";"Ecoles";"Non";"NC";"DIR";"LES DEUX";"NC";"NC";43,3798;-1,6681
+"Collège de Poligny";0;1;0;0;"Non";"3 Place Emile Zola";"39800";"POLIGNY";"BOURGOGNE-FRANCHE-COMTE";"Collèges";"Non";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"1";"430";44,6902;6,036
+"Collège d'Orlinde";0;1;0;0;"Non";"Avenue de la République";"46130";"Bretenoux";"OCCITANIE";"Collèges";"Non";"NC";"DIR";"LES DEUX";"NC";"NC";44,9145;1,845
+"Collège du Vic-Bilh";0;1;0;0;"Oui";"rue des pellans";"64350";"lembeye";"NOUVELLE AQUITAINE";"Collèges";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";43,4499;-0,1018
+"Collège la Croix de l Orme ";0;1;0;0;"Non";"1 rue des sports";"89110";"MONTHOLON";"BOURGOGNE-FRANCHE-COMTE";"Collèges";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";47,8953;3,3185
+"Collège Restif de la Bretonne";0;1;0;0;"Non";"2 AVENUE DES DROITS DE L'HOMME";"89140";"PONT SUR YONNE";"BOURGOGNE-FRANCHE-COMTE";"Collèges";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";48,3706;3,2812
+"Collège Théodore Monod";0;1;0;0;"Non";"5 route des 5 chemins";"74200";"margencel";"AUVERGNE-RHONE-ALPES";"Collèges";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";46,3323;6,4207
+"CA VALENCE AGGLOMERATION";0;1;1;1;"Non";"1 place Jacques Brel";"26000";"VALENCE";"AUVERGNE-RHONE-ALPES";"Cuisine centrale";"Oui";"Entre 3000 et 10 000 repas/jour";"DIR";"CENTRALE";"73";"6300";45,8852;0,3178
+"CC AMBERT LIVRADOIS FOREZ";0;1;0;0;"Non";"15 Avenue du 11 Novembre";"63600";"AMBERT";"AUVERGNE-RHONE-ALPES";"Ecoles";"Oui";"NC";"LES DEUX";"LES DEUX";"NC";"NC";45,5629;3,7462
+"AMIENS";0;1;0;1;"Non";"7000 60";"80000";"AMIENS";"HAUTS-DE-FRANCE";"Cuisine centrale";"Oui";"Entre 3000 et 10 000 repas/jour";"DIR";"CENTRALE";"87";"7400";49,8935;2,2924
+"ANTIBES JUAN LES PINS";0;1;1;1;"Non";"Cours MASSENA";"6600";"ANTIBES";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Entre 3000 et 10 000 repas/jour";"DIR";"SUR PLACE";"34";"5000";43,5734;7,1178
+"AUCAMVILLE";0;1;0;0;"Non";"mairie d'aucamville";"31140";"aucamville";"OCCITANIE";"Cuisine centrale";"Oui";"NC";"DIR";"CENTRALE";"NC";"NC";43,6736;1,4283
+"BARJAC";0;1;1;1;"Oui";"Rue Marcel eyraud";"30430";"Barjac";"OCCITANIE";"Cuisine centrale";"Oui";"NC";"DIR";"CENTRALE";"7";"200";43,0622;1,133
+"BIOT";0;1;1;1;"Non";"8-10 route de Valbonne";"6410";"Biot";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"SUR PLACE";"13";"1157";43,6228;7,0817
+"CASTELNAUDARY";0;1;1;0;"Non";"COURS DE LA REPUBLIQUE";"11491";"CASTELNAUDARY";"OCCITANIE";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"DEL";"CENTRALE";"10";"660";43,3282;1,9629
+"CASTRIES";0;1;1;0;"Oui";"11 avenue de la cooperative";"34160";"castries";"OCCITANIE";"Ecoles";"Oui";"NC";"DIR";"LES DEUX";"NC";"NC";43,687;3,9805
+"CAVALAIRE SUR MER";0;1;1;1;"Non";"PLACE BENJAMIN GAILLARD";"83240";"CAVALAIRE";"PROVENCE-ALPES-COTE-D'AZUR";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"MIX";"CENTRALE";"4";"700";43,1728;6,5221
+"CHATEL EN TRIEVES";0;1;1;1;"Non";"Le Village - Saint Sébastien";"38710";"CHÂTEL-EN-TRIEVES";"AUVERGNE-RHONE-ALPES";"Ecoles";"Oui";"Moins de 500 repas/jour";"DEL";"SUR PLACE";"1";"20";44,8331;5,7029
+"CORRENS";0;1;1;1;"Oui";"5 place du Général de Gaulle";"83570";"CORRENS";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"55";43,4802;6,0679
+"COSSE LE VIVIEN";0;1;1;1;"Non";"Rue de Nantes";"53230";"Cossé Le Vivien";"PAYS-DE-LOIRE";"Ecoles";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"LES DEUX";"24";"1384";47,9596;-0,8512
+"CUCURON";0;1;1;0;"Oui";"0";"84160";"Cucuron";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"115";43,7753;5,4551
+"DIE";0;1;1;1;"Non";"chemin de Fontgiraud";"26150";"Die";"AUVERGNE-RHONE-ALPES";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"3";"228";44,7488;5,3807
+"FLEAC";0;1;1;1;"Oui";"5 rue de la mairie";"16730";"FLEAC";"NOUVELLE AQUITAINE";"Cuisine centrale";"Oui";"Moins de 500 repas/jour";"DIR";"CENTRALE";"3";"416";45,6731;0,0904
+"GOURDON";0;1;1;0;"Non";"Rue Hivernerie";"46300";"GOURDON";"OCCITANIE";"Ecoles";"Oui";"NC";"DIR";"LES DEUX";"NC";"NC";43,7228;6,9668
+"JOYEUSE";0;1;1;0;"Non";"Les Jardins de Jallès";"7260";"JOYEUSE";"AUVERGNE-RHONE-ALPES";"Cuisine centrale";"Oui";"NC";"DIR";"CENTRALE";"NC";"NC";44,4749;4,2419
+"LA TESTE DE BUCH";0;1;1;0;"Non";"Esplanade Edmond Doré";"33260";"LA TESTE DE BUCH";"NOUVELLE AQUITAINE";"Cuisine centrale";"Oui";"NC";"DEL";"CENTRALE";"NC";"NC";44,6125;-1,1958
+"LANGOUET";0;1;1;1;"Non";"Rue des chênes";"35630";"Langouet";"BRETAGNE";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"70";48,253;-1,814
+"LAURIS";0;1;1;1;"Non";"18 Rue Louis Mourre";"84360";"LAURIS";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"240";43,7584;5,315
+"LONS-LE-SAUNIER";0;1;1;1;"Non";"635  rue de levant";"39000";"lons le saunier";"BOURGOGNE-FRANCHE-COMTE";"Cuisine centrale";"Oui";"Entre 3000 et 10 000 repas/jour";"DIR";"CENTRALE";"571";"7360";46,6754;5,558
+"LYON";0;1;1;0;"Non";"Place de la Comédie";"69001";"Lyon";"AUVERGNE-RHONE-ALPES";"Cuisine centrale";"Oui";"NC";"MIX";"CENTRALE";"NC";"NC";45,7685;4,8236
+"LYS LEZ LANNOY ";0;1;0;1;"Non";"avenue paul bert 75";"59390";"Lys lez Lannoy";"HAUTS-DE-FRANCE";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"CENTRALE";"10";"1630";50,6665;3,2099
+"MIRAMAS";0;1;1;1;"Oui";"Maison de l’Enfance et de la Jeunesse, 1 promenade de la Crau";"13140";"Miramas";"PROVENCE-ALPES-COTE-D'AZUR";"Cuisine centrale";"Oui";"NC";"DEL";"CENTRALE";"24";"1300";43,5701;5,0329
+"MONEIN";0;1;1;1;"Oui";"Rue Marca";"64360";"MONEIN";"NOUVELLE AQUITAINE";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"LES DEUX";"14";"626";43,2905;-0,5579
+"MOUANS-SARTOUX";1;1;1;1;"Oui";"Place du Général de Gaulle";"6370";"Mouans-Sartoux";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"NC";"DIR";"SUR PLACE";"3";"1015";43,6236;6,9703
+"NIORT";0;1;1;0;"Non";"Place Martin Bastard";"79027";"NIORT";"NOUVELLE AQUITAINE";"Ecoles";"Oui";"Entre 3000 et 10 000 repas/jour";"DIR";"LES DEUX";"41";"4800";46,3265;-0,4678
+"NOGARO";0;1;1;1;"Oui";"1, place de la mairie";"32110";"NOGARO";"OCCITANIE";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"6";"317";43,7634;-0,0308
+"PARIS";0;1;1;1;"Non";"4 rue Lobau";"75004";"PARIS";"ILE DE FRANCE";"Cuisine centrale";"Oui";"Plus de 10 000 repas/jour";"LES DEUX";"LES DEUX";"1276";"169843";43,8072;1,8315
+"PLOURIN-LES-MORLAIX";0;1;0;0;"Non";"anne-marie coq";"29600";"plourin lesmorlaix";"BRETAGNE";"Lycées";"Oui";"NC";"DIR";"LES DEUX";"NC";"NC";48,597;-3,815
+"POITIERS";0;1;1;1;"Non";"15 place Maréchal Leclerc";"86000";"POITIERS";"PAYS-DE-LOIRE";"Cuisine centrale";"Oui";"Entre 3000 et 10 000 repas/jour";"DIR";"LES DEUX";"61";"6140";46,5822;0,3631
+"PRADES-LE-LEZ";0;1;1;0;"Non";"PLACE DU MARCHÉ";"34730";"PRADES LE LEZ";"OCCITANIE";"Ecoles";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"SUR PLACE";"3";"605";43,7061;3,8651
+"RENNES";0;1;1;1;"Non";"Hotel de ville";"35000";"RENNES";"BRETAGNE";"Cuisine centrale";"Oui";"Plus de 10 000 repas/jour";"DIR";"CENTRALE";"131";"18750";48,1105;-1,6815
+"RIOM";0;1;1;0;"Non";"23 rue de l'hotel de ville";"63200";"RIOM";"AUVERGNE-RHONE-ALPES";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"CENTRALE";"8";"1251";44,2715;5,465
+"STRASBOURG";0;1;1;1;"Non";"1 place de l'etoile";"67000";"STRASBOURG";"GRAND-EST";"Cuisine centrale";"Oui";"Plus de 10 000 repas/jour";"DEL";"LES DEUX";"68";"11670";48,5673;7,7553
+"VENTALON EN CEVENNES";0;1;1;1;"Non";"Les abrits";"48240";"Ventalon en Cévennes";"OCCITANIE";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"26";44,2623;3,8023
+"BLANC-MESNIL et de PANTIN";0;1;0;1;"Non";"RUE GUSTAVE ROUSSY";"93150";"LE BLANC MESNIL";"ILE DE FRANCE";"Cuisine centrale";"Oui";"Entre 3000 et 10 000 repas/jour";"DIR";"CENTRALE";"63";"6500";48,9366;2,4622
+"BUGARACH et RENNES-LES-BAINS";0;1;0;0;"Non";"route des pyrénées";"11190";"couiza";"OCCITANIE";"Cuisine centrale";"Oui";"NC";"MIX";"CENTRALE";"NC";"NC";42,9337;2,272
+"Crèche Bout Chou";0;1;0;0;"Non";"8 route de Jonzac";"17240";"Saint Genis de Saintonge";"NOUVELLE AQUITAINE";"Crèches";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";45,4837;-0,6131
+"Crèche du Grand-Rond";0;1;0;0;"Non";"2 rue Abel Autofage";"31000";"Toulouse";"OCCITANIE";"Crèches";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";43,6089;1,4368
+"Crèche ELS Patufets";0;1;0;1;"Non";"Avenue de St Jean Plats de Corts";"66420";"Maureillas-las-Illas";"OCCITANIE";"Cuisine centrale";"Non";"Moins de 500 repas/jour";"DEL";"CENTRALE";"1";"20";42,4738;2,8092
+"Crèche Le Pays Imaginaire";0;1;0;0;"Non";"3 allée de la Roseraie";"43800";"Rosières";"AUVERGNE-RHONE-ALPES";"Crèches";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";45,1399;3,9529
+"Crèche Les P'tites Abeilles";0;1;1;0;"Oui";"Lann Er Velin";"56670";"RIANTEC";"BRETAGNE";"Crèches";"Non";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"1";"45";47,7123;-3,3008
+"Crèche Multiaccueil de Seyssins";0;1;1;0;"Non";"40 rue de la liberté";"38180";"Seyssins";"AUVERGNE-RHONE-ALPES";"Crèches";"Non";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"1";"47";45,1588;5,6744
+"Crèches Croix Rouge Lyon";0;1;1;0;"Non";"25 rue Victorien Sardou";"69007";"LYON";"AUVERGNE-RHONE-ALPES";"Crèches";"Non";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"1";"46";45,7685;4,8236
+"Département de Loire Atlantique";0;1;1;1;"Oui";"Quay Ceineray";"44000";"Nantes";"PAYS-DE-LOIRE";"Collèges";"Oui";"Plus de 10 000 repas/jour";"DIR";"SUR PLACE";"73";"33200";47,2397;-1,5492
+"Département du Gers";0;1;1;1;"Oui";"81 Route de Pessan";"32000";"Auch";"OCCITANIE";"Collèges";"Oui";"NC";"DIR";"SUR PLACE";"20";"1014595";43,6602;0,5718
+"Ecole Menthe Abricot Cerise ";0;1;1;1;"Non";"Village";"38650";"Roissard";"AUVERGNE-RHONE-ALPES";"Ecoles";"Non";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"42";44,881;5,6339
+"Ecole Steiner Waldorf de SORGUES";0;1;1;1;"Non";"300 chemin de la traille";"84700";"Sorgues";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Non";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"1";"300";44,0196;4,873
+"EHPAD Maison Notre Dame ";0;1;0;0;"Non";"6 bvd Benoîte Danesi";"20200";"Bastia";"CORSE";"Ehpad";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";42,6927;9,4372
+"EPLEFPA de la baie du Mont Saint-Michel";0;1;0;0;"Non";"11 route de Fougères";"50600";"Saint-Hilaire-du-Harcouët";"NORMANDIE";"Lycées";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";48,5726;-1,0251
+"Foyer du Romarin ";0;1;0;0;"Oui";"246 RU E DU ROMARIN";"34830";"CLAPIERS";"OCCITANIE";"Ehpad";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";43,6633;3,8818
+"Lycée Agricole Yvetot";0;1;0;0;"Non";"route de Caudebec";"76190";"AUZEBOSC";"NORMANDIE";"Lycées";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";49,6016;0,7324
+"Lycée Alain";0;1;0;0;"Non";"27 Boulevard Mezeray";"61000";"ALENCON";"NORMANDIE";"Lycées";"Non";"NC";"DIR";"LES DEUX";"NC";"NC";48,4284;0,0931
+"Lycée Arthur Rimbaud";0;1;0;0;"Non";"quartier des Salles";"13800";"Istres";"PROVENCE-ALPES-COTE-D'AZUR";"Lycées";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";43,519;4,9842
+"Lycée de Navarre ";0;1;0;0;"Non";"Avenue du Jaï Alaï, BP 1";"64220";"Saint Jean Pied de Port";"NOUVELLE AQUITAINE";"Lycées";"Non";"NC";"DIR";"LES DEUX";"NC";"NC";43,1454;-1,1639
+"Lycée des Métiers Sauxmarais";0;1;0;0;"Non";"444 rue de la Chasse aux Loups, appt n°4";"50110";"CHERBOURG EN COTENTIN";"NORMANDIE";"Lycées";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";49,6501;-1,5132
+"Lycée Flora Tristan";0;1;0;0;"Non";"7-9 avenue le Meunier de la Raillère";"61600";"LA FERTE MACE";"NORMANDIE";"Lycées";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";48,6222;-0,3094
+"Lycée François Rabelais ";0;1;0;0;"Non";"rue Rabelais";"85200";"Fontenay le Comte";"NOUVELLE AQUITAINE";"Lycées";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";46,4435;-0,8638
+"Lycée Louis Pergaud";0;1;0;0;"Non";"91 boulevard Blum";"25000";"BESANCON";"BOURGOGNE-FRANCHE-COMTE";"Lycées";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";47,26;6,0285
+"Lycée Marie Le Franc";0;1;1;0;"Non";"128 BOULEVARD LEON BLUM - BP 2146";"56321";"LORIENT CEDEX";"BRETAGNE";"Lycées";"Non";"Entre 500 et 3000 repas/jour";"DIR";"SUR PLACE";"1";"600";NA;NA
+"RA du Rectorat de Besancon";0;1;0;0;"Non";"10 rue de la Convention";"25000";"besancon";"BOURGOGNE-FRANCHE-COMTE";"Entreprises & administrations";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";47,26;6,0285
+"RE ADEME Angers";0;1;0;0;"Non";"20, Avenue du Grésillé";"49004";"Angers";"PAYS-DE-LOIRE";"Entreprises & administrations";"Non";"NC";"DEL";"SUR PLACE";"NC";"NC";47,4776;-0,5628
+"RE H2 du CEA de Grenoble";0;1;0;0;"Non";"Restaurant H2 CEA, 17 Avenue des Martyrs";"38000";"GRENOBLE";"AUVERGNE-RHONE-ALPES";"Entreprises & administrations";"Non";"NC";"DEL";"SUR PLACE";"NC";"NC";45,1825;5,7301
+"CR HAUTS DE FRANCE";0;1;1;1;"Non";"Boulevard Hoover";"59000";"Lille";"HAUTS-DE-FRANCE";"Lycées";"Oui";"Plus de 10 000 repas/jour";"DIR";"SUR PLACE";"92";"NC";48,5692;-1,8574
+"RIA de Vesoul";0;1;0;0;"Non";"1 Impasse des Rosiers";"70000";"Vesoul";"BOURGOGNE-FRANCHE-COMTE";"Entreprises & administrations";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";47,633;6,1513
+"SIRP du COUTACH";0;1;1;1;"Non";"48, Place des Arènes";"30260";"QUISSAC";"OCCITANIE";"Cuisine centrale";"Oui";"Moins de 500 repas/jour";"DEL";"CENTRALE";"2";"228";43,9193;3,9902
+"Centre de vacances Anae La Grande Casse";0;1;0;0;"Non";"NC";"NC";"NC";"NC";"Centre de vacances";"Non";"NC";"NC";"NC";"NC";"NC";NA;NA
+"Centre de vacances Neige et Soleil ";0;1;0;0;"Non";"NC";"NC";"NC";"NC";"Centre de vacances";"Non";"NC";"NC";"NC";"NC";"NC";NA;NA
+"Collège René Cassin";0;0;0;0;"Oui";"15 rue des roitelets";"70000";"noidans les vesoul";"BOURGOGNE-FRANCHE-COMTE";"Collèges";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";47,5893;6,089
+"SAINT PIERRE D'ENTREMONT SAVOIE";0;0;1;1;"Non";"place rené cassin";"73670";"saint pierre d'entremont savoie";"AUVERGNE-RHONE-ALPES";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"65";45,3907;5,8603
+"CD NIEVRE";0;1;0;0;"Non";"rue de la Préfecture";"58039";"Nevers";"BOURGOGNE-FRANCHE-COMTE";"Collèges";"Oui";"NC";"DIR";"LES DEUX";"NC";"NC";46,9892;3,1609
+"CD LOIRE ET CHER";0;1;0;0;"Non";"place de la République";"41020";"Blois ce dex";"CENTRE-VAL DE LOIRE";"Collèges";"Oui";"NC";"DIR";"SUR PLACE";"NC";"NC";47,8151;0,7552
+"RE Sogeres Grand Moulin de Plantin";0;1;0;0;"Non";"9 rue du Debarcadere";"93500";"PANTIN";"ILE DE FRANCE";"Entreprises & administrations";"Non";"NC";"DEL";"SUR PLACE";"NC";"NC";48,8996;2,4106
+"CR OCCITANIE";0;1;0;0;"Non";"avenue de la Pompignane";"34000";"Montpellier";"OCCITANIE";"Lycées";"Oui";"NC";"DIR";"LES DEUX";"NC";"NC";43,6183;3,8592
+"Lycée Armand Peugeot ";0;1;0;0;"Non";"rue des carrieres";"25700";"Valentigney";"BOURGOGNE-FRANCHE-COMTE";"Lycées";"Non";"NC";"DIR";"LES DEUX";"NC";"NC";47,4591;6,8292
+"CAGNES SUR MER";0;0;1;1;"Non";"3 place Gabriel Péri";"6800";"Cagnes sur Mer";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Entre 3000 et 10 000 repas/jour";"DIR";"SUR PLACE";"27";"3195";43,67;7,1533
+"PAMIERS";0;0;1;0;"Non";"mairie de Pamiers    Place du Mercadal";"9100";"Pamiers";"OCCITANIE";"Cuisine centrale";"Oui";"NC";"DIR";"CENTRALE";"NC";"NC";43,1198;1,5933
+"SAINT JEAN SUR VEYLE";0;0;1;0;"Non";"184 bis rue François Leguat";"1290";"Saint Jean sur Veyle";"AUVERGNE-RHONE-ALPES";"Ecoles";"Oui";"Moins de 500 repas/jour";"DEL";"SUR PLACE";"2";"75";46,2183;4,8448
+"CC DE LA VEYLE";0;0;1;0;"Non";"le village";"1540";"Saint Julien sur Veyle";"AUVERGNE-RHONE-ALPES";"Ecoles";"Oui";"Moins de 500 repas/jour";"DEL";"SUR PLACE";"4";"220";46,2492;4,9691
+"CD HAUTE GARONNE";0;0;1;1;"Non";"Boulevard de la Marquette";"31000";"TOULOUSE";"OCCITANIE";"Collèges";"Oui";"Plus de 10 000 repas/jour";"DIR";"SUR PLACE";"84";"175000";43,6089;1,4368
+"Collège Jean Rostand";0;0;1;0;"Oui";"43 route d'Ales";"30900";"Nîmes";"OCCITANIE";"Collèges";"Non";"Entre 500 et 3000 repas/jour";"DIR";"SUR PLACE";"1";"550";43,8299;4,2771
+"LE DEVOLUY";0;0;1;1;"Non";"Le Pré - St Etienne en Dévoluy";"5250";"LE DEVOLUY";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"DEL";"SUR PLACE";"3";"89";44,6832;5,8891
+"CD AUDE";0;0;1;0;"Non";"Allee Raymond Courriere";"11160";"Caunes Minervois";"OCCITANIE";"Collèges";"Oui";"Entre 3000 et 10 000 repas/jour";"DIR";"SUR PLACE";"28";"7500";43,3803;2,4749
+"CD DORDOGNE";0;0;1;1;"Oui";"2 rue Paul Louis Courier";"24019";"Périgueux";"NOUVELLE AQUITAINE";"Collèges";"Oui";"Plus de 10 000 repas/jour";"DIR";"SUR PLACE";"35";"11038";45,1593;1,1047
+"CANEJAN";0;0;1;1;"Non";"Allée de la prade d'ombeille";"33610";"Canéjan";"NOUVELLE AQUITAINE";"Cuisine centrale";"Oui";"Moins de 500 repas/jour";"DIR";"CENTRALE";"283";"304";44,7584;-0,6515
+"CD HERAULT";0;0;1;1;"Oui";"19 AVENUE CHARLES DE GAULLE";"34690";"FABREGUES";"OCCITANIE";"Collèges";"Oui";"Plus de 10 000 repas/jour";"DIR";"LES DEUX";"75";"25000";43,5415;3,7777
+"CD HAUTE LOIRE";0;0;1;0;"Non";"1 place Monseigneur de Galard";"43000";"LE PUY EN VELAY";"AUVERGNE-RHONE-ALPES";"Collèges";"Oui";"Entre 3000 et 10 000 repas/jour";"DIR";"SUR PLACE";"64";"4650";45,0517;3,8849
+"CD SARTHE";0;0;1;0;"Non";"avenue du maréchal LYAUTEY";"72000";"LE MANS";"PAYS-DE-LOIRE";"Collèges";"Oui";"Plus de 10 000 repas/jour";"DIR";"LES DEUX";"46";"17300";47,9908;0,2016
+"CD SAVOIE";0;0;1;0;"Oui";"Château des Ducs de Savoie - cs 31802";"73018";"Chambéry cedex";"AUVERGNE-RHONE-ALPES";"Collèges";"Oui";"Plus de 10 000 repas/jour";"DIR";"LES DEUX";"38";"13000";45,5117;6,0705
+"ANGERS";0;0;1;1;"Non";"49 rue des Claveries";"49124";"Saint-Barthélémy-D'Anjou";"PAYS-DE-LOIRE";"Cuisine centrale";"Oui";"Plus de 10 000 repas/jour";"MIX";"CENTRALE";"191";"16249";47,4941;-0,437
+"ARLES";0;0;1;1;"Non";"12 boulevard Emile Zola - Espace Chiavary";"13200";"ARLES";"PROVENCE-ALPES-COTE-D'AZUR";"Cuisine centrale";"Oui";"Entre 3000 et 10 000 repas/jour";"DIR";"CENTRALE";"49";"3200";43,5272;4,6489
+"LES ANDELYS";0;0;1;0;"Non";"impasse du crucifix";"27700";"Les Andelys";"NORMANDIE";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"CENTRALE";"10";"670";49,2545;1,4225
+"Lycée JB Dumas";0;0;1;0;"Non";"1 place de Belgique";"30100";"ALES";"OCCITANIE";"Lycées";"Non";"Entre 500 et 3000 repas/jour";"DIR";"SUR PLACE";"1";"900";44,1241;4,0917
+"Lycée Louis Lapicque";0;0;1;0;"Non";"rue nicolas bellot";"88000";"epinal";"GRAND-EST";"Lycées";"Non";"Entre 500 et 3000 repas/jour";"DIR";"SUR PLACE";"1";"1000";48,1688;6,4766
+"Lycée Victor Louis ";0;0;1;0;"Non";"2 AVENUE DE THOUARS";"33405";"TALENCE CEDEX";"NOUVELLE AQUITAINE";"Lycées";"Non";"Plus de 10 000 repas/jour";"DIR";"SUR PLACE";"137";"86940";45,1654;-0,6769
+"SAINT MICHEL CHEF CHEF";0;0;1;0;"Non";"rue de l'horizon";"44730";"Saint michel chef chef";"PAYS-DE-LOIRE";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"390";47,1747;-2,139
+"LE VERSOUD";0;0;1;0;"Non";"309 rue des Desmes";"38420";"Le Versoud";"AUVERGNE-RHONE-ALPES";"Cuisine centrale";"Oui";"Moins de 500 repas/jour";"DEL";"CENTRALE";"4";"343";45,2025;5,8436
+"MFR de Pont de Veyle";0;0;1;0;"Non";"20 avenue des sports";"1290";"pont de veyle";"AUVERGNE-RHONE-ALPES";"Lycées";"Non";"Moins de 500 repas/jour";"DEL";"SUR PLACE";"1";"200";46,2183;4,8448
+"PNR CAPS ET MARAIS D'OPALE";0;0;1;0;"Non";"0";"0";"0";"HAUTS-DE-FRANCE";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"100";NA;NA
+"PERNES LES FONTAINES";0;0;1;1;"Oui";"Place Aristide Briand";"84210";"Pernes Les Fontaines";"PROVENCE-ALPES-COTE-D'AZUR";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"DEL";"CENTRALE";"11";"990";44,0128;4,9567
+"LE ROURET";0;0;1;1;"Non";"Allée des anciens combattants";"6650";"LE ROURET";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"LES DEUX";"SUR PLACE";"5";"490";43,6591;7,0058
+"Lycée Jean Jaures Occitanie";0;0;1;0;"Non";"17 rue Ruinart de Brimont";"51100";"reims";"GRAND-EST";"Lycées";"Non";"Entre 500 et 3000 repas/jour";"DIR";"SUR PLACE";"1";"800";49,2484;4,0438
+"Lycée de Milhaud";0;0;1;0;"Non";"43 rue du moulin";"30540";"milhaud";"OCCITANIE";"Lycées";"Non";"Entre 500 et 3000 repas/jour";"DIR";"SUR PLACE";"1";"1000";43,7859;4,3095
+"Lycée Professionnel Norman Foster";0;0;1;1;"Oui";"578 avenue de gascogne";"82500";"Beaumont de Lomagne";"OCCITANIE";"Lycées";"Non";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"1";"300";43,8568;0,9665
+"RIA de Lyon";0;0;1;0;"Non";"165 rue Garibaldi";"69003";"Lyon";"AUVERGNE-RHONE-ALPES";"Entreprises & administrations";"Non";"Entre 500 et 3000 repas/jour";"DIR";"SUR PLACE";"1";"1200";45,7685;4,8236
+"CRUZILLES SAINT ANDRÉ";0;0;1;0;"Non";"Route d'Illiat";"1290";"CRUZILLES LES MEPILLAT";"AUVERGNE-RHONE-ALPES";"Ecoles";"Oui";"Moins de 500 repas/jour";"MIX";"SUR PLACE";"2";"100";46,2183;4,8448
+"ANNECY";0;0;1;1;"Non";"17 chemin du Maquis";"74000";"ANNECY";"AUVERGNE-RHONE-ALPES";"Cuisine centrale";"Oui";"Entre 3000 et 10 000 repas/jour";"DIR";"CENTRALE";"55";"5260";45,8985;6,1014
+"SAINT GENIS SUR MENTHON";0;0;1;0;"Non";"0";"0";"0";"AUVERGNE-RHONE-ALPES";"Ecoles";"Oui";"Moins de 500 repas/jour";"DEL";"SUR PLACE";"2";"70";NA;NA
+"SAINT JUST DE CLAIX";0;0;1;1;"Oui";"22 Place de l'Eglise";"38680";"Saint Just de Claix";"AUVERGNE-RHONE-ALPES";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"3";"180";45,0651;5,31
+"SAS Micro-crèche Nursea";0;0;1;1;"Oui";"74 avenue maréchal Foch";"13004";"Marseille";"PROVENCE-ALPES-COTE-D'AZUR";"Crèches";"Non";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"5";"10";43,2079;2,5362
+"POLIGNY";0;0;1;0;"Non";"rue jacques coittier";"39800";"POLIGNY";"BOURGOGNE-FRANCHE-COMTE";"Ecoles";"Oui";"NC";"DIR";"SUR PLACE";"4";"NC";44,6902;6,036
+"SAINT MAXIME";0;0;1;0;"Non";"Avenue Gaston Rebuffat - Parc de loisirs des Bosquette";"83120";"SAINTE MAXIME";"PROVENCE-ALPES-COTE-D'AZUR";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"LES DEUX";"11";"1195";43,3445;6,5513
+"BORDEAUX MERIGNAC";0;0;1;1;"Non";"40 avenue de la gare";"33200";"Bordeaux";"NOUVELLE AQUITAINE";"Cuisine centrale";"Oui";"Plus de 10 000 repas/jour";"DIR";"CENTRALE";"241";"24120";44,8572;-0,5874
+"LES FONDETTES";0;0;1;1;"Non";"Rue Pierre et Marie Curie Zone Artisanale de la Haute Limougère";"37230";"Fondettes";"CENTRE-VAL DE LOIRE";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"CENTRALE";"15";"1872";47,4174;0,611
+"COUERON";0;0;1;0;"Non";"Place Charles de Gaulle";"44220";"Coueron";"PAYS-DE-LOIRE";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"MIX";"CENTRALE";"15";"2050";47,2357;-1,7209
+"GONFREVILLE L'ORCHER";0;0;1;1;"Non";"Place Jean Jaures BP 95";"76700";"Gonfreville l orcher";"NORMANDIE";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"CENTRALE";"14";"1208";49,5215;0,2541
+"CD GARD";0;0;1;1;"Oui";"rue Guillemette";"30044";"Nîmes";"OCCITANIE";"Collèges";"Oui";"NC";"DIR";"SUR PLACE";"26";"10000";44,3732;4,0398
+"RIE Bouchayer Viallet Elior entreprises";0;0;1;0;"Non";"21 Rue Gustave Eiffeil";"38000";"Grenoble";"AUVERGNE-RHONE-ALPES";"Entreprises & administrations";"Non";"Moins de 500 repas/jour";"DEL";"SUR PLACE";"1";"350";45,1825;5,7301
+"CD BAS RHIN";0;0;1;0;"Non";"Place Quartier Blanc";"67000";"Strasbourg";"GRAND-EST";"Collèges";"Oui";"Plus de 10 000 repas/jour";"LES DEUX";"SUR PLACE";"90";"23500";48,5673;7,7553
+"Centre hospitalier de Niort";0;0;1;0;"Non";"40 avenue CHARLES DE GAULLE";"79000";"NIORT";"NOUVELLE AQUITAINE";"Hopital";"Non";"Entre 3000 et 10 000 repas/jour";"DIR";"SUR PLACE";"2";"3300";46,3265;-0,4678
+"GRIEGES";0;0;1;0;"Non";"36 place de l’église";"1290";"GRIEGES";"AUVERGNE-RHONE-ALPES";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"4";"120";46,2673;4,8515
+"CR REGION SUD PACA";0;0;1;0;"Non";"27 Place Jules Guesdes";"13481";"Marseille CEDEX 20";"PROVENCE-ALPES-COTE-D'AZUR";"Lycées";"Oui";"Plus de 10 000 repas/jour";"DIR";"LES DEUX";"164";"64000";NA;NA
+"PONT DE VEYLE";0;0;1;0;"Non";"30 Grande Rue";"1290";"PONT DE VEYLE";"AUVERGNE-RHONE-ALPES";"Cuisine centrale";"Oui";"Moins de 500 repas/jour";"MIX";"CENTRALE";"2";"100";46,2183;4,8448
+"CHANOZ";0;0;1;0;"Non";"36, impasse de la mairie";"1400";"Chanoz Châtenay";"AUVERGNE-RHONE-ALPES";"Ecoles";"Oui";"Moins de 500 repas/jour";"DEL";"SUR PLACE";"2";"160";46,1567;4,926
+"CR AUVERGNE RHONE ALPES";0;0;1;0;"Non";"1 esplanade F Mitterand";"69000";"Lyon";"AUVERGNE-RHONE-ALPES";"Lycées";"Oui";"Plus de 10 000 repas/jour";"LES DEUX";"LES DEUX";"309";"160000";45,7685;4,8236
+"Collège du Renon";0;0;1;0;"Non";"230 RUE DU VERNAY";"1540";"VONNAS";"AUVERGNE-RHONE-ALPES";"Collèges";"Non";"NC";"DEL";"SUR PLACE";"1";"NC";46,2152;4,9959
+"LANGLADE";0;0;1;0;"Non";"12 rue haute";"30980";"LANGLADE";"OCCITANIE";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"3";"230";43,803;4,2546
+"CORMORANCHE-SUR-SAÔNE";0;0;1;0;"Non";"35 ROUTE DU PONT D'ARCIAT";"1290";"CORMORANCHE-SUR-SAÔNE";"AUVERGNE-RHONE-ALPES";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"93";46,2183;4,8448
+"PERREX";0;0;1;0;"Non";"67 grande rue";"1540";"perrex";"AUVERGNE-RHONE-ALPES";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"54";46,2492;4,9691
+"CA DE SAINTES";0;0;1;0;"Non";"4 avenue de Tombouctou";"17100";"SAINTES";"NOUVELLE AQUITAINE";"Cuisine centrale";"Oui";"Entre 3000 et 10 000 repas/jour";"DIR";"LES DEUX";"83";"4660";45,742;-0,6519
+"MARPA La Veyle";0;0;1;0;"Non";"19 allée de la Marpa";"1290";"Grieges";"AUVERGNE-RHONE-ALPES";"Ehpad";"Non";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"1";"40";46,2673;4,8515
+"GAILLARD";0;0;1;0;"Non";"Cours de la République";"74240";"Gaillard";"AUVERGNE-RHONE-ALPES";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"CENTRALE";"8";"738";46,1852;6,2039
+"LAIZ";0;0;1;0;"Non";"15, rue des écoles";"1290";"LAIZ";"AUVERGNE-RHONE-ALPES";"Ecoles";"Oui";"Moins de 500 repas/jour";"DEL";"SUR PLACE";"2";"70";46,2477;4,9012
+"CROTTET";0;0;1;0;"Non";"espace Armand Veille";"1290";"Crottet";"AUVERGNE-RHONE-ALPES";"Cuisine centrale";"Oui";"Moins de 500 repas/jour";"DEL";"CENTRALE";"2";"110";46,2842;4,8706
+"SAINT COME ET MARUEJOLS";0;0;1;0;"Non";"1, place de la Mairie";"30870";"Saint-Côme et maruejols";"OCCITANIE";"Cuisine centrale";"Oui";"Moins de 500 repas/jour";"DEL";"CENTRALE";"2";"50";43,8294;4,2227
+"SAINT VINCENT DE MERCUZE";0;0;1;0;"Non";"49 place de la mairie";"38660";"Saint Vincent de Mercuze";"AUVERGNE-RHONE-ALPES";"Cuisine centrale";"Oui";"Moins de 500 repas/jour";"DEL";"CENTRALE";"3";"106";45,3067;5,9104
+"MONTBONNOT SAINT MARTIN";0;0;0;1;"Non";"allée du parc de miribel";"38330";"Montbonnot Saint Martin";"AUVERGNE-RHONE-ALPES";"Ecoles";"Oui";"Entre 500 et 3000 repas/jour";"LES DEUX";"LES DEUX";"7";"550";45,2457;5,8029
+"VILLARD-BONNOT";0;0;0;1;"Non";"20 boulevard Jules Ferry";"38190";"Villard Bonnot";"AUVERGNE-RHONE-ALPES";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"DEL";"CENTRALE";"7";"640";45,2635;5,9794
+"Crèche PetiBio Toulouse";0;0;0;1;"Oui";"2 Rue du parc";"31530";"LEVIGNAC";"OCCITANIE";"Cuisine centrale";"Non";"Entre 500 et 3000 repas/jour";"DEL";"CENTRALE";"22";"800";43,6635;1,204
+"CAZOULS-LES-BEZIERS";0;0;0;1;"Oui";"Place des Cent Quarante";"34370";"CAZOULS LES BEZIERS";"OCCITANIE";"Cuisine centrale";"Oui";"Moins de 500 repas/jour";"DIR";"CENTRALE";"3";"270";43,3979;3,1029
+"TRAPPES-EN-YVELINES";0;0;0;1;"Non";"7 rue Jean d'Alembert";"78190";"Trappes-en-Yvelines";"ILE DE FRANCE";"Cuisine centrale";"Oui";"Entre 3000 et 10 000 repas/jour";"DIR";"CENTRALE";"52";"3710";48,7725;1,9906
+"COMMUNAUTE DE COMMUNES MAREMNE ADOUR COTE SUD";0;0;0;1;"Non";"ALLEE DES CAMELIAS";"40230";"SAINT VINCENT DE TYROSSE";"NOUVELLE AQUITAINE";"Cuisine centrale";"Oui";"Entre 3000 et 10 000 repas/jour";"DIR";"CENTRALE";"87";"7630";43,636;-1,3658
+"LYCEE JEAN FRANCOIS MILLET";0;0;0;1;"Non";"rue de bougainville";"50130";"cherbourg en cotentin";"NORMANDIE";"Lycées";"Non";"Entre 500 et 3000 repas/jour";"DIR";"SUR PLACE";"1";"1000";49,6387;-1,6439
+"LES TAILLADES";0;0;0;1;"Oui";"vallon de la Combe";"84300";"LES TAILLADES";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"170";43,8433;5,0563
+"SOLIERS";0;0;0;1;"Non";"rue du parc";"14540";"Soliers";"NORMANDIE";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"3";"290";49,1314;-0,2879
+"LYCEE JACOB HOLTZER";0;0;0;1;"Non";"5 RUE MICHELET";"42704";"FIRMINY";"AUVERGNE-RHONE-ALPES";"Lycées";"Non";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"220";45,3768;4,2906
+"PIBRAC";0;0;0;1;"Non";"Esplanade Sainte Germaine";"31820";"PIBRAC";"OCCITANIE";"Ecoles";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"SUR PLACE";"4";"750";43,622;1,2721
+"MOURENX";0;0;0;1;"Non";"Rue Adrienne Le Gal";"64150";"Mourenx";"NOUVELLE AQUITAINE";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"LES DEUX";"6";"220";43,3752;-0,6158
+"SAINT VALLIER DE THIEY";0;0;0;1;"Non";"2 Place de l'Apié";"6460";"Saint Vallier de Theiy";"PROVENCE-ALPES-COTE-D'AZUR";"Cuisine centrale";"Oui";"Moins de 500 repas/jour";"DEL";"CENTRALE";"5";"325";43,7381;6,9077
+"MONTPELLIER";0;0;0;1;"Non";"1, Place Georges FRECHES";"34270";"Montpellier";"OCCITANIE";"Cuisine centrale";"Oui";"Plus de 10 000 repas/jour";"DIR";"LES DEUX";"155";"15700";43,6183;3,8592
+"LA TRONCHE";0;0;0;1;"Non";"74 grande rue";"38700";"La Tronche";"AUVERGNE-RHONE-ALPES";"Cuisine centrale";"Oui";"Moins de 500 repas/jour";"DEL";"CENTRALE";"5";"450";45,2282;5,7566
+"LE GRAND VILLAGE PLAGE";0;0;0;1;"Non";"4 boullevard de la plage";"17370";"le grand village plage";"NOUVELLE AQUITAINE";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"1";"60";45,8374;-1,2206
+"MONTBRISON";0;0;0;1;"Non";"2 rue Michel Portier";"42600";"MONTBRISON";"AUVERGNE-RHONE-ALPES";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"CENTRALE";"13";"770";45,6041;4,0639
+"COLLEGE LA LOMBARDIERE";0;0;0;1;"Non";"rue jacques prevert";"7100";"annonay";"AUVERGNE-RHONE-ALPES";"Collèges";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"1";"400";45,2433;4,6513
+"ROUSSILLON";0;0;0;1;"Non";"2 place de la mairie";"84220";"ROUSSILLON";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"88";45,3749;4,8129
+"MENERBES";0;0;0;1;"Non";"Route des écoles";"84560";"Menerbes";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"80";43,8295;5,2269
+"PEYPIN D'AIGUES";0;0;0;1;"Non";"0";"84240";"PEYPIN D'AIGUES";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"1";"80";43,7331;5,4656
+"CABRIERES D'AIGUES";0;0;0;1;"Non";"Rue du temple";"84240";"CABRIERES D'AIGUES";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"85";43,7331;5,4656
+"OPPEDE";0;0;0;1;"Non";"Mairie d’Oppede";"84580";"OPPEDE";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"3";"120";43,8306;5,169
+"VOLX";0;0;0;1;"Non";"Boulevard Léon Blum";"4130";"VOLX";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"LES DEUX";"2";"250";43,8756;5,8295
+"GRAMBOIS";0;0;0;1;"Non";"101 chemin de Barraban";"84240";"GRAMBOIS";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"115";43,7681;5,6008
+"CAISSE DES ECOLES";0;0;0;1;"Non";"34 AVENUE DU 24 AOUT 1944";"16440";"MOUTHIERS SUR BOEME";"NOUVELLE AQUITAINE";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"3";"240";45,5499;0,0501
+"CADENET";0;0;0;1;"Non";"Boulevard de la Liberté";"84160";"CADENET";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"3";"390";43,7341;5,3873
+"MERINDOL";0;0;0;1;"Non";"Rue des anciens combattants";"84360";"MERINDOL";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"LES DEUX";"4";"210";43,763;5,1944
+"MURS";0;0;0;1;"Non";"0";"84220";"MURS";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"1";"19";46,9286;1,1697
+"GRIMAUD";0;0;0;1;"Non";"Rue de la mairie";"83310";"Grimaud";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Entre 500 et 3000 repas/jour";"DEL";"SUR PLACE";"6";"890";43,274;6,5097
+"CABRIERES D'AVIGNON";0;0;0;1;"Non";"145 Chemin des écoles";"84220";"Cabrières d'Avignon";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"55";43,8615;5,2037
+"GARGAS";0;0;0;1;"Non";"Le chateau";"84400";"GARGAS";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"3";"340";43,7574;1,4575
+"ANSOUIS";0;0;0;1;"Non";"Route de la bonde";"84240";"ANSOUIS";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"85";43,7331;5,4656
+"SAINTE-TULLE";0;0;0;1;"Non";"26 Avenue Gracchus Babeuf";"4220";"Sainte-Tulle";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"LES DEUX";"5";"345";43,7866;5,7592
+"SAIGNON";0;0;0;1;"Non";"7 route de Castellet";"84400";"SAIGNON";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"3";"75";43,8566;5,4432
+"ROBION";0;0;0;1;"Non";"Avenue de la Gare";"84440";"Robion";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"380";43,8497;5,1081
+"VILLEURBANNE";0;0;0;1;"Non";"Place Lazare Goujon";"69100";"Villeurbanne";"AUVERGNE-RHONE-ALPES";"Cuisine centrale";"Oui";"Entre 3000 et 10 000 repas/jour";"DIR";"CENTRALE";"68";"8100";45,7707;4,8902
+"CLERMONT-FERRAND";0;0;0;1;"Non";"Mail d'Allagnat";"63000";"Clermont-Ferrand";"AUVERGNE-RHONE-ALPES";"Cuisine centrale";"Oui";"Entre 3000 et 10 000 repas/jour";"DIR";"CENTRALE";"66";"6200";45,7825;3,1074
+"MEGEVE";0;0;0;1;"Non";"34 ROUTE DE ROCHEBRUNE";"74120";"megeve";"AUVERGNE-RHONE-ALPES";"Ecoles";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"SUR PLACE";"8";"990";45,833;6,6316
+"Pep Alsace - Centre de vacances";0;0;0;1;"Non";"RUE BLAISE PASCAL";"68000";"COLMAR";"GRAND-EST";"Cuisine centrale";"Non";"Entre 500 et 3000 repas/jour";"MIX";"CENTRALE";"28";"1912";48,1203;7,3936
+"Association Agropoint Saveurs du Tarn";0;1;0;0;"Non";"Avenue Hoche";"81000";"ALBI";"OCCITANIE";"Centrale d'achats ou plateforme";"Non";"NC";"LES DEUX";"LES DEUX";"NC";"NC";43,9173;2,1448
+"Acceuil Péri-scolaire - La Courte Échelle";0;1;0;0;"Non";"1, Place des Écoles";"68370";"ORBEY";"GRAND-EST";"Centre de vacances";"Non";"NC";"DEL";"SUR PLACE";"NC";"NC";48,1082;7,1488
+"Centre de vacances Clos Florine";0;1;0;0;"Non";"3252 route moussière d'en haut";"74430";"Saint Jean d'Aulps";"AUVERGNE-RHONE-ALPES";"Centre de vacances";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";46,2872;6,615
+"Centre de vacances La Grande Ourse";0;1;0;0;"Non";"60 route de la vallettaz d'en haut";"74430";"st jean d'aulps";"AUVERGNE-RHONE-ALPES";"Centre de vacances";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";46,2872;6,615
+"CNFPT";0;1;0;0;"Oui";"rue de reuilly";"75";"Paris";"ILE DE FRANCE";"Entreprises & administrations";"Non";"NC";"LES DEUX";"LES DEUX";"NC";"NC";43,8072;1,8315
+"Collège Albert Camus";0;1;0;0;"Non";"1 rue sous la leye";"57160";"MOULINS-LES-METZ";"GRAND-EST";"Collèges";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";49,0971;6,1106
+"Collège de l'Eyrieux";0;1;0;0;"Non";"390 route de l'ancienne gare";"7190";"Saint Sauveur de Montagut";"AUVERGNE-RHONE-ALPES";"Collèges";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";44,8184;4,4193
+"Collège La Chènevière des Arbres";0;1;0;0;"Non";"10 rue du Collège";"89160";"ANCY LE FRANC";"BOURGOGNE-FRANCHE-COMTE";"Collèges";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";47,7785;4,1693
+"Collège Maurice Clavel";0;1;0;0;"Non";"rue des écoles";"89200";"avallon";"BOURGOGNE-FRANCHE-COMTE";"Collèges";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";47,48;3,9184
+"CC ROUSSILLON CONFLENT";0;1;0;0;"Non";"1 Rue Michel Blanc BP 05";"66130";"ILLE SUR TET";"OCCITANIE";"Cuisine centrale";"Oui";"NC";"DIR";"CENTRALE";"NC";"NC";42,5912;2,5961
+"SAINTE EULALIE EN ROYANS";0;1;0;0;"Non";"20 Route de l'Eglise";"26190";"commune de sainte eulalie en royans";"AUVERGNE-RHONE-ALPES";"Cuisine centrale";"Oui";"NC";"DEL";"CENTRALE";"NC";"NC";44,9285;5,2902
+"CD LANDES";0;1;0;0;"Non";"rue Victor Hugo";"40000";"Mont de Marsan";"NOUVELLE AQUITAINE";"Collèges";"Oui";"NC";"DIR";"SUR PLACE";"NC";"NC";43,8925;-0,4844
+"Centre de vacances Pierrot et Colombine";0;1;0;0;"Non";"7 RUE DUSSAUSSOY";"69006";"LYON";"AUVERGNE-RHONE-ALPES";"Centre de vacances";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";45,7685;4,8236
+"Centre de vacances Oursons et Compagnie";0;1;0;0;"Non";"230 Rue de Créqui";"69003";"LYON";"AUVERGNE-RHONE-ALPES";"Centre de vacances";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";45,7685;4,8236
+"Centre de loisirs Ethic Etapes CIS Valcenis";0;1;0;0;"Non";"chemin des Crueux";"73480";"Lanslebourg";"AUVERGNE-RHONE-ALPES";"Centre de vacances";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";45,2867;7,0469
+"Foyers de l'enfance Rhône Alpes";0;1;0;0;"Non";"115 AVENUE LACASSAGNE";"69003";"LYON";"AUVERGNE-RHONE-ALPES";"Foyers de l'enfance";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";45,7685;4,8236
+"AVIGNON";0;1;0;0;"Non";"Avenue Pierre SEMARD (M.I.N d' Avignon, Bâtiment M2)";"84000";"AVIGNON";"PROVENCE-ALPES-COTE-D'AZUR";"Cuisine centrale";"Oui";"NC";"DIR";"CENTRALE";"NC";"NC";43,946;4,8465
+"Lycée Pierre Corneille";0;1;0;0;"Non";"4 RUE DU MAULEVRIER";"76000";"ROUEN";"NORMANDIE";"Lycées";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";49,4432;1,0984
+"Lycée Lucie Aubrac";0;1;0;0;"Non";"224 avenue ernest lafont";"84500";"bollene";"PROVENCE-ALPES-COTE-D'AZUR";"Lycées";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";44,2896;4,7442
+"Lycée Professionnel Toussaint Louverture";0;1;0;0;"Non";"81 rue de besançon";"25300";"PONTARLIER";"BOURGOGNE-FRANCHE-COMTE";"Lycées";"Non";"NC";"DIR";"SUR PLACE";"NC";"NC";46,9147;6,3895
+"CHAMALIERES";0;1;0;0;"Non";"1 place claude Wolff";"63400";"CHAMALIERES";"AUVERGNE-RHONE-ALPES";"Cuisine centrale";"Oui";"NC";"DEL";"CENTRALE";"NC";"NC";45,7746;3,0577
+"MOISSY-CRAMAYEL";0;1;0;0;"Non";"PLACE DU SOUVENIR";"77550";"MOISSY-CRAMAYEL";"ILE DE FRANCE";"Cuisine centrale";"Oui";"NC";"DIR";"CENTRALE";"NC";"NC";48,6239;2,5909
+"SAINT-ETIENNE-DU-VALDONNEZ";0;1;0;0;"Non";"Place de la mairie";"48000";"Saint Etienne du Valdonnez";"OCCITANIE";"Ecoles";"Oui";"NC";"MIX";"SUR PLACE";"NC";"NC";44,5425;3,5544
+"PAYS HAUT LANGUEDOC ET VIGNOBLES";0;1;0;0;"Non";"1 Rue de la voie ferrée";"34360";"Saint Chinian";"OCCITANIE";"Ecoles";"Oui";"NC";"NC";"NC";"NC";"NC";43,3963;2,8791
+"QUETIGNY";0;1;0;0;"Non";"Mairie";"21800";"QUETIGNY";"BOURGOGNE-FRANCHE-COMTE";"Cuisine centrale";"Oui";"NC";"DEL";"CENTRALE";"NC";"NC";47,3186;5,1151
+"Collège de Coutach";0;0;0;1;"Non";"296 AVENUE DU MARECHAL JUIN";"30260";"QUISSAC";"OCCITANIE";"Collèges";"Non";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"1";"400";43,9193;3,9902
+"BREST";0;0;0;1;"Non";"2, rue Frézier";"29200";"BREST";"BRETAGNE";"Cuisine centrale";"Oui";"Entre 3000 et 10 000 repas/jour";"DEL";"CENTRALE";"69";"5510";48,4059;-4,5058
+"CAUNES MINERVOIS";0;0;0;1;"Non";"Place de la mairie";"11160";"CAUNES MINERVOIS";"OCCITANIE";"Ecoles";"Oui";"Moins de 500 repas/jour";"LES DEUX";"LES DEUX";"3";"180";43,3803;2,4749
+"NOUGAROULET";0;0;0;1;"Oui";"0";"32270";"nougaroulet";"OCCITANIE";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"51";43,6884;0,719
+"Centre de loisirs Ethic Etapes Le Cart";0;0;0;1;"Non";"31 rue emilien Dumas";"30250";"Sommières";"OCCITANIE";"Centre de vacances";"Non";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"1";"150";43,8042;4,0349
+"Lycée Gilbert Martin";0;0;0;1;"Non";"3 RUE PIERRE CORNEILLE";"27110";"LE NEUBOURG";"NORMANDIE";"Lycées";"Non";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"1";"180";49,1156;1,0607
+"Crèche Pom Flore et Alexandre";0;0;0;1;"Oui";"29 rue des Arts et métiers";"38000";"Grenoble";"AUVERGNE-RHONE-ALPES";"Crèches";"Non";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"1";"50";45,1825;5,7301
+"REILLANNE";0;0;0;1;"Non";"0";"4110";"Reillanne";"PROVENCE-ALPES-COTE-D'AZUR";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"3";"142";43,8823;5,6562
+"Crèches Croc La vie";0;0;0;1;"Non";"6  rue jacques messager";"59175";"Templemars";"HAUTS-DE-FRANCE";"Cuisine centrale";"Non";"Entre 500 et 3000 repas/jour";"DEL";"CENTRALE";"120";"2500";50,5705;3,0608
+"SAINT-GERMAIN-LAPRADE";0;0;0;1;"Non";"0";"43700";"Saint Germain Laprade";"AUVERGNE-RHONE-ALPES";"Cuisine centrale";"Oui";"Moins de 500 repas/jour";"DIR";"CENTRALE";"14";"304";44,9935;3,9542
+"BRUZ";0;0;0;1;"Non";"Place du Dr Joly";"35170";"Bruz";"BRETAGNE";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"CENTRALE";"5";"1450";48,0242;-1,7465
+"LOUVIERS - Régie Les 2 Airelles";0;0;0;1;"Non";"Ecoparc 1 8 allÈe des marronniers";"27400";"LOUVIERS";"NORMANDIE";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"CENTRALE";"18";"1360";49,2261;1,1471
+"LANGOGNE";0;0;0;1;"Non";"BD DES CAPUCINS";"48300 LANGOGNE";"COMMUNE DE LANGOGNE";"AUVERGNE-RHONE-ALPES";"Ecoles";"Oui";"Moins de 500 repas/jour";"DIR";"SUR PLACE";"2";"110";NA;NA
+"FONTENAY-SOUS-BOIS";0;0;0;1;"Non";"44 bis rue La Fontaine";"94120";"Fontenay sous Bois";"ILE DE FRANCE";"Cuisine centrale";"Oui";"Entre 3000 et 10 000 repas/jour";"DIR";"LES DEUX";"37";"5270";48,8513;2,4739
+"CA DE BAYEUX";0;0;0;1;"Non";"4 place Gauquelin Despalières";"14400";"BAYEUX";"NORMANDIE";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"LES DEUX";"1";"1320";49,2765;-0,7018
+"SAINT-LOUBES";0;0;0;1;"Non";"39 rue du Stade";"33450";"SAINT-LOUBES";"NOUVELLE AQUITAINE";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"CENTRALE";"10";"1410";44,9182;-0,4322
+"Adsea 05";0;0;0;1;"Non";"72 route des eyssagnieres";"5000";"Gap";"PROVENCE-ALPES-COTE-D'AZUR";"Cuisine centrale";"Non";"Moins de 500 repas/jour";"DIR";"CENTRALE";"14";"390";44,572;6,0628
+"CC VAL DE DRÔME";0;0;0;1;"Non";"96 ronde des alisisers - Ecosite";"26400";"Eurre";"AUVERGNE-RHONE-ALPES";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"LES DEUX";"LES DEUX";"46";"1915";44,765;4,9763
+"PERTUIS";0;0;0;1;"Non";"0";"84120";"Pertuis";"PROVENCE-ALPES-COTE-D'AZUR";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"CENTRALE";"9";"1380";43,6985;5,5193
+"LÉVIGNAC";0;0;0;1;"Non";"1 place de la mairie";"31530";"Lévignac";"OCCITANIE";"Cuisine centrale";"Oui";"Moins de 500 repas/jour";"DEL";"CENTRALE";"2";"210";43,6781;1,0968
+"CD FINISTÈRE";0;0;0;1;"Non";"32, Boulevard Dupleix";"29000";"QUIMPER";"BRETAGNE";"Cuisine centrale";"Oui";"Plus de 10 000 repas/jour";"LES DEUX";"SUR PLACE";"53";"17887";47,9914;-4,0916
+"PARAY-VIEILLE-POSTE";0;0;0;1;"Non";"Place henri Barbusse";"91550";"paray-vieille-poste";"ILE DE FRANCE";"Cuisine centrale";"Oui";"Entre 500 et 3000 repas/jour";"MIX";"CENTRALE";"12";"1144";48,7234;2,3569
+"CC DU TRIÈVES";0;0;0;1;"Non";"0";"0";"Communauté de communes du Trièves";"AUVERGNE-RHONE-ALPES";"Ecoles";"Oui";"Moins de 500 repas/jour";"DEL";"CENTRALE";"6";"270";NA;NA
+"MARCHIN";0;0;0;1;"Non";"rue du Parc, 5";"B 4570";"Vyle-et-Tharoul";"Belgique";"Cuisine centrale";"Oui";"Moins de 500 repas/jour";"DIR";"CENTRALE";"10";"150";NA;NA
+"PLABENNEC";0;0;0;1;"Non";"avenue de Kerveguen";"29860 Plabennec";"Mairie de Plabennec";"BRETAGNE";"Ecoles";"Oui";"Entre 500 et 3000 repas/jour";"DIR";"SUR PLACE";"3";"505";NA;NA
