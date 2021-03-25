@@ -10,8 +10,8 @@ library(openxlsx)
 
 # Chargement des données
 department <- readOGR(dsn="./Map",layer = "departements-20170102")
-liste_participants <- read.xlsx("./Out/liste_participants_coordinates.xlsx")
-bdd20_summary <- read.csv("./Out/bdd20_summary.csv")
+liste_participants <- read.xlsx("R_Data/Out/liste_participants_coordinates.xlsx")
+bdd20_summary <- read.csv("R_Data/Out/bdd20_summary.csv")
 
 getSize <- function(repas){
   a=0
@@ -28,7 +28,7 @@ getSize <- function(repas){
     a= 8
   }
   return(a)
-  
+
 }
 
 
@@ -69,52 +69,52 @@ bdd20_vege$mean = bdd20_vege$mean_vege_anonyme
 
 # Define UI 
 ui <- fluidPage(
-  
+
   # App title ----
   titlePanel("Répartition géographique"),
-  
+
   # Sidebar layout with input and output definitions ----
   sidebarLayout(
-    
+
     # Sidebar panel for inputs ----
     sidebarPanel(
-      radioButtons("projection", "Affichage : ", 
+      radioButtons("projection", "Affichage : ",
                    choices= c("Part du bio (en %)" = "bio" ,
                               "Part de produits Locaux (en%)" = "loc",
                               "Prix moyen par repas" = "prix" ,
                               "% Au moins un menu végétarien hebdomadaire" = "vege")),
-  
-  
-),
-leafletOutput(outputId = "mymap")
-))
+
+
+    ),
+    leafletOutput(outputId = "mymap")
+  ))
 
 
 server <- function(input, output, session) {
-  
-  
+
+
   selectedData <- reactive({
     if(input$projection=="bio") return(bdd20_bio)
     if(input$projection=="loc") return(bdd20_loc)
     if(input$projection=="prix")return(bdd20_price)
     if(input$projection=="vege") return(bdd20_vege)
-    
+
   })
-  
+
   # Definition legende
   legende <- c("Déléguée", "Directe", "Les deux", "Mixte", "NC")
-  
-   # Definition palette
-  pal_gestion <- colorFactor(as.character(wes_palette("Darjeeling1")[c(1,2,3,4,5)]), 
+
+  # Definition palette
+  pal_gestion <- colorFactor(as.character(wes_palette("Darjeeling1")[c(1,2,3,4,5)]),
                              liste_participants$`MODE.GESTION.RESTAURATION.COLLECTIVE.(Gestion.directe,.concédée,.mixte.ou.les.deux)`)
-  
+
   pal <- reactive({
     if(input$projection=="bio") return (colorNumeric(palette = brewer.pal(n = 9, "Greens")[2:9],domain = bdd20_bio$mean))
     if(input$projection=="loc") return (colorNumeric(palette = brewer.pal(n = 9, "Blues")[2:9],domain = bdd20_loc$mean))
     if(input$projection=="prix") return (colorNumeric(palette = brewer.pal(n = 9, "Reds")[2:9],domain = bdd20_price$mean))
     if(input$projection=="vege") return (colorNumeric(palette = brewer.pal(n = 9, "Purples")[2:9],domain = bdd20_vege$mean))
   })
-  
+
   # Definition de la carte
   output$mymap <- renderLeaflet({
     pal <- pal()
@@ -144,6 +144,3 @@ server <- function(input, output, session) {
 }
 
 shinyApp(ui, server)
-
-    
-  
