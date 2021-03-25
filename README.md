@@ -1,4 +1,8 @@
 # MarathonduWeb GROUPE 7
+
+Attention : Pensez à dezip le dossier Map !!!!!!!!!!!!!!!
+
+
 Projet de création d'un site web orienté data visualisation en Rshiny
 
 Un Plus Bio est une association qui, depuis vingt ans, interroge l’évolution des approches et des métiers de la restauration collective, avec pour finalité de changer notre alimentation pour aller vers plus de bio et de local.
