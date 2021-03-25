@@ -213,7 +213,6 @@ server <- function(input, output) {
         #plot
         ggplot(bdd_2020_menu , aes(x = cmp, y = freq_vege, fill = freq_vege)) +
             geom_density_ridges() +
-            labs(title = 'Prix des repas en fonction du régime alimentaire')+
                 
             theme_ridges() + 
             theme(legend.position = "bottom")+
@@ -239,8 +238,7 @@ server <- function(input, output) {
         #plot
             ggplot( bdd_2020_loc, aes(x = loc  ,y=bio, size=cmp, fill=bio)) +
                 geom_point(alpha=0.5, shape=21, color="black") +
-                ggtitle("Proportion de repas bio en fonction de la proportion de produits locaux et du coût d'un repas") +
-                scale_size(range = c(.1, 7), name="Coût d'un repas") +
+                scale_size(range = c(5,15), name="Coût d'un repas") +
                 scale_fill_viridis(discrete=FALSE, guide=FALSE, option="A") +
                 theme(plot.title = element_text(hjust = 0.7, size = 8))+
                 theme_ipsum()+
@@ -259,7 +257,7 @@ server <- function(input, output) {
                          n23 = venn_vege_bio,
                          n13 = venn_bio_cmp,
                          n123 = les_trois,
-                         fill = c("yellow", "blue", "red"),
+                         fill = c("#582c83", "#007644", "#DC4405"),
                          category = c("Prix < 2.5€", "Au moins 1 repas végé hebdo", "bio +20%"))
         
     })
@@ -313,6 +311,8 @@ server <- function(input, output) {
             addLegend("topright", pal = pal, values = selectedData()$mean,
                       title = "Projection départements")
     })
+    
+    outputOptions(output, "mymap", suspendWhenHidden = FALSE)
     
 }
 

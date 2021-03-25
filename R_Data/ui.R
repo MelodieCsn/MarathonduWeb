@@ -11,6 +11,54 @@ dashboardPage(
         )
     ),
     dashboardBody(
+        tags$head(tags$style(HTML('
+                                /* logo */
+                                .skin-blue .main-header .logo {
+                                background-color: #e45f2e;
+                                }
+
+                                /* logo when hovered */
+                                .skin-blue .main-header .logo:hover {
+                                background-color: #e45f2ed;
+                                }
+
+                                /* navbar (rest of the header) */
+                                .skin-blue .main-header .navbar {
+                                background-color: #e45f2e;
+                                }
+
+                                /* main sidebar */
+                                .skin-blue .main-sidebar {
+                                background-color: #e45f2e;
+                                }
+
+                                /* active selected tab in the sidebarmenu */
+                                .skin-blue .main-sidebar .sidebar .sidebar-menu .active a{
+                                background-color: #e45f2e;
+                                }
+
+                                /* other links in the sidebarmenu */
+                                .skin-blue .main-sidebar .sidebar .sidebar-menu a{
+                                background-color: #e45f2e;
+                                color: #000000;
+                                }
+
+                                /* other links in the sidebarmenu when hovered */
+                                .skin-blue .main-sidebar .sidebar .sidebar-menu a:hover{
+                                background-color: #e45f2e;
+                                }
+                                /* toggle button when hovered  */
+                                .skin-blue .main-header .navbar .sidebar-toggle:hover{
+                                background-color: #114c2d;
+                                }
+
+                                /* body */
+                                .content-wrapper, .right-side {
+                                background-color: #FFFFF7;
+                                }
+
+                                '))),
+        tags$style(type = "text/css", "#mymap {height: calc(100vh - 80px) !important;}"),
         tabItems(
             tabItem(tabName = "Stat",
                     # Input: selectInput ----
@@ -28,8 +76,12 @@ dashboardPage(
                     ),
                     
                     fluidRow(
-                        box(plotOutput(outputId = "PrixRegAlim"), width = "70%"),
-                        box(plotOutput(outputId = "PrixBioLoc"), width = "30%")
+                        box(title = "BubblePlot"
+                            , status = "primary", solidHeader = F
+                            , collapsible = T, width = 5
+                            , column(9, align="center", plotOutput(outputId = "PrixBioLoc"))), 
+                        box(plotOutput(outputId = "PrixRegAlim")),
+                        #box(plotOutput(outputId = "PrixBioLoc"))
                         ),
                         
                     
@@ -38,8 +90,9 @@ dashboardPage(
                                box(plotlyOutput(outputId = "Stacked"))
                     ),
                     fluidRow(
-                        
-                        column(4,plotOutput(outputId = "venn"))
+                        column(4),
+                        column(4,plotOutput(outputId = "venn")),
+                        column(4)
                     )
                     
                     
