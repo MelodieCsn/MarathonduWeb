@@ -314,6 +314,16 @@ server <- function(input, output) {
                       title = "Projection départements")
     })
     
+
+    outputOptions(output, "plotbioprix", priority = 1)
+    outputOptions(output, "plotbioloc", priority = 1)
+    outputOptions(output, "Stacked", priority = 1)
+    outputOptions(output, "linePriceBio", priority = 1)
+    outputOptions(output, "PrixRegAlim", priority = 1)
+    outputOptions(output, "PrixBioLoc", priority = 1)
+    outputOptions(output, "venn", priority = 1)
+    outputOptions(output, "mymap", priority = 1)
+    outputOptions(output, "mymap", suspendWhenHidden = FALSE, priority = 10)
 }
 
 
