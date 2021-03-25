@@ -110,34 +110,34 @@ server <- function(input, output) {
         dfvegehebdo = count(vegehebdo, 'typeviande')
         dfvegehebdo$freqvege = "Hebdomadaire"
 
-        vegequot = df_subset()[df_subset()$freq_veg == 3,]
-        vegequot = vegequot[complete.cases(vegequot$freq_vege), ]
-        vegequot = vegequot[complete.cases(vegequot$via_bio), ]
-        vegequot$typeviande = NA
+        vegequot <- df_subset()[df_subset()$freq_veg == 3,]
+        vegequot <- vegequot[complete.cases(vegequot$freq_vege), ]
+        vegequot <- vegequot[complete.cases(vegequot$via_bio), ]
+        vegequot$typeviande <- NA
         vegequot$typeviande[vegequot$via_bio == 1] <- "viande bio"
         vegequot$typeviande[vegequot$via_bio == 0] <- "viande non bio"
 
-        vegequot$typeviande = as.factor(vegequot$typeviande)
-        dfvegequot = count(vegequot, 'typeviande')
-        dfvegequot$freqvege = "Quotidien"
+        vegequot$typeviande <- as.factor(vegequot$typeviande)
+        dfvegequot <- count(vegequot, 'typeviande')
+        dfvegequot$freqvege <- "Quotidien"
 
-        novege = df_subset()[df_subset()$menuvege == 2,]
-        novege = novege[complete.cases(novege$menuvege), ]
-        novege = novege[complete.cases(novege$via_bio), ]
-        novege$typeviande = NA
+        novege <- df_subset()[df_subset()$menuvege == 2,]
+        novege <- novege[complete.cases(novege$menuvege), ]
+        novege <- novege[complete.cases(novege$via_bio), ]
+        novege$typeviande <- NA
         novege$typeviande[novege$via_bio == 1] <- "viande bio"
         novege$typeviande[novege$via_bio == 0] <- "viande non bio"
 
-        novege$typeviande = as.factor(novege$typeviande)
-        dfnovege = count(novege, 'typeviande')
-        dfnovege$freqvege = "Non végétarien"
+        novege$typeviande <- as.factor(novege$typeviande)
+        dfnovege <- count(novege, 'typeviande')
+        dfnovege$freqvege <- "Non végétarien"
 
-        df = dplyr::bind_rows(dfnovege, dfvegehebdo)
-        dfstackedbar = dplyr::bind_rows(df, dfvegequot)
+        df <- dplyr::bind_rows(dfnovege, dfvegehebdo)
+        dfstackedbar <- dplyr::bind_rows(df, dfvegequot)
         ggplotly(
           ggplot(dfstackedbar, aes(fill = typeviande,y=freq, x=freqvege)) +
             geom_bar(position='stack', stat='identity')+
-            scale_fill_manual('Position', values=c("#DC4405",'#582c83'))+
+            scale_fill_manual('Qualité de la Viande', values=c("#DC4405",'#582c83'))+
             xlab("Type de menu")+
             ylab("Effectif")+
             theme_bw()

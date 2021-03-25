@@ -56,39 +56,63 @@ dashboardPage(
     tabItems(
       tabItem(tabName = "Stat",
               # Input: selectInput ----
+              column(3),
+              column(6,
+                     box(status = "info", width = "30%",
+                         selectInput("nbrepas", "Nombres de repas : ",
+                                     choices= c("- 500", "500-3000", "3000-10000", "+ 10000", "Total")
+                         ),
 
-              selectInput("nbrepas", "Nombres de repas : ",
-                          choices= c("- 500", "500-3000", "3000-10000", "+ 10000", "Total")
+                         radioButtons("loliouhisto", "Type de graphe désiré ",c("Histogramme" = "histo","graphe lolipop" = "loli"),
+                                      selected = c("graphe lolipop" = "loli"))
+                     )
               ),
-              radioButtons("loliouhisto", "Type de graphe désiré ",c("Histogramme" = "histo","graphe lolipop" = "loli"),
-                           selected = c("graphe lolipop" = "loli")),
-              fluidRow(
-                box(
-                  plotlyOutput(outputId = "plotbioprix")),
-                box(
-                  plotlyOutput(outputId = "plotbioloc"))
-              ),
-
-              fluidRow(
-                box(plotOutput(outputId = "PrixRegAlim"), width = "70%", collapsible = TRUE),
-                box(title = "BubblePlot"
-                  , status = "primary", solidHeader = F
-                  , collapsible = TRUE, width = "30%"
-                  , plotOutput(outputId = "PrixBioLoc"))
-              ),
-
+              column(3),
 
               fluidRow(
-                box(plotOutput(outputId = "linePriceBio")),
-                box(plotlyOutput(outputId = "Stacked"))
+                box(title = "Pourcentage de produit bio
+                            en fonction du prix moyen d'un repas ",
+                    status = "warning", solidHeader = TRUE,
+                    collapsible = TRUE,
+                    plotlyOutput(outputId = "plotbioprix")),
+
+                box(title = "Pourcentage de produit bio
+                            en fonction du prix moyen d'un repas ",
+                    status = "success", solidHeader = TRUE,
+                    collapsible = TRUE,
+                    plotlyOutput(outputId = "plotbioloc"))
               ),
+
+              fluidRow(
+                box(title = "Prix des repas en fonction du régime alimentaire ",
+                    plotOutput(outputId = "PrixRegAlim"), width = "70%",
+                    background = "purple", solidHeader = TRUE, collapsible = TRUE),
+                box(title = "Proportion de repas bio en fonction de la proportion de produits locaux et du coût d'un repas ",
+                    background = "yellow", solidHeader = TRUE,
+                    collapsible = TRUE, width = "30%",
+                    plotOutput(outputId = "PrixBioLoc"))
+              ),
+
+
+              fluidRow(
+                box(plotOutput(title = "Évolution du prix moyen d'un repas et la part
+                                   en pourcentage de produits bio, en fonction des années",
+                               status = "primary", solidHeader = TRUE,
+                               outputId = "linePriceBio")),
+                box(plotlyOutput(outputId = "Stacked"),
+                    title = "Qualité de la viande en fonction du régime alimentaire",
+                    status = "success", solidHeader = TRUE,
+                )
+              ),
+
               fluidRow(
                 column(4),
-                column(4,plotOutput(outputId = "venn")),
+                column(4,box(title = "Diagramme de Venn",
+                             background = "maroon", solidHeader = TRUE,
+                             plotOutput(outputId = "venn"))
+                ),
                 column(4)
               )
-
-
       ),
 
       tabItem(tabName = "Carte",
@@ -105,8 +129,6 @@ dashboardPage(
       tabItem(tabName="test",
               p("COUCOU")
       )
-
     )
-
   )
 )
