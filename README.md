@@ -1,7 +1,7 @@
 # MarathonduWeb GROUPE 7
 
-<span style="color:blue">some *blue* text</span>
-Attention : Penser à dezip le dossier compressé Map.zip dans le dossier Map !!!!!!!!!!!!!!!
+text here <span style="text-decoration: underline">underlined text</span> other text
+__/!\/!\/!\Attention : Penser à dezip le dossier compressé Map.zip dans le dossier Map !!!!!!!!!!!!!!!/!\/!\/!\__
 
 
 Projet de création d'un site web orienté data visualisation en Rshiny
