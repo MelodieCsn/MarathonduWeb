@@ -137,9 +137,9 @@ server <- function(input, output) {
         ggplotly(
           ggplot(dfstackedbar, aes(fill = typeviande,y=freq, x=freqvege)) +
             geom_bar(position='stack', stat='identity')+
-            scale_fill_manual('Qualité de la Viande', values=c("#DC4405",'#582c83'))+
+            scale_fill_manual('Qualité de Viande', values=c("#DC4405",'#582c83'))+
             xlab("Type de menu")+
-            ylab("Effectif")+
+            ylab("Nombre de cantines")+
             theme_bw()
         )
 
@@ -174,8 +174,8 @@ server <- function(input, output) {
             sec.axis = sec_axis(~./30, name="Prix du repas")) +
           theme_ipsum() +
           theme(
-            axis.title.y = element_text(angle = 0, color = "#582c83", size=20),
-            axis.title.y.right = element_text(angle = 0,color = "#DC4405", size=20),
+            axis.title.y = element_text(color = "#582c83", size=20),
+            axis.title.y.right = element_text(color = "#DC4405", size=20),
             axis.text.x = element_text(size=18,color="black"),
             axis.title.x = element_text(size=18,color="black"))
 
@@ -188,7 +188,7 @@ server <- function(input, output) {
 
     #prix régime alimentaire
     output$PrixRegAlim <- renderPlot({
-        bdd_2020_menu <- read.xlsx("bdd_observatoire_2020.xlsx")%>%
+        bdd_2020_menu <- read.xlsx("R_data/bdd_observatoire_2020.xlsx")%>%
           select(c("freq_vege","cmp"))
 
         bdd_2020_menu$freq_vege[is.na(bdd_2020_menu$freq_vege)] <- 0
@@ -227,7 +227,7 @@ server <- function(input, output) {
 
     output$PrixBioLoc <- renderPlot({
 
-        bdd_2020_loc<- read.xlsx("bdd_observatoire_2020.xlsx")%>%
+        bdd_2020_loc<- read.xlsx("R_data/bdd_observatoire_2020.xlsx")%>%
           select(c("loc","cmp","bio"))
 
         # on eneleve les NA de la colonne cmp
@@ -314,14 +314,14 @@ server <- function(input, output) {
     })
 
 
-    outputOptions(output, "plotbioprix", priority = 1)
-    outputOptions(output, "plotbioloc", priority = 1)
-    outputOptions(output, "Stacked", priority = 1)
-    outputOptions(output, "linePriceBio", priority = 1)
-    outputOptions(output, "PrixRegAlim", priority = 1)
-    outputOptions(output, "PrixBioLoc", priority = 1)
-    outputOptions(output, "venn", priority = 1)
-    outputOptions(output, "mymap", suspendWhenHidden = FALSE, priority = 10)
+    outputOptions(output, "plotbioprix", priority = 10)
+    outputOptions(output, "plotbioloc", priority = 10)
+    outputOptions(output, "Stacked", priority = 10)
+    outputOptions(output, "linePriceBio", priority = 10)
+    outputOptions(output, "PrixRegAlim", priority = 10)
+    outputOptions(output, "PrixBioLoc", priority = 10)
+    outputOptions(output, "venn", priority = 10)
+    outputOptions(output, "mymap", suspendWhenHidden = FALSE, priority = 1)
 }
 
 
