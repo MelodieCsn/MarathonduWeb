@@ -47,7 +47,7 @@ server <- function(input, output) {
                 geom_bar(stat = "summary",fill="#DC4405")+
                 theme_classic(base_size = 20)+
                 geom_hline(yintercept = 5, linetype = "dashed")+
-                xlab("% de bio")+
+                xlab("% de produits bio")+
                 ylab("Prix moyen d'un repas")+
                 #geom_text(label =y,size = 3, position = position_stack(vjust = 0.5))+
                 #stat_summary(aes(label=..y..), fun.data=fun_mean, geom="text",

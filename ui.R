@@ -26,10 +26,7 @@ dashboardPage(
     )
   ),
   dashboardBody(
-    #tag$div{id = "tentacule",
-    img(src='vector-one_1.png', style="position:relative;top:-20px;left:-5px", height=200, width =500),
-    #}
-    img(src='vector-three-1.png',style="position:relative ;top:0px;left:650px", height=300, width =150),
+    
     
     
     
@@ -52,6 +49,7 @@ dashboardPage(
                                 /* navbar (rest of the header) */
                                 .skin-blue .main-header .navbar {
                                 background-color: #d83e00;
+                                margin-bottom: 50px
                                 }
                                 /* main sidebar */
                                 .skin-blue .main-sidebar {
