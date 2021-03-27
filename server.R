@@ -82,7 +82,7 @@ server <- function(input, output) {
                 geom_bar(stat = "summary",fill="#582c83")+
                 theme_classic(base_size = 20)+
                 geom_hline(yintercept = 100, linetype = "dashed")+
-                xlab("% de bio")+
+                xlab("% de produits bio")+
                 ylab("% de produits locaux")+
                 #stat_summary(aes(label=..y..), fun.data=fun_mean, geom="text",
                 #size=4,vjust = 5, color ="white")+

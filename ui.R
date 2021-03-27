@@ -171,8 +171,8 @@ dashboardPage(
               ),
 
               fluidRow(
-                box(title = "Pourcentage de produit bio
-                            en fonction du prix moyen d'un repas ",
+                box(title = "Prix moyen d'un repas en fonction du pourcentage de produit bio
+                              ",
                     status = "primary", solidHeader = TRUE,
                     collapsible = TRUE,
                     plotlyOutput(outputId = "plotbioprix"),
