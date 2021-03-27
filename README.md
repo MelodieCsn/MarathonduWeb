@@ -1,10 +1,10 @@
 # MarathonduWeb GROUPE 7
 
-**\/!\\\/!\\\/!\\ATTENTION : DEZIPPER LE CONTENU DE "R_Data/Map.zip" DANS "R_Data/Map" !!!!!!!!!!!!!!!\/!\\\/!\\\/!\\**
+**\/!\\\/!\\\/!\\ATTENTION : DEZIPPER LE CONTENU DE "Map.zip" DANS "R_Data/Map" !!!!!!!!!!!!!!!\/!\\\/!\\\/!\\**
 
-**\/!\\\/!\\\/!\\ATTENTION : DEZIPPER LE CONTENU DE "R_Data/Map.zip" DANS "R_Data/Map" !!!!!!!!!!!!!!!\/!\\\/!\\\/!\\**
+**\/!\\\/!\\\/!\\ATTENTION : DEZIPPER LE CONTENU DE "Map.zip" DANS "R_Data/Map" !!!!!!!!!!!!!!!\/!\\\/!\\\/!\\**
 
-**\/!\\\/!\\\/!\\ATTENTION : DEZIPPER LE CONTENU DE "R_Data/Map.zip" DANS "R_Data/Map" !!!!!!!!!!!!!!!\/!\\\/!\\\/!\\**
+**\/!\\\/!\\\/!\\ATTENTION : DEZIPPER LE CONTENU DE "Map.zip" DANS "R_Data/Map" !!!!!!!!!!!!!!!\/!\\\/!\\\/!\\**
 
 Projet de création d'un site web orienté data visualisation en Rshiny
 
