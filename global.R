@@ -22,14 +22,15 @@ library("wesanderson")
 library("tidyr")
 library("rlist")
 library("openxlsx")
+library("shinyWidgets")
 
 # Chargement des données
 
 
-department <- readOGR(dsn="./Map",layer = "departements-20170102")
+department <- readOGR("r_data/Map/departements.geojson.txt")
 
-participants_map <- read.xlsx("./Out/liste_participants_coordinates.xlsx")
-bdd20_summary <- read.xlsx("./Out/bdd20_summary.xlsx")
+participants_map <- read.xlsx("R_Data/Out/liste_participants_coordinates.xlsx")
+bdd20_summary <- read.xlsx("R_Data/Out/bdd20_summary.xlsx")
 
 getSize <- function(repas){
   a=0
@@ -56,9 +57,6 @@ getInsee <- function(elt){
   if(nchar(elt) == 1){
     return(paste0("0",elt))
   }
-  if(elt == "69"){
-    return("69M")
-  }
   else{
     return(elt)
   }
@@ -66,7 +64,7 @@ getInsee <- function(elt){
 
 bdd20_summary$code_insee <- lapply(bdd20_summary$code.département, getInsee)
 
-bdd20_summary <- bdd20_summary[order(match(bdd20_summary$code_insee, department$code_insee)),]
+bdd20_summary <- bdd20_summary[order(match(bdd20_summary$code_insee, department$code)),]
 
 bdd20_bio <- bdd20_summary%>%
   select(c("code.département","mean_bio_anonyme"))
@@ -87,10 +85,10 @@ bdd20_vege$mean = bdd20_vege$mean_vege_anonyme
 
 myPalette <- brewer.pal(2,"Dark2") 
 
-liste_participants <- read.xlsx("LISTE PARTICIPANTS OBSERVATOIRE.xlsx", rowNames = TRUE)
-bdd_2020 <- read.xlsx("bdd_observatoire_2020.xlsx")
-bdd_2019 <- read.xlsx("bdd_observatoire_2019.xlsx")
-bdd_2018 <- read.xlsx("bdd_observatoire_2018.xlsx")
+liste_participants <- read.xlsx("R_data/LISTE PARTICIPANTS OBSERVATOIRE.xlsx", rowNames = TRUE)
+bdd_2020 <- read.xlsx("R_Data/bdd_observatoire_2020.xlsx")
+bdd_2019 <- read.xlsx("R_Data/bdd_observatoire_2019.xlsx")
+bdd_2018 <- read.xlsx("R_Data/bdd_observatoire_2018.xlsx")
 
 
 bdd_2020$bio_fact = cut(bdd_2020$bio, breaks=c(0,10, 20,30, 40,50, 60,70, 80 ,90,Inf), labels = c("0-10","10-20","20-30","30-40","40-50","50-60","60-70","70-80","80-90","90-100"))
