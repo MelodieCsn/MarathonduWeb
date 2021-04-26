@@ -1,17 +1,8 @@
-library(shiny)
-library(dplyr)
-library(leaflet)
-library(rgdal)
-library(RColorBrewer)
-library(wesanderson)
-library(tidyr)
-library(rlist)
-library(openxlsx)
 
 # Chargement des données
-department <- readOGR(dsn="./Map",layer = "departements-20170102")
-liste_participants <- read.xlsx("R_Data/Out/liste_participants_coordinates.xlsx")
-bdd20_summary <- read.csv("R_Data/Out/bdd20_summary.csv")
+department <- readOGR(dsn="R_data/Map",layer = "departements-20170102")
+liste_participants <- read.xlsx("Out/liste_participants_coordinates.xlsx")
+bdd20_summary <- read.csv("Out/bdd20_summary.csv")
 
 getSize <- function(repas){
   a=0

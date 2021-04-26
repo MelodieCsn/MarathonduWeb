@@ -107,7 +107,8 @@ server <- function(input, output) {
         vegehebdo$typeviande[vegehebdo$via_bio == 0] <- "viande non bio"
 
         vegehebdo$typeviande = as.factor(vegehebdo$typeviande)
-        dfvegehebdo = count(vegehebdo, 'typeviande')
+        dfvegehebdo = dplyr::count(vegehebdo, typeviande, name="freq")
+
         dfvegehebdo$freqvege = "Hebdomadaire"
 
         vegequot <- df_subset()[df_subset()$freq_veg == 3,]
@@ -118,7 +119,7 @@ server <- function(input, output) {
         vegequot$typeviande[vegequot$via_bio == 0] <- "viande non bio"
 
         vegequot$typeviande <- as.factor(vegequot$typeviande)
-        dfvegequot <- count(vegequot, 'typeviande')
+        dfvegequot <- dplyr::count(vegequot, typeviande, name="freq")
         dfvegequot$freqvege <- "Quotidien"
 
         novege <- df_subset()[df_subset()$menuvege == 2,]
@@ -129,7 +130,7 @@ server <- function(input, output) {
         novege$typeviande[novege$via_bio == 0] <- "viande non bio"
 
         novege$typeviande <- as.factor(novege$typeviande)
-        dfnovege <- count(novege, 'typeviande')
+        dfnovege <- dplyr::count(novege, typeviande, name="freq")
         dfnovege$freqvege <- "Non végétarien"
 
         df <- dplyr::bind_rows(dfnovege, dfvegehebdo)
@@ -172,7 +173,7 @@ server <- function(input, output) {
             name = "Pourcentage de bio",
             # Add a second axis and specify its features
             sec.axis = sec_axis(~./30, name="Prix du repas")) +
-          theme_ipsum() +
+          theme_bw() +
           theme(
             axis.title.y = element_text(color = "#582c83", size=20),
             axis.title.y.right = element_text(color = "#DC4405", size=20),
@@ -230,7 +231,7 @@ server <- function(input, output) {
         bdd_2020_loc<- read.xlsx("R_data/bdd_observatoire_2020.xlsx")%>%
           select(c("loc","cmp","bio"))
 
-        # on eneleve les NA de la colonne cmp
+        # on enleve les NA de la colonne cmp
         bdd_2020_loc = bdd_2020_loc[complete.cases(bdd_2020_loc$cmp), ]
         bdd_2020_loc = bdd_2020_loc[complete.cases(bdd_2020_loc$loc), ]
         bdd_2020_loc = bdd_2020_loc[complete.cases(bdd_2020_loc$bio), ]
@@ -241,7 +242,7 @@ server <- function(input, output) {
           scale_size(range = c(5,15), name="Coût d'un repas") +
           scale_fill_viridis(discrete=FALSE, guide=FALSE, option="A") +
           theme(plot.title = element_text(hjust = 0.7, size = 8))+
-          theme_ipsum()+
+          theme_bw()+
           theme(legend.position="bottom") +
           xlab("Proportion de poduits locaux (en %)") +
           ylab("Proportion de repas bio (en %)")+
@@ -290,7 +291,7 @@ server <- function(input, output) {
     output$mymap <- renderLeaflet({
         pal <- pal()
         leaflet()%>%
-          setView(lng = 3.1074, lat = 45.7825, zoom = 5)%>%
+          setView(lng = 3.1074, lat = 45.7825, zoom = 6)%>%
           addProviderTiles(providers$Stamen.TonerLite)%>%
           addPolygons(data = department,
                       weight = 1,
@@ -323,5 +324,3 @@ server <- function(input, output) {
     outputOptions(output, "venn", priority = 10)
     outputOptions(output, "mymap", suspendWhenHidden = FALSE, priority = 1)
 }
-
-

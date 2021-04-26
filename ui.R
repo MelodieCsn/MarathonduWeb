@@ -2,36 +2,35 @@ dashboardPage(
 
   #Header
   dashboardHeader(title = ""),
-    #img(src='UPB-LOGO-ROUGE-CADRE.png', align = "center", height=200, width =200)),
-  
+  #img(src='UPB-LOGO-ROUGE-CADRE.png', align = "center", height=200, width =200)),
+
   # tags$li(class = "dropdown",
   #         tags$style(".main-header {max-height: 100px}"),
   #         tags$style(".main-header .logo {height: 100px}")
   # ),
-  # 
+  #
   # tags$li(div(
   #   img(src = 'UPB-LOGO-ROUGE-CADRE.png',
   #       height = "100px",  width ="100px"),
   #   style = "padding-top:auto; padding-right:100px;"),
   #   class = "dropdown")
   # ),
-  
-  
+
+
   #Sidebar
   dashboardSidebar(
     sidebarMenu(
       menuItem("Statistiques", tabName = "Stat", icon = icon("chart-bar")),
       menuItem("Carte interactive", tabName = "Carte", icon = icon("map-marked-alt"))
-      #img(src='UPB-LOGO-ROUGE.png', align = "center", height=200, width =200)
     )
   ),
   dashboardBody(
-    
-    
-    
-    
+
+
+
+
     tags$head(tags$style(HTML('
-                                
+
                                 /* logo */
                                 .skin-blue .main-header .logo {
                                 background-color: #d83e00;
@@ -59,7 +58,7 @@ dashboardPage(
                                 }
                                 .skin-blue .main-header .navbar .sidebar-toggle {
                                 display:none;
-                                
+
                                 }
                                 /* active selected tab in the sidebarmenu */
                                 /* other links in the sidebarmenu when hovered */
@@ -118,11 +117,11 @@ dashboardPage(
                                 .box.box-solid.box-primary {
                                 border-color: #613e92;
                                 }
-                                
+
                                 .box.box-primary {
                                 border-top-color : #613e92;
                                 }
-                                
+
                                 .box.box-solid.box-primary > .box-header {
                                 background-color: #613e92;
                                 }
@@ -140,8 +139,11 @@ dashboardPage(
                                 .box.box-solid.box-info > .box-header {
                                 background-color: #d0ebfc;
                                 }
-                                
-                                
+                                .content {
+                                padding-top: 5%
+                                }
+
+
                                 '))),
     tags$style(type = "text/css", "#mymap {height: calc(100vh - 80px) !important;}"),
     tags$style(type = "text/css", "#PrixBioLoc {height: calc(75vh) !important;}"),
@@ -150,22 +152,22 @@ dashboardPage(
       tabItem(tabName = "Stat",
               # Input: selectInput ----
               column(12,
-              column(2,box(status = "primary", width = "30%",
-                            pickerInput("nbrepas", "Nombres de repas : ", 
-                                        choices= c("- 500", "500-3000", "3000-10000", "+ 10000", "Total"),
-                                        options = list(style = "btn-primary")),
-                            
-                            prettyRadioButtons("loliouhisto", "Type de graphe désiré",c("Histogramme" = "histo","Loliplot" = "loli"), 
-                                               selected = c("graphe lolipop" = "loli"),icon = icon("check"), 
-                                               bigger = TRUE,
-                                               status = "info",
-                                               animation = "jelly")
-              )),
-              column(1),
-              column(8,h2("Comment évolue la part de bio dans vos repas... Quel en est l'impact sur le budget...", align = "center", 
-                          style="font-family:gangster grotesk"),
-                     h1("...Dans les cantines de même taille que la vôtre !*", align="center", style="font-family:gangster grotesk")),
-              column(1)
+                     column(2,box(status = "primary", width = "30%",
+                                  pickerInput("nbrepas", "Nombres de repas : ",
+                                              choices= c("- 500", "500-3000", "3000-10000", "+ 10000", "Total"),
+                                              options = list(style = "btn-primary")),
+
+                                  prettyRadioButtons("loliouhisto", "Type de graphe désiré",c("Histogramme" = "histo","Loliplot" = "loli"),
+                                                     selected = c("graphe lolipop" = "loli"),icon = icon("check"),
+                                                     bigger = TRUE,
+                                                     status = "info",
+                                                     animation = "jelly")
+                     )),
+                     column(1),
+                     column(8,h2("Comment évolue la part de bio dans vos repas... Quel en est l'impact sur le budget...", align = "center",
+                                 style="font-family:gangster grotesk"),
+                            h1("...Dans les cantines de même taille que la vôtre !*", align="center", style="font-family:gangster grotesk")),
+                     column(1)
               ),
 
               fluidRow(
@@ -176,7 +178,7 @@ dashboardPage(
                     plotlyOutput(outputId = "plotbioprix"),
                     h3("Il n'y a pas d'augmentation nette du prix du repas avec l'augmentation de la part de produit bio.",
                        style="font-family:gangster grotesk",align="center")
-                    ),
+                ),
 
                 box(title = "Pourcentage de produit bio
                             en fonction du prix moyen d'un repas ",
@@ -193,17 +195,17 @@ dashboardPage(
                     status = "danger", solidHeader = TRUE, collapsible = TRUE,
                     h3("Servir des plats végétariens est un levier pour maîtriser son budget.", style="font-family:gangster grotesk",align="center"),
                     h3(" La distribution des structures qui ne proposent pas de plats végétariens tend vers les prix les plus élevés",
-                      style="font-family:gangster grotesk; font-style:italic;",align="center")
-                    ),
-                
-                
+                       style="font-family:gangster grotesk; font-style:italic;",align="center")
+                ),
+
+
                 box(title = "Proportion de repas bio en fonction de la proportion de produits locaux et du coût d'un repas ",
                     status = "primary", solidHeader = TRUE,
                     collapsible = TRUE, width = "30%", height = "60%",
                     plotOutput(outputId = "PrixBioLoc"),
                     h3("Augmenter la part de bio et de local dans l'assiette ne conduit pas forcément à une augmentation du prix.",style="font-family:gangster grotesk", align="center"),
                     h3("Chaque bulle représente une structure: plus elle est petite, plus le prix par repas est faible.",style="font-family:gangster grotesk;font-style:italic;",align="center")
-                    )
+                )
               ),
 
 
@@ -214,8 +216,8 @@ dashboardPage(
                     plotOutput(outputId = "linePriceBio"),
                     h3("La part de bio servie dans les cantines suivies depuis 2018 a augmenté, pas le prix !",
                        style="font-family:gangster grotesk", align="center")
-                    
-                    ),
+
+                ),
                 box(plotlyOutput(outputId = "Stacked"),
                     title = "Qualité de la viande en fonction du régime alimentaire",
                     status = "success", solidHeader = TRUE,
@@ -226,23 +228,23 @@ dashboardPage(
 
               fluidRow(
                 column(2),
-                column(8, align="center", offset=4, 
+                column(8, align="center", offset=4,
                        box(title = "Diagramme de Venn",
                            status = "danger", solidHeader = TRUE,
                            plotOutput(outputId = "venn"),
                            h3("Intersection entre le fait de proposer plus de 20% de bio, au moins un repas végétarien et avoir un prix inférieur à 2,50€",
                               style="font-family:gangster grotesk", align="center")
-                      )
+                       )
                 ),
-                       
-               column(2,
-                      img(src='UPB POMME4.png',style="position:relative ;bottom:500px;left:50px", height=300, width =300)
-              
-              )
-      
-            ),
-            h3("*Les données qui ont permis la réalisation de ces analyses statistiques proviennent des réponses aux questionnaires de Observatoire National de la Restauration Collective bio et durable des années 2018, 2019 et 2020",
-               style="font-family:gangster grotesk; font-style:italic;",align="center")
+
+                column(2,
+                       img(src='UPB POMME4.png',style="position:relative ;bottom:500px;left:50px", height=300, width =300)
+
+                )
+
+              ),
+              h3("*Les données qui ont permis la réalisation de ces analyses statistiques proviennent des réponses aux questionnaires de Observatoire National de la Restauration Collective bio et durable des années 2018, 2019 et 2020",
+                 style="font-family:gangster grotesk; font-style:italic;",align="center")
       ),
 
       tabItem(tabName = "Carte",
@@ -255,14 +257,11 @@ dashboardPage(
                                             "Part de produits Locaux (en%)" = "loc",
                                             "Prix moyen par repas" = "prix" ,
                                             "% Au moins un menu végétarien hebdomadaire" = "vege"),
-                                 icon = icon("check"), 
+                                 icon = icon("check"),
                                  bigger = TRUE,
                                  status = "info",
                                  animation = "jelly"),
               leafletOutput(outputId = "mymap")
-      ),
-      tabItem(tabName="test",
-              p("COUCOU")
       )
     )
   )
