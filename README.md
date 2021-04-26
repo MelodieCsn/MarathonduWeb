@@ -1,11 +1,5 @@
 # MarathonduWeb GROUPE 7
 
-**\/!\\\/!\\\/!\\ATTENTION : DEZIPPER LE CONTENU DE "Map.zip" DANS "R_Data/Map" !!!!!!!!!!!!!!!\/!\\\/!\\\/!\\**
-
-**\/!\\\/!\\\/!\\ATTENTION : DEZIPPER LE CONTENU DE "Map.zip" DANS "R_Data/Map" !!!!!!!!!!!!!!!\/!\\\/!\\\/!\\**
-
-**\/!\\\/!\\\/!\\ATTENTION : DEZIPPER LE CONTENU DE "Map.zip" DANS "R_Data/Map" !!!!!!!!!!!!!!!\/!\\\/!\\\/!\\**
-
 Projet de création d'un site web orienté data visualisation en Rshiny
 
 Un Plus Bio est une association qui, depuis vingt ans, interroge l’évolution des approches et des métiers de la restauration collective, avec pour finalité de changer notre alimentation pour aller vers plus de bio et de local.
